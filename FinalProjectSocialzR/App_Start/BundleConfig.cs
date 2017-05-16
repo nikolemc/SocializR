@@ -10,8 +10,7 @@ namespace FinalProjectSocialzR
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                  "~/Scripts/sidebar.js", "~/Scripts/slider.js", "~/Scripts/commentpanel.js", 
-                  "~/Scripts/vertical-responsive-menu.min.js", "~/Scripts/BootSideMenu.js",
-                   "~/Scripts/sortablelist.js",
+                 "~/Scripts/BootSideMenu.js", "~/Scripts/sortablelist.js",
                         "~/Scripts/jquery-{version}.js", "~/Scripts/jquery-ui.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
@@ -27,7 +26,7 @@ namespace FinalProjectSocialzR
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css", "~/Content/sidebar.css", "~/Content/vertical-responsive.css",
+                      "~/Content/bootstrap.css", "~/Content/sidebar.css", 
                        "~/Content/slider.css", "~/Content/commentpanel.css", "~/Content/font-awesome.css",
                        "~/Content/BootSideMenu.css", "~/Content/sortablelist.css", "~/Content/jquery-ui.css",
                         "~/Content/navbar.css",

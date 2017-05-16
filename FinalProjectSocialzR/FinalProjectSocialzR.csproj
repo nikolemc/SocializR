@@ -219,7 +219,6 @@
     <Content Include="Content\navbar.css" />
     <Content Include="Content\slider.css" />
     <Content Include="Content\sortablelist.css" />
-    <Content Include="Content\vertical-responsive-menu.css" />
     <Content Include="favicon.ico" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
@@ -252,7 +251,6 @@
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\slider.js" />
     <Content Include="Scripts\sortablelist.js" />
-    <Content Include="Scripts\vertical-responsive-menu.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -290,9 +288,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
