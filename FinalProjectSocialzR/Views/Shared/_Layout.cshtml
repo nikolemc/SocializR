@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    @*@Html.Partial("_LoginPartial")*@
+
+    @*<div class="container-fluid">
+        <div class="navbar navbar-fixed-top navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navbar-offcanvas" data-canvas="body">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand pull-right" href="#">
+                    <img src="http://assets.inhabitat.com/wp-content/blogs.dir/1/files/2010/05/BP-Redesign-Contest-4-75x75.jpg" alt="Alternate Text for Image">
+                </a>
+
+                <div class="navbar-offcanvas offcanvas navmenu-fixed-left">
+                    <a class="navmenu-brand" href="#">eServices</a>
+                    <ul class="nav nav-justified">
+                        <li><a href="index.html">Menu 1</a></li>
+                        <li><a href="index.html">Menu 2</a></li>
+                        <li><a href="index.html">Menu 3</a></li>
+                        <li><a href="index.html">Menu 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+
+    
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        @*<footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>*@
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

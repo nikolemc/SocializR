@@ -1,0 +1,86 @@
+﻿
+.nav {
+    padding-right: 20%;
+}
+
+.navbar-toggle {
+    position: absolute;
+    right: 20%;
+    top: 0;
+}
+
+.navbar-brand {
+    width: 20%;
+}
+
+    .navbar-brand img {
+        display: block;
+        height: auto;
+        width: 100%;
+    }
+
+.navbar-fixed-top {
+    left: 80px;
+    right: 80px;
+}
+
+.navbar-default {
+    background-color: #595959;
+    border-color: #595959;
+}
+
+    .navmenu-default .navmenu-brand, .navbar-default .navbar-offcanvas .navmenu-brand {
+        color: #FFFFFF !important;
+    }
+
+    .navbar-default .navbar-offcanvas {
+        background-color: #595959 !important;
+        border-color: #595959 !important;
+    }
+
+.navbar-brand {
+    padding: 0px 0px 0px 0px;
+    position: absolute;
+    right: 0px;
+}
+
+.navbar-default .navbar-nav > .active > a {
+    color: #66CCFF;
+    background-color: transparent;
+}
+
+.navbar-default li > a {
+    color: #CCCCCC;
+}
+
+    .navbar-default li > a:hover, .navbar-default li > a:focus {
+        color: #FFFFFF;
+        background-color: transparent;
+    }
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    color: #FFFFFF;
+    background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #FEFEFE
+}
+
+.navbar-nav > li {
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #181818;
+}
+
+.nav > li > a {
+    position: relative;
+    display: block;
+    padding: 14px 10px;
+}
