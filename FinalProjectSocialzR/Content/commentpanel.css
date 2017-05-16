@@ -1,0 +1,72 @@
+﻿body {
+    padding-top: 30px;
+}
+
+rowbody{
+margin-left: 0px
+}
+
+.widget .panel-body {
+    padding: 0px;
+}
+
+.widget .list-group {
+    margin-bottom: 0;
+}
+
+.widget .panel-title {
+    display: inline
+}
+
+.widget .label-info {
+    float: right;
+}
+
+.widget li.list-group-item {
+    border-radius: 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+
+    .widget li.list-group-item:hover {
+        background-color: rgba(86,61,124,.1);
+    }
+
+.widget .mic-info {
+    color: #666666;
+    font-size: 11px;
+}
+
+.widget .action {
+    margin-top: 5px;
+}
+
+.widget .comment-text {
+    font-size: 12px;
+}
+
+.widget .btn-block {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+
+.widget .action .btn-block {
+    background: #2bc1f2;
+    border: none;
+    color: #fff;
+    /* width: 100%; */
+    font-size: 22px;
+    font-weight: bolder;
+    padding: 8px 0;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+.list-group-item:first-child .upbutton {
+    display: none;
+}
+
+.list-group-item:last-child .downbutton {
+    display: none;
+}
