@@ -30,8 +30,9 @@ namespace FinalProjectSocialzR.Controllers
             return View();
         }
 
+        
         [ActionName("CustomSearch")]
-        public async Task<ActionResult> CustomSearchAsync(string searchTerm = "trump")
+        public async Task<ActionResult> CustomSearchAsync(string searchTerm)
         {
 
             var auth = new MvcAuthorizer
@@ -64,7 +65,7 @@ namespace FinalProjectSocialzR.Controllers
                 tweets.Add(tweetToAdd);
             }
 
-            return View(tweets);
+            return PartialView("_TwitterSearchResultsPartial", tweets);
         }
 
         [ActionName("CustomSearchZip")]
@@ -96,7 +97,10 @@ namespace FinalProjectSocialzR.Controllers
                 {
                     ImageUrl = item.User.ProfileImageUrl,
                     ScreenName = item.User.ScreenNameResponse,
-                    Text = item.Text
+                    Text = item.Text,
+                    PostTimeStamp = item.CreatedAt,
+                    UserName = item.User.Name,
+                    PostContentUrl = item.OEmbedUrl
                 };
 
 

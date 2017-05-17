@@ -14,6 +14,7 @@ namespace FinalProjectSocialzR.Controllers
             return View();
         }
 
+        [ActionName("Begin")]
         public async Task<ActionResult> BeginAsync()
         {
             //var auth = new MvcSignInAuthorizer
@@ -30,6 +31,7 @@ namespace FinalProjectSocialzR.Controllers
             return await auth.BeginAuthorizationAsync(new Uri(twitterCallbackUrl));
         }
 
+        [ActionName("Complete")]
         public async Task<ActionResult> CompleteAsync()
         {
             var auth = new MvcAuthorizer
