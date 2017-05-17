@@ -1,17 +1,11 @@
 ﻿let runTwitterSearch = () => {
-
-    let searchCriteria = {
-        searchTerm: $("#search").val()
-    };
-
     $.ajax({
-        url: '/Home/CustomSearch',
-        dataType: "json",
-        contentType: "application/json",
-        data: JSON.stringify(newMarble),
+        url: '/Home/CustomSearch?searchTerm='+ $("#twitterSearch").val(),
+        dataType: "html",
         type: "GET",
-        success: (data) => {
-            marbDisplay(data);
+        success: (partial) => {
+            $("#twitterSearchDisplayFront").html(partial);
+            console.log('works');
         },
         error: (data) => {
             console.log("oops", data)
