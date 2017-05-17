@@ -13,7 +13,7 @@
                 <form>
                     <div class="form-group1">
                         <label for="search">Search</label>
-                        <input type="text" id="search" name="search" placeholder="Search here...">
+                        <input type="text" id="twitterSearch" name="search" placeholder="Search here...">
                     </div>
 
                     <div class="form-group1">
@@ -33,7 +33,7 @@
                         <input type="checkbox" id="geotargeted" name="Geo Targeted" >*@
 
                     <div class="search">
-                        <button type="submit" class="btn btn-primary" >Search</button>
+                        <button class="btn btn-primary" onclick="runTwitterSearch();" type="button">Search</button>
                     </div>
 
 
@@ -142,7 +142,9 @@
                 </div>
                 <div class="panel-body">
                     <ul class="list-group">
-                        @Html.Partial("_TwitterSearchResultsPartial")
+                        <li id="twitterSearchDisplayFront">
+                            @Html.Partial("_TwitterSearchResultsPartial")
+                        </li>
                         <li class="list-group-item">
                             <div class="row">
                                 <div class="col-xs-2 col-md-1">

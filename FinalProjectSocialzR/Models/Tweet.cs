@@ -19,8 +19,6 @@ namespace FinalProjectSocialzR.Models
         [DisplayName("Tweet")]
         public string Text { get; set; }
 
-        ///add this stuff in
-       
         public DateTime PostTimeStamp { get; set; }
 
         // this is for images and videos inside of the post
