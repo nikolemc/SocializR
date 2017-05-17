@@ -233,10 +233,25 @@ input[type=submit] {
     background-color: #ffffff;
     padding: 0px;
     width: 100%;
+    min-height: 300px;
+    box-sizing: border-box;
 }
 
-/* This get the content to wrap for mobile device */
-.content {
-    float: left;
-    height: 30px;
+
+
+@media screen and (min-width: 600px) {
+    .containercomments {
+        height: auto;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    containercomments1 {
+        width: 50%;
+        float: left;
+    }
+
+    containercomments2 {
+        width: 50%;
+    }
 }
