@@ -238,7 +238,6 @@
     <Content Include="Content\jquery-ui.css" />
     <Content Include="Content\navbar.css" />
     <Content Include="Content\slider.css" />
-    <Content Include="Content\sortablelist.css" />
     <Content Include="favicon.ico" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
