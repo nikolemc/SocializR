@@ -1,6 +1,6 @@
 ﻿.sortable_list {
     border: 1px solid #eee;
-    width: 142px;
+    width: 300px;
     min-height: 20px;
     list-style-type: none;
     margin: 0;
@@ -13,5 +13,5 @@
         margin: 0 5px 5px 5px;
         padding: 5px;
         font-size: 1.2em;
-        width: 120px;
+        width: 250px;
     }
