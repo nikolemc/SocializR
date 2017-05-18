@@ -2,8 +2,7 @@
 
 @if (Model != null)
 {
-    @*<div id="twitterSearchDisplay">*@
-        @*<div id="sortable2" class="sortable_list connectedSortable">*@
+
             foreach (var item in Model)
             {
 
@@ -22,6 +21,14 @@
                                 </div>
                                 <div class="comment-text">
                                     @item.Text
+                                    @if (item.Media != null)
+                                    {
+                                        <blockquote class="twitter-video" data-lang="en">
+                                            <p lang="en" dir="ltr"></p>
+                                            <a href="@item.Media"></a>
+                                        </blockquote>
+                                        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                    }
                                 </div>
                                 <div class="action">
                                     <button class="upbutton btn btn-default btn-xs" title="Up">
@@ -50,8 +57,6 @@
 
             }
 
-        @*</div>*@
-    @*</div>*@
 }
 
 

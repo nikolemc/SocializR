@@ -21,7 +21,7 @@ namespace FinalProjectSocialzR.Models
 
         public DateTime PostTimeStamp { get; set; }
 
-        // this is for images and videos inside of the post
+        // for direct twitter post
         public string PostContentUrl { get; set; }
 
         public string UserName { get; set; }
@@ -34,7 +34,7 @@ namespace FinalProjectSocialzR.Models
 
         public string Language { get; set; }
 
-         
+        public string Media { get; set; }
 
     }
 }
