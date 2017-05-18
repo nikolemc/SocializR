@@ -236,7 +236,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\commentpanel.css" />
     <Content Include="Content\jquery-ui.css" />
-    <Content Include="Content\navbar.css" />
     <Content Include="Content\slider.css" />
     <Content Include="favicon.ico" />
     <Content Include="Content\font-awesome.css" />
@@ -244,6 +243,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\SocializR1.png" />
+    <Content Include="Images\SocializRFade.png" />
+    <Content Include="Images\SocializRFade2.png" />
+    <Content Include="Images\SocializRmiddle.png" />
+    <Content Include="Images\SocializRmiddle2.png" />
+    <Content Include="Images\SocializRmiddlelong.png" />
+    <Content Include="Images\SocializRWhite.png" />
     <Content Include="Scripts\BootSideMenu.js" />
     <Content Include="Scripts\BootSideMenuServices.js" />
     <Content Include="Scripts\bootstrap.js" />
