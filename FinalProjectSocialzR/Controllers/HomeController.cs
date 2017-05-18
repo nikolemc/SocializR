@@ -57,7 +57,8 @@ namespace FinalProjectSocialzR.Controllers
                 {
                     ImageUrl = item.User.ProfileImageUrl,
                     ScreenName = item.User.ScreenNameResponse,
-                    Text = item.Text
+                    Text = item.Text,
+                    Media = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.MediaUrl != null).ToString()
                 };
 
 
@@ -99,7 +100,8 @@ namespace FinalProjectSocialzR.Controllers
                     Text = item.Text,
                     PostTimeStamp = item.CreatedAt,
                     UserName = item.User.Name,
-                    PostContentUrl = item.OEmbedUrl
+                    PostContentUrl = item.OEmbedUrl,
+                    Media = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.DisplayUrl != null).ToString()
                 };
 
 
