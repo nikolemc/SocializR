@@ -1,9 +1,4 @@
-/**
- * BootSideMenu v 1.0
- * Author: Andrea Lombardo
- * http://www.lombardoandrea.com
- * https://github.com/AndreaLombardo/BootSideMenu
- * */
+
 (function ($) {
 
     $.fn.BootSideMenu = function (userOptions) {
@@ -103,8 +98,7 @@
         if (options.onStartup !== undefined) {
             options.onStartup(menu);
         }
-
-        //aggiungi icone a tutti i collapse
+        
         $("[data-toggle=\"collapse\"]", menu).each(function () {
             var icona = $("<span class=\"glyphicon glyphicon-chevron-right\"></span>");
             $(this).prepend(icona);
