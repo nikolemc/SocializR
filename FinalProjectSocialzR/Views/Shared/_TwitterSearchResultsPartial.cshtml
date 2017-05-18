@@ -1,62 +1,50 @@
 @model List<FinalProjectSocialzR.Models.Tweet>
-
 @if (Model != null)
 {
 
-            foreach (var item in Model)
-            {
+    foreach (var item in Model)
+    {
 
-                <div class="ui-state-highlight">
-                    <div class="list-group-item">
-                        <div class="row">
-                            <div class="col-xs-2 col-md-1">
-                                <img src=@item.ImageUrl class="img-circle img-responsive" alt="" />
+        <div class="ui-state-highlight">
+            <div class="list-group-item">
+                <div class="row">
+                    <div class="col-xs-3 col-md-2">
+                        <img src=@item.ImageUrl class="img-circle img-responsive" alt="" />
+                    </div>
+                    <div class="col-xs-7 col-md-11">
+                        <div>
+                            <a href="http://bootsnipp.com/BhaumikPatel/snippets/4ldn">@item.ScreenName</a>
+                            <div class="mic-info">
+                                By: <a href="#"></a> @item.PostTimeStamp
                             </div>
-                            <div class="col-xs-10 col-md-11">
-                                <div>
-                                    <a href="http://bootsnipp.com/BhaumikPatel/snippets/4ldn">Cool Sign Up</a>
-                                    <div class="mic-info">
-                                        By: <a href="#"></a> @item.PostTimeStamp
-                                    </div>
-                                </div>
-                                <div class="comment-text">
-                                    @item.Text
-                                    @if (item.Media != null)
-                                    {
-                                        <blockquote class="twitter-video" data-lang="en">
-                                            <p lang="en" dir="ltr"></p>
-                                            <a href="@item.Media"></a>
-                                        </blockquote>
-                                        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                                    }
-                                </div>
-                                <div class="action">
-                                    <button class="upbutton btn btn-default btn-xs" title="Up">
-                                        <span class="glyphicon glyphicon-arrow-up"></span>
-                                    </button>
-                                    <button class="downbutton btn btn-default btn-xs" title="Down">
-                                        <span class="glyphicon glyphicon-arrow-down"></span>
-                                    </button>
-                                    <button type="button" class="btn btn-primary btn-xs" title="Edit">
-                                        <span class="glyphicon glyphicon-pencil"></span>
-                                    </button>
-                                    <button type="button" class="btn btn-success btn-xs" title="Approved">
-                                        <span class="glyphicon glyphicon-ok"></span>
-                                    </button>
-                                    <button type="button" class="btn btn-danger btn-xs" title="Delete">
-                                        <span class="glyphicon glyphicon-trash"></span>
-                                    </button>
-
-                                </div>
-                            </div>
+                        </div>
+                        <div class="comment-text">
+                            @item.Text
+                        </div>
+                        <div class="action">
+                            <button class="upbutton btn btn-default btn-xs" title="Up">
+                                <span class="glyphicon glyphicon-arrow-up"></span>
+                            </button>
+                            <button class="downbutton btn btn-default btn-xs" title="Down">
+                                <span class="glyphicon glyphicon-arrow-down"></span>
+                            </button>
+                            <button type="button" class="btn btn-primary btn-xs" title="Edit">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                            </button>
+                            <button type="button" class="btn btn-success btn-xs" title="Approved">
+                                <span class="glyphicon glyphicon-ok"></span>
+                            </button>
+                            <button type="button" class="btn btn-danger btn-xs" title="Delete">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
 
 
-            }
+    }
 
 }
-
-

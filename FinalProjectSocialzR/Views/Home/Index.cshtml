@@ -181,12 +181,6 @@
     </div>
 
 
-    <div id="sortable2" class="sortable_list connectedSortable">
-        <div class="ui-state-highlight">1</div>
-        <div class="ui-state-highlight">2</div>
-        <div class="ui-state-highlight">3</div>
-    </div>
-
 
 
 
@@ -209,42 +203,40 @@
                             </span>
                         </div>
                         <div class="panel-body">
-                           <div id="twitterSearchDisplayFront" class="sortable_list connectedSortable">
-                                    @Html.Partial("_TwitterSearchResultsPartial")
-                            
+                            <div id="twitterSearchDisplayFront" class="sortable_list connectedSortable">
+                                @Html.Partial("_TwitterSearchResultsPartial")
 
 
                                 <a href="#" class="btn btn-primary btn-sm btn-block" role="button"><span class="glyphicon glyphicon-refresh"></span> More</a>
-                         </div>  
+                            </div>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
-
-    </div>
-    <div class="containercomments">
-        <div class="col-xs-12 col-md-6">
+        <div class="col-xs-12 col-md-6 pull-right">
             <div class="containercomments2">
                 <div class="rowbody">
                     <div class="panel panel-default widget">
                         <div class="panel-heading">
                             <span class="glyphicon glyphicon-comment"></span>
                             <h3 class="panel-title">
-                                Selected Comments
+                                Moderated Comments
                             </h3>
                             <span class="label label-info">
                                 78
                             </span>
                         </div>
                         <div class="panel-body">
-                            <div class="list-group">
-                                @Html.Partial("_TwitterSearchResultsPartial")
+                            <div id="twitterSearchDisplayFront" class="sortable_list connectedSortable">
+                                @*@Html.Partial("_TwitterSearchResultsPartial")*@
 
 
+                                <a href="#" class="btn btn-primary btn-sm btn-block" role="button"><span class="glyphicon glyphicon-refresh"></span> More</a>
                             </div>
-                            <a href="#" class="btn btn-primary btn-sm btn-block" role="button"><span class="glyphicon glyphicon-refresh"></span> More</a>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -252,9 +244,9 @@
     </div>
 
 
+    
 
-
-
+    
 
 
 
