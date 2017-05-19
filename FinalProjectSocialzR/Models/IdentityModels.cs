@@ -30,5 +30,7 @@ namespace FinalProjectSocialzR.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<FinalProjectSocialzR.Models.SavedSocialMessage> SavedSocialMessages { get; set; }
     }
 }
