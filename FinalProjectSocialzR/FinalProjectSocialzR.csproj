@@ -228,6 +228,10 @@
     <Compile Include="Migrations\201705182004533_First.Designer.cs">
       <DependentUpon>201705182004533_First.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705191755561_SocialMessageAdded.cs" />
+    <Compile Include="Migrations\201705191755561_SocialMessageAdded.Designer.cs">
+      <DependentUpon>201705191755561_SocialMessageAdded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -340,6 +344,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705182004533_First.resx">
       <DependentUpon>201705182004533_First.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705191755561_SocialMessageAdded.resx">
+      <DependentUpon>201705191755561_SocialMessageAdded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
