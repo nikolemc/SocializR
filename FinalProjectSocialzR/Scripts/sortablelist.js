@@ -1,7 +1,7 @@
 ﻿$(function () {
     $(".sortable_list").sortable({
         connectWith: ".connectedSortable",
-        update: function (event, ui) {
+        receive: function (event, ui) {
             var item = {
 
                 //source: ui.item[0].Source,
