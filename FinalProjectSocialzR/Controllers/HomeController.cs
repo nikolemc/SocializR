@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 
 namespace FinalProjectSocialzR.Controllers
 {
@@ -13,6 +14,23 @@ namespace FinalProjectSocialzR.Controllers
     {
         public ActionResult Index()
         {
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                var name = HttpContext.User.Identity.Name;
+                var userId = User.Identity.GetUserId();
+                var userName = User.Identity.GetUserName();
+            }
+
+            //var vm = new ApplicationDbContext().Tweet.OrderByDescending(o => o.PostedTimeStamp).Include(i => i.message).ToList();
+            //return View(vm);
+            return View();
+        }
+
+        //This can be used for only allowing superUsers and Admin to post to twitter.
+        [Authorize (Roles = "superUser, Administrator")]
+        public ActionResult AddPost()
+        {
+            ViewBag.Name = HttpContext.User.Identity.Name;
             return View();
         }
 
@@ -55,6 +73,7 @@ namespace FinalProjectSocialzR.Controllers
             {
                 if (item.ExtendedEntities.MediaEntities.Count != 0)
                 {
+
                     var tweetToAdd = new Tweet
                     {
                         ImageUrl = item.User.ProfileImageUrl,
@@ -67,14 +86,18 @@ namespace FinalProjectSocialzR.Controllers
                 else
                 {
                     var tweetToAdd = new Tweet
-                    {
-                        ImageUrl = item.User.ProfileImageUrl,
-                        ScreenName = item.User.ScreenNameResponse,
-                        Text = item.Text,
-                    };
-                    tweets.Add(tweetToAdd);
-                }
-                                
+                    {                       
+                    ImageUrl = item.User.ProfileImageUrl,
+                    ScreenName = item.User.ScreenNameResponse,
+                    Text = item.Text,
+                    PostTimeStamp = item.CreatedAt,
+                    }
+
+                };
+
+
+                tweets.Add(tweetToAdd);
+
             }
 
             return PartialView("_TwitterSearchResultsPartial", tweets);
