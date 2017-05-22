@@ -1,0 +1,15 @@
+﻿@{
+    Response.Write("<?xml version='1.0' encoding='UTF-8' ?>");
+    Layout = null;
+}
+@model IEnumerable<FinalProjectSocialzR.Models.SavedSocialMessage>
+<block>
+    @foreach (var item in Model)
+    {
+        <Tweet>
+            <title>@item.ScreenName</title>
+            <text>@item.Text</text>
+            <ProfileImage>@item.ImageUrl</ProfileImage>
+        </Tweet>
+    }
+</block>
