@@ -18,3 +18,8 @@
     });
 }
 
+
+//receive: ajax(event, ui) {
+//    alert("Your Twitter account has not been authenticated. Click here to register: https://localhost:44358/OAuth"); 
+
+
