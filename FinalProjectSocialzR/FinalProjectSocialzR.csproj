@@ -220,13 +220,34 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\OauthController.cs" />
+    <Compile Include="Controllers\PlaylistsController.cs" />
+    <Compile Include="Controllers\SavedSocialMessagesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705182004533_First.cs" />
+    <Compile Include="Migrations\201705182004533_First.Designer.cs">
+      <DependentUpon>201705182004533_First.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705191755561_SocialMessageAdded.cs" />
+    <Compile Include="Migrations\201705191755561_SocialMessageAdded.Designer.cs">
+      <DependentUpon>201705191755561_SocialMessageAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705221733252_PlaylistCreated.cs" />
+    <Compile Include="Migrations\201705221733252_PlaylistCreated.Designer.cs">
+      <DependentUpon>201705221733252_PlaylistCreated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705221753302_Playlistcontrooler.cs" />
+    <Compile Include="Migrations\201705221753302_Playlistcontrooler.Designer.cs">
+      <DependentUpon>201705221753302_Playlistcontrooler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Playlist.cs" />
     <Compile Include="Models\Tweet.cs" />
+    <Compile Include="Models\SavedSocialMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -316,6 +337,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Application\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -328,6 +350,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201705182004533_First.resx">
+      <DependentUpon>201705182004533_First.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705191755561_SocialMessageAdded.resx">
+      <DependentUpon>201705191755561_SocialMessageAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705221733252_PlaylistCreated.resx">
+      <DependentUpon>201705221733252_PlaylistCreated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705221753302_Playlistcontrooler.resx">
+      <DependentUpon>201705221753302_Playlistcontrooler.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
