@@ -76,7 +76,9 @@ namespace FinalProjectSocialzR.Controllers
                     ImageUrl = item.User.ProfileImageUrl,
                     ScreenName = item.User.ScreenNameResponse,
                     Text = item.Text,
-                   
+                    PostTimeStamp = item.CreatedAt,
+
+
                 };
 
 
