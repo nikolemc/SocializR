@@ -54,5 +54,12 @@ namespace FinalProjectSocialzR.Models
         //[ForeignKey("UserId")]
         //public virtual ApplicationUser User { get; set; }
 
+
+        public int? PlaylistId { get; set; }
+        public virtual Playlist Playlist { get; set; }
     }
+
+
 }
+
+

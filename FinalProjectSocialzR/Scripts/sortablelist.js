@@ -1,6 +1,7 @@
 ﻿$(function () {
     $(".sortable_list").sortable({
         connectWith: ".connectedSortable",
+        //need to use receive command to look only at right hand list. Update looks at both
         receive: function (event, ui) {
             var item = {
 
