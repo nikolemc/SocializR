@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 
 namespace FinalProjectSocialzR.Controllers
 {
@@ -13,6 +14,23 @@ namespace FinalProjectSocialzR.Controllers
     {
         public ActionResult Index()
         {
+            if (HttpContext.User.Identity.IsAuthenticated)
+            {
+                var name = HttpContext.User.Identity.Name;
+                var userId = User.Identity.GetUserId();
+                var userName = User.Identity.GetUserName();
+            }
+
+            //var vm = new ApplicationDbContext().Tweet.OrderByDescending(o => o.PostedTimeStamp).Include(i => i.message).ToList();
+            //return View(vm);
+            return View();
+        }
+
+        //This can be used for only allowing superUsers and Admin to post to twitter.
+        [Authorize (Roles = "superUser, Administrator")]
+        public ActionResult AddPost()
+        {
+            ViewBag.Name = HttpContext.User.Identity.Name;
             return View();
         }
 
@@ -58,7 +76,9 @@ namespace FinalProjectSocialzR.Controllers
                     ImageUrl = item.User.ProfileImageUrl,
                     ScreenName = item.User.ScreenNameResponse,
                     Text = item.Text,
-                    Media = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.MediaUrl != null).ToString()
+                    PostTimeStamp = item.CreatedAt,
+
+
                 };
 
 

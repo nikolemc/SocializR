@@ -16,6 +16,7 @@ namespace FinalProjectSocialzR.Models
             // Add custom user claims here
             return userIdentity;
         }
+
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
@@ -29,5 +30,9 @@ namespace FinalProjectSocialzR.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<FinalProjectSocialzR.Models.SavedSocialMessage> SavedSocialMessages { get; set; }
+
+        public System.Data.Entity.DbSet<FinalProjectSocialzR.Models.Playlist> Playlists { get; set; }
     }
 }

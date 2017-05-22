@@ -8,6 +8,7 @@
             console.log('works');
         },
         error: (data) => {
+            alert("Your Twitter account has not been authenticated");
             console.log("oops", data)
         },
         complete: (data) => {
@@ -17,5 +18,3 @@
     });
 }
 
-receive: ajax(event, ui) {
-    alert("Your Twitter account has not been authenticated. Click here to register: https://localhost:44358/OAuth"); 
