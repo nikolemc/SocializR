@@ -71,41 +71,18 @@ namespace FinalProjectSocialzR.Controllers
 
             foreach (var item in searchResponse.Statuses)
             {
-<<<<<<< HEAD
                 var tweetToAdd = new Tweet
                 {
-=======
-                if (item.ExtendedEntities.MediaEntities.Count != 0)
-                {
-
-                    var tweetToAdd = new Tweet
-                    {
-                        ImageUrl = item.User.ProfileImageUrl,
-                        ScreenName = item.User.ScreenNameResponse,
-                        Text = item.Text,
-                        Media = item.ExtendedEntities.MediaEntities.First().ExpandedUrl.ToString()
-                    };
-                    tweets.Add(tweetToAdd);
-                }
-                else
-                {
-                    var tweetToAdd = new Tweet
-                    {                       
->>>>>>> 45f660dd5f73c917a3a5004e40738789754c809e
                     ImageUrl = item.User.ProfileImageUrl,
                     ScreenName = item.User.ScreenNameResponse,
                     Text = item.Text,
                     PostTimeStamp = item.CreatedAt,
-                    }
+
 
                 };
 
 
                 tweets.Add(tweetToAdd);
-<<<<<<< HEAD
-=======
-
->>>>>>> 45f660dd5f73c917a3a5004e40738789754c809e
             }
 
             return PartialView("_TwitterSearchResultsPartial", tweets);
