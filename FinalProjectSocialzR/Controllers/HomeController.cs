@@ -53,16 +53,28 @@ namespace FinalProjectSocialzR.Controllers
 
             foreach (var item in searchResponse.Statuses)
             {
-                var tweetToAdd = new Tweet
+                if (item.ExtendedEntities.MediaEntities.Count != 0)
                 {
-                    ImageUrl = item.User.ProfileImageUrl,
-                    ScreenName = item.User.ScreenNameResponse,
-                    Text = item.Text,
-                    Media = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.MediaUrl != null).ToString()
-                };
-
-
-                tweets.Add(tweetToAdd);
+                    var tweetToAdd = new Tweet
+                    {
+                        ImageUrl = item.User.ProfileImageUrl,
+                        ScreenName = item.User.ScreenNameResponse,
+                        Text = item.Text,
+                        Media = item.ExtendedEntities.MediaEntities.First().ExpandedUrl.ToString()
+                    };
+                    tweets.Add(tweetToAdd);
+                }
+                else
+                {
+                    var tweetToAdd = new Tweet
+                    {
+                        ImageUrl = item.User.ProfileImageUrl,
+                        ScreenName = item.User.ScreenNameResponse,
+                        Text = item.Text,
+                    };
+                    tweets.Add(tweetToAdd);
+                }
+                                
             }
 
             return PartialView("_TwitterSearchResultsPartial", tweets);
@@ -71,7 +83,7 @@ namespace FinalProjectSocialzR.Controllers
         [ActionName("CustomSearchZip")]
         public async Task<ActionResult> CustomSearchZipAsync(string searchTermZip = "trump", string lati = "27.782254", string longi = "-82.667619", string radi = "1")
         {
-
+            
             var auth = new MvcAuthorizer
             {
                 CredentialStore = new SessionStateCredentialStore()
@@ -101,7 +113,7 @@ namespace FinalProjectSocialzR.Controllers
                     PostTimeStamp = item.CreatedAt,
                     UserName = item.User.Name,
                     PostContentUrl = item.OEmbedUrl,
-                    Media = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.DisplayUrl != null).ToString()
+
                 };
 
 
@@ -110,6 +122,17 @@ namespace FinalProjectSocialzR.Controllers
 
             return View(tweets);
         }
+
+        [ActionName("GetXML")]
+        public ActionResult GetXML(string placeHolder)
+        {
+                      
+
+
+            return View();
+        }
+
+
     }
 }
 
