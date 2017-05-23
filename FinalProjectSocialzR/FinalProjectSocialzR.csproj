@@ -219,6 +219,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MediaExportController.cs" />
     <Compile Include="Controllers\OauthController.cs" />
     <Compile Include="Controllers\PlaylistsController.cs" />
     <Compile Include="Controllers\SavedSocialMessagesController.cs" />
@@ -335,7 +336,11 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_TwitterSearchResultsPartial.cshtml" />
     <Content Include="Views\Oauth\Index.cshtml" />
+
     <Content Include="Views\Shared\_PlaylistSearchResultsPartial.cshtml" />
+
+    <Content Include="Views\MediaExport\Index.cshtml" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,44 @@
+﻿@{
+    Response.Write("<?xml version='1.0' encoding='UTF-8' ?>");
+    Layout = null;
+}
+@model IEnumerable<FinalProjectSocialzR.Models.SavedSocialMessage>
+<channel>
+    <title>
+        SocializR
+    </title>
+    <lastBuildDate/>
+    <pubDate/>
+
+
+    @foreach (var item in Model)
+    {
+        <Tweet>
+            <title>@item.ScreenName</title>
+            <text>@item.Text</text>
+            <ProfileImage>@item.ImageUrl</ProfileImage>
+            @Html.Raw(string.Format("<link>{0}</link>", item.ImageUrl))
+            
+        </Tweet>
+    }
+</channel>
+
+@*<rss version="2.0">
+        <channel>
+            <title>Website name</title>
+            <link>website link</link>
+            <description>News for website</description>
+            <dc:language>en-gb</dc:language>
+            <dc:creator>email</dc:creator>
+            <dc:rights>Copyright 2010</dc:rights>
+            <admin:generatorAgent rdf:resource="" />
+            @foreach (var row in Model)
+            {
+                <item>
+                     <title>@row.ScreenName </title>
+                     @Html.Raw(string.Format("<link>{0}</link>", row.ImageUrl))
+                    <discription>@row.Text </discription>
+                </item>
+            }
+        </channel>
+    </rss>*@

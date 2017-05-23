@@ -3,7 +3,11 @@
         connectWith: ".connectedSortable",
         //need to use receive command to look only at right hand list. Update looks at both
         receive: function (event, ui) {
+            alert("dropped on = " + this.id); // Where the item is dropped
+            alert("sender = " + ui.sender[0].id); // Where it came from
+            alert("item = " + ui.item[0].innerHTML); //Which item (or ui.item[0].id)
             var item = {
+                               
 
                 //source: ui.item[0].Source,
                 ImageUrl: $(ui.item[0]).find("img").attr("src"),
