@@ -9,7 +9,7 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using FinalProjectSocialzR.Models;
-
+using System.Data.Entity;
 namespace FinalProjectSocialzR.Controllers
 {
     public class PlaylistsController : ApiController
@@ -26,13 +26,15 @@ namespace FinalProjectSocialzR.Controllers
         [ResponseType(typeof(Playlist))]
         public IHttpActionResult GetPlaylist(int id)
         {
-            Playlist playlist = db.Playlists.Find(id);
+            Playlist playlist = db.Playlists.FirstOrDefault(f => f.Id == id);
             if (playlist == null)
             {
                 return NotFound();
             }
+            var rv = db.Playlists.Select(s => new { Playlist = s, Message = s.SavedSocialMessage }).First(f => f.Playlist.Id == id); //take this and put in seperate controller return a partial that is the html.
+            
+            return PartialView(playlist);
 
-            return Ok(playlist);
         }
 
         // PUT: api/Playlists/5
