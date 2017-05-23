@@ -1,9 +1,11 @@
-﻿
-@model FinalProjectSocialzR.Models.Playlist
+﻿@model FinalProjectSocialzR.ViewModel.PlaylistWithSocialMessagesVM
+
+
+
 @if (Model != null)
 {
 
-    foreach (var item in Model.SavedSocialMessage)
+    foreach (var item in Model.Messages)
     {
 
         <div class="ui-state-highlight">

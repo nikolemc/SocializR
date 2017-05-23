@@ -41,6 +41,12 @@
 
 });
 
+$(".list-group-item").mousedown(function () {
+    $(".sortable_list").height($(".sortable_list").height());
+}).mouseup(function () {
+    $(".sortable_list").height('auto');
+});
+
 
 
 

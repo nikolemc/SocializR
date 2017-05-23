@@ -31,11 +31,15 @@ namespace FinalProjectSocialzR.Controllers
             {
                 return NotFound();
             }
-            var rv = db.Playlists.Select(s => new { Playlist = s, Message = s.SavedSocialMessage }).First(f => f.Playlist.Id == id); //take this and put in seperate controller return a partial that is the html.
             
             return Ok(playlist);
 
         }
+
+        //private IHttpActionResult PartialView(Playlist playlist)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         // PUT: api/Playlists/5
         [ResponseType(typeof(void))]
