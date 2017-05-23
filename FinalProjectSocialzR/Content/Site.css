@@ -50,4 +50,15 @@ radio-inline {
     padding-left: 7px;
 }
 
+.playlist-buttons {
+    display: inline-block;
+    background-color: transparent;
+}
+
+.buttonplaylist {
+    margin-top: 0;
+    border-top: 0;
+    padding-top: 0;
+}
+
 

@@ -14,6 +14,6 @@ namespace FinalProjectSocialzR.Models
         public string PlaylistName { get; set; }
         public DateTime LastModifiedTimeStamp { get; set; } = DateTime.Now;
 
-        public virtual ICollection<SavedSocialMessage> SavedSocialMessage { get; set; }
+        public ICollection<SavedSocialMessage> SavedSocialMessage { get; set; }
     }
 }
