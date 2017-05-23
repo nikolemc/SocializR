@@ -19,7 +19,7 @@
                 //UserName:ui.item[0].UserName,
                 //IsRetweeted:ui.item[0].IsRetweeted,
                 //Language:ui.item[0].Language,
-                //Media:ui.item[0].Media,
+                Media: $(ui.item[0]).find(".twit-vid").attr("href"),
                 //AddedToPlaylistTimeStamp:ui.item[0].AddedToPlaylistTimeStamp,
                 //UserId:ui.item[0].UserId,
 

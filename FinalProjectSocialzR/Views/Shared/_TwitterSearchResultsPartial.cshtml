@@ -26,12 +26,13 @@
                             {
                                 if (item.Media.Contains("video"))
                                 {
-                                    <blockquote class="twitter-video" data-lang="en">
-                                        <p lang="en" dir="ltr"></p>
-                                        <a href="@item.Media"></a>
-                                    </blockquote>
-                                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                                    @*<img src="@item.MediaImage" alt="Alternate Text" />*@
+                                    @*<div class="video">*@
+                                        <blockquote class="twitter-video" data-lang="en">
+                                            <p lang="en" dir="ltr"></p>
+                                            <a class="twit-vid" href="@item.Media"></a>
+                                        </blockquote>
+                                        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                    @*</div>*@
                                 }
                                 else
                                 {
