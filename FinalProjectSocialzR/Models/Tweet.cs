@@ -36,6 +36,7 @@ namespace FinalProjectSocialzR.Models
 
         public string Media { get; set; }
 
+        public string MediaImage { get; set; }
     }
 }
 
