@@ -11,18 +11,26 @@ namespace FinalProjectSocialzR.Controllers
     {
         public ActionResult Index()
         {
-            //XDocument doc = new XDocument(new XElement("body",
-            //                              new XElement("Message",
-            //                              new XElement("Content", "This is an email message"))));
-
             ApplicationDbContext db = new ApplicationDbContext();
 
             var mediaToExport = db.SavedSocialMessages.ToList();
 
             Response.ContentType = "text/xml";
-            //Response.AppendHeader("Content-Disposition", String.Format("attachment;filename={0}", doc));
 
             return View(mediaToExport);
         }
+
+        public ActionResult REALIndex(int id)
+        {
+            ApplicationDbContext db = new ApplicationDbContext();
+
+            var mediaToExport = db.SavedSocialMessages.ToList();
+
+            Response.ContentType = "text/xml";
+
+            return View(mediaToExport);
+        }
+
+
     }
 }
