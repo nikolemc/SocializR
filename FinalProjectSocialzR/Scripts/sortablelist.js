@@ -6,6 +6,7 @@
             alert("dropped on = " + this.id); // Where the item is dropped
             alert("sender = " + ui.sender[0].id); // Where it came from
             alert("item = " + ui.item[0].innerHTML); //Which item (or ui.item[0].id)
+
             var item = {
                                
 
@@ -23,6 +24,7 @@
                 //AddedToPlaylistTimeStamp:ui.item[0].AddedToPlaylistTimeStamp,
                 //UserId:ui.item[0].UserId,
 
+
             }
 
             console.log(item); //Which item (or ui.item[0].id)
@@ -33,6 +35,7 @@
                 dataType: "json",
                 contentType: "application/json",
                 data: JSON.stringify(item)
+
             });
 
         }
@@ -41,11 +44,7 @@
 
 });
 
-$(".list-group-item").mousedown(function () {
-    $(".sortable_list").height($(".sortable_list").height());
-}).mouseup(function () {
-    $(".sortable_list").height('auto');
-});
+
 
 
 
