@@ -1,4 +1,4 @@
-﻿$(function () {
+$(function () {
     $(".sortable_list").sortable({
         connectWith: ".connectedSortable",
         //need to use receive command to look only at right hand list. Update looks at both
@@ -42,8 +42,15 @@
         },
 
         receive: function (event, ui) {
+
             this.ui.html("balh blah blach test");
             
+
+            alert("dropped on = " + this.id); // Where the item is dropped
+            alert("sender = " + ui.sender[0].id); // Where it came from
+            alert("item = " + ui.item[0].innerHTML); //Which item (or ui.item[0].id)
+
+
             var item = {
 
 
@@ -59,7 +66,10 @@
                 //Language:ui.item[0].Language,
                 Media: $(ui.item[0]).find(".twit-vid").attr("href"),
                 //AddedToPlaylistTimeStamp:ui.item[0].AddedToPlaylistTimeStamp,
+
                 //UserId:ui.item[0].UserId, 
+
+
 
             };
             
@@ -71,6 +81,7 @@
                 dataType: "json",
                 contentType: "application/json",
                 data: JSON.stringify(item)
+
             });
 
         }
@@ -78,6 +89,8 @@
 
 
 });
+
+
 
 
 

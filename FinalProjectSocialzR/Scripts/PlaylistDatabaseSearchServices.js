@@ -1,6 +1,7 @@
 ﻿let runPlaylistSearch = (playlistNumber) => {
     $.ajax({
-        url: '/api/Playlists?id=' + playlistNumber , //controller to ping to get data from datbase (GET for saved social media controller)
+        url: '/PlaylistSelection/GetPlaylist?id=' + playlistNumber , //controller to ping to get data from datbase (GET for saved social media controller)
+
         dataType: "html",
         type: "GET",
         success: (partial) => {
@@ -17,3 +18,5 @@
 
     });
 }
+
+
