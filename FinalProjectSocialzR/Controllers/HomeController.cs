@@ -48,6 +48,7 @@ namespace FinalProjectSocialzR.Controllers
             return View();
         }
 
+
         [ActionName("CustomSearch")]
         public async Task<ActionResult> CustomSearchAsync(string searchTerm)
         {
