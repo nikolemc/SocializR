@@ -14,10 +14,12 @@ namespace FinalProjectSocialzR.Controllers
         // GET: PlaylistChoice
         public ActionResult GetPlaylist( int id)
         {
-            var rv = db.Playlists.Select(s => new { Playlist = s, Message = s.SavedSocialMessage }).First(f => f.Playlist.Id == id); //take this and put in seperate controller return a partial that is the html.
+            var rv = db.Playlists.Select(s => new { Playlist = s, Message = s.SavedSocialMessage,  }).First(f => f.Playlist.Id == id); //take this and put in seperate controller return a partial that is the html.
+            var playLists = db.Playlists.ToList();
             var vm = new PlaylistWithSocialMessagesVM {
                 Messages = rv.Message,
-                PlaylistName = rv.Playlist.PlaylistName,
+                SelectedPlayListName = rv.Playlist.PlaylistName,
+                AllPlaylist = playLists,
                 Id = id
             };
             return PartialView("_PlaylistSearchResultsPartial", vm);

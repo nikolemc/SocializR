@@ -20,9 +20,10 @@ namespace FinalProjectSocialzR.Controllers
                 var userId = User.Identity.GetUserId();
                 var userName = User.Identity.GetUserName();
             }
-            //var vm = new ApplicationDbContext().Tweet.OrderByDescending(o => o.PostedTimeStamp).Include(i => i.message).ToList();
-            //return View(vm);
-            return View();
+
+            var vm = new ApplicationDbContext().Playlists.ToList();
+            return View(vm);
+
         }
 
         //This can be used for only allowing superUsers and Admin to post to twitter.

@@ -1,4 +1,5 @@
-﻿let runPlaylistSearch = (playlistNumber) => {
+﻿function runPlaylistSearch(that, playlistNumber) {
+    $("#currentPlaylist").val(playlistNumber);
     $.ajax({
         url: '/PlaylistSelection/GetPlaylist?id=' + playlistNumber , //controller to ping to get data from datbase (GET for saved social media controller)
 
