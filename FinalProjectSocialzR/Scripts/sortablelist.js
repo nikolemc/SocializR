@@ -43,14 +43,7 @@ $(function () {
 
         receive: function (event, ui) {
 
-            this.ui.html("balh blah blach test");
-            
-
-            alert("dropped on = " + this.id); // Where the item is dropped
-            alert("sender = " + ui.sender[0].id); // Where it came from
-            alert("item = " + ui.item[0].innerHTML); //Which item (or ui.item[0].id)
-
-
+            let _playListId = $(".selected-playlist").attr("data-id");
             var item = {
 
 
@@ -66,13 +59,15 @@ $(function () {
                 //Language:ui.item[0].Language,
                 Media: $(ui.item[0]).find(".twit-vid").attr("href"),
                 //AddedToPlaylistTimeStamp:ui.item[0].AddedToPlaylistTimeStamp,
-
                 //UserId:ui.item[0].UserId, 
 
+                PlaylistId: _playListId
 
 
             };
-            
+
+            //$("#item").load("runPlaylistSearch" + PlaylistId + "&list=" + $(this).attr('id')); 
+                      
             console.log(item); //Which item (or ui.item[0].id)
             // POST to server using $.post or $.ajax
             $.ajax({
@@ -90,7 +85,20 @@ $(function () {
 
 });
 
+////this is where I want to get my playlist ID for runPlaylistSearch
+//function AddPlaylistId(Text, Value) {
+//    // Create an playlist object
 
+//    var pl = document.createElement("playlist");
+
+//    // Add an Option object to Drop Down/List Box
+//    document.getElementById("dropdown-menu").options.add(opt);
+//    // Assign text and value to Option object
+//    pl.text = Text;
+//    pl.value = Value;
+//    ui.item[0].PlaylistId,
+
+//            };
 
 
 

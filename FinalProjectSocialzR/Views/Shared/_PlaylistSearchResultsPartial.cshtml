@@ -1,9 +1,45 @@
 ﻿@model FinalProjectSocialzR.ViewModel.PlaylistWithSocialMessagesVM
 
 
+<div class="panel-heading">
+    <span class="glyphicon glyphicon-comment"></span>
+    <h3 class="panel-title">
+        Moderated Comments
+    </h3>
+    @*<span class="label label-info">
+        
+        </span>*@
+       <div class="playlist-buttons pull-right">
+        <div class="dropdown">
+            <buttonplaylist type="button" class="btn btn-primary btn-xs" title="Select Playlist" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-search"></span>
+                <span class="caret"></span>
+            </buttonplaylist>
+            <ul id="drop-menu" class="dropdown-menu">
 
-@if (Model != null)
+                @foreach (var item in Model.AllPlaylist)
+                {
+
+                    var selected = "";
+                    if (item.Id == Model.Id)
+                    {
+                        selected = "selected-playlist";
+                    }
+
+                    <li id="playlist-@item.Id" class="@selected" onclick="runPlaylistSearch(this,  @item.Id);" data-id="@item.Id"><a href="#">@item.PlaylistName</a></li>
+                }
+            </ul>
+            <buttonplaylist type="button" class="btn btn-success btn-xs" title="Export Playlist">
+                <span class="glyphicon glyphicon-save"></span>
+            </buttonplaylist>
+        </div>
+    </div>
+</div>
+
+
+@if (Model != null && Model.Messages != null)
 {
+
 
     foreach (var item in Model.Messages)
     {
