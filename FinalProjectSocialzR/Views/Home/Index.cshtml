@@ -1,4 +1,5 @@
-﻿@{
+﻿@model IEnumerable<FinalProjectSocialzR.Models.Playlist>
+@{
     ViewBag.Title = "Home Page";
 }
 <body>
@@ -209,8 +210,8 @@
                         </div>
                         <div class="panel-body">
                             <div>
-                                <div id="twitterSearchDisplayFront" style="max-height: 820px;" class="sortable_list connectedSortable">
-                                    @Html.Partial("_TwitterSearchResultsPartial")
+                                <div id="twitterSearchDisplayFront" style="max-height: 80vh" class="sortable_list connectedSortable">
+                                    @Html.Partial("_TwitterSearchResultsPartial", new List<FinalProjectSocialzR.Models.Tweet>())
 
 
                                     <a href="#" class="btn btn-primary btn-sm btn-block" role="button"><span class="glyphicon glyphicon-refresh"></span> More</a>
@@ -227,46 +228,10 @@
             <div class="containercomments2">
                 <div class="rowbody">
                     <div class="panel panel-default widget">
-                        <div class="panel-heading">
-                            <span class="glyphicon glyphicon-comment"></span>
-                            <h3 class="panel-title">
-                                Moderated Comments
-                            </h3>
-                            <div class="playlist-buttons pull-right">
-
-
-                                <div class="dropdown">
-
-
-                                    <buttonplaylist type="button" class="btn btn-primary btn-xs" title="Select Playlist" data-toggle="dropdown">
-                                        <span class="glyphicon glyphicon-search"></span>
-                                        <span class="caret"></span>
-                                    </buttonplaylist>
-
-                                    <ul class="dropdown-menu" onchange="runPlaylistSearch();">
-
-                                        @*@Html.Partial("_PlaylistSearchResultsPartial")*@
-                                        <li id="playlist1" onclick="runPlaylistSearch(1);"><a href="#">1</a></li>
-                                        <li id="playlist2" onclick="runPlaylistSearch(4);"><a href="#">2</a></li>
-                                        <li id="playlist3" onclick="runPlaylistSearch(3);"><a href="#">3</a></li>
-                                    </ul>
-
-                                    <buttonplaylist type="button" class="btn btn-success btn-xs" title="Export Playlist">
-                                        <span class="glyphicon glyphicon-save"></span>
-                                    </buttonplaylist>
-                                </div>
-
-
-                            </div>
-
-
-
-
-
-                        </div>
+                        
                         <div class="panel-body">
-                            <div id="playlistSearchDisplayFront" style="max-height: 820px;" class="sortable_list connectedSortable">
-                                @Html.Partial("_PlaylistSearchResultsPartial")
+                            <div id="playlistSearchDisplayFront"  class="sortable_list connectedSortable">
+                                @Html.Partial("_PlaylistSearchResultsPartial", new FinalProjectSocialzR.ViewModel.PlaylistWithSocialMessagesVM { AllPlaylist = Model})
 
 
                                 <a href="#" class="btn btn-primary btn-sm btn-block" role="button"><span class="glyphicon glyphicon-refresh"></span> More</a>
