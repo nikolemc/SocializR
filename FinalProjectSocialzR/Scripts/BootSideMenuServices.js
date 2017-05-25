@@ -27,8 +27,8 @@ let runTwitterSearchAdvance = () => {
         Latitude: $("#Latitude").val(),
         Longitude: $("#Longitude").val(),
         Radius: $("#Radius").val(),
-        MustContainVideo: $("#mediafilter").val('Must Contain Video') || $("#mediafilter").val('Must Contain Video and Photo') ?true :false,
-        MustContainPhoto: $("#mediafilter").val('Must Contain Photo') || $("#mediafilter").val('Must Contain Video and Photo') ?true :false,
+        //MustContainVideo: $("#mediafilter").val('Must Contain Video') || $("#mediafilter").val('Must Contain Video and Photo') ?true :false,
+        //MustContainPhoto: $("#mediafilter").val('Must Contain Photo') || $("#mediafilter").val('Must Contain Video and Photo') ?true :false,
         IncludeRetweet: $('#IncludeRetweets').val() ?true :false,
     };
 
