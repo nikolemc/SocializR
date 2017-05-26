@@ -28,31 +28,34 @@ namespace FinalProjectSocialzR.Services
             {
                 query = query.Where(w => w.GeoCode == (searchParam.Latitude + "," + searchParam.Longitude + "," + searchParam.Radius + "mi"));
             }
-            
-            //if (searchParam.Language != null)
-            //{
-            //    query = query.Where(w => w.SearchLanguage == searchParam.Language);
-            //}
+            if (searchParam.Language != null)
+            {
+                query = query.Where(w => w.SearchLanguage == searchParam.Language);
+            }
             //if (searchParam.ZipCode != null)
             //{
             //    //twitter cant do this
             //}
-            //if (searchParam.MustContainPhoto)
-            //{
-            //    query = query.Where(w => w.Statuses.Any(a => a.ExtendedEntities.MediaEntities.Any(b => b.VideoInfo != null)));
-            //}
-            //if (searchParam.MustContainVideo)
-            //{
-            //    query = query.Where(w => w.Statuses.Any(a => a.ExtendedEntities.MediaEntities.Any(b => b.MediaUrl != null)));
-            //}
+
             // to take count && Enumerate it
             var searchResponse = await query.Where(w => w.Count == 100).SingleOrDefaultAsync();
             var tweets = SearchResponseToTweets(searchResponse);
 
-            if (searchParam.IncludeRetweet)
+            if (!searchParam.IncludeRetweet)
             {
-                tweets = tweets.Where(w => w.IsRetweeted).ToList();   
+                tweets = tweets.Where(w => w.StatusId == 0).ToList();
             }
+            if (searchParam.MustContainVideo)
+            {
+                tweets = tweets.Where(w => w.Media != null).ToList();
+            }
+            if (searchParam.MustContainPhoto)
+            {
+                tweets = tweets.Where(w => w.MediaImage != null).ToList();
+            }
+
+
+
             return tweets;
         }
 
@@ -69,7 +72,7 @@ namespace FinalProjectSocialzR.Services
                 newerTweet.PostTimeStamp = item.CreatedAt;
                 newerTweet.Media = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.ExpandedUrl != null)?.ExpandedUrl.ToString();
                 newerTweet.MediaImage = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.ExpandedUrl != null)?.MediaUrl.ToString();
-                newerTweet.IsRetweeted = item.RetweetedStatus;
+                newerTweet.StatusId = item.RetweetedStatus.StatusID;
                 tweets.Add(newerTweet);
             }
             return tweets; 

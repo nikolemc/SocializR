@@ -29,7 +29,7 @@ let runTwitterSearchAdvance = () => {
         Radius: $("#Radius").val(),
         //MustContainVideo: $("#mediafilter").val('Must Contain Video') || $("#mediafilter").val('Must Contain Video and Photo') ?true :false,
         //MustContainPhoto: $("#mediafilter").val('Must Contain Photo') || $("#mediafilter").val('Must Contain Video and Photo') ?true :false,
-        IncludeRetweet: $('#IncludeRetweets').val() ?true :false,
+        IncludeRetweet: $('#IncludeRetweets').is(":checked") ?true :false,
     };
 
     pass = JSON.stringify({

@@ -30,13 +30,15 @@ namespace FinalProjectSocialzR.Models
         // getting this is a plus 
         public string Location { get; set; }
         
-        public bool IsRetweeted { get; set; }
+        public int IsRetweeted { get; set; }
 
         public string Language { get; set; }
 
         public string Media { get; set; }
 
         public string MediaImage { get; set; }
+
+        public ulong StatusId { get; set; }
     }
 }
 
