@@ -49,10 +49,6 @@ namespace FinalProjectSocialzR.Services
             var searchResponse = await query.Where(w => w.Count == 100).SingleOrDefaultAsync();
             var tweets = SearchResponseToTweets(searchResponse);
 
-            if (searchParam.IncludeRetweet)
-            {
-                tweets = tweets.Where(w => w.IsRetweeted).ToList();   
-            }
             return tweets;
         }
 
@@ -69,7 +65,7 @@ namespace FinalProjectSocialzR.Services
                 newerTweet.PostTimeStamp = item.CreatedAt;
                 newerTweet.Media = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.ExpandedUrl != null)?.ExpandedUrl.ToString();
                 newerTweet.MediaImage = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.ExpandedUrl != null)?.MediaUrl.ToString();
-                newerTweet.IsRetweeted = item.RetweetedStatus;
+              
                 tweets.Add(newerTweet);
             }
             return tweets; 
