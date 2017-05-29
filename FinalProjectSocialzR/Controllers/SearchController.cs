@@ -53,10 +53,10 @@ namespace FinalProjectSocialzR.Controllers
             var httpClient = new HttpClient();
 
             var json = await httpClient.GetStringAsync(
-                       //"https://www.instagram.com/xamarinhq/media/"
+                       //"https://www.instagram.com/socialzr/media/"
                        //this is the URL for SocialzR instragram login
                        // "https://api.instagram.com/v1/users/469744406/media/recent?client_id=b37af746cd344f5e92a8babb0e003426"
-                       "https://api.instagram.com/v1/tags/nofilter/media/recent?access_token=5516426810.1677ed0.55ba330959054ebcb98ba947703dc514"
+                       "https://www.instagram.com/oauth/authorize/?client_id=b37af746cd344f5e92a8babb0e003426&redirect_uri=https://localhost:44358/&response_type=token"
                         );
 
             JObject response = Newtonsoft.Json.JsonConvert.DeserializeObject<dynamic>(json);
