@@ -7,13 +7,16 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
+using System.Configuration;
 
 namespace FinalProjectSocialzR.Controllers
 {
     public class HomeController : Controller
     {
+        
         public ActionResult Index()
         {
+            
             if (HttpContext.User.Identity.IsAuthenticated)
             {
                 var name = HttpContext.User.Identity.Name;

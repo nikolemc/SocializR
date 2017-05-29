@@ -51,19 +51,18 @@ $(function () {
                 ImageUrl: $(ui.item[0]).find("img").attr("src"),
                 ScreenName: $(ui.item[0]).find(".screen-name").html().trim(),
                 Text: $(ui.item[0]).find(".comment-text").html().trim(),
+                OriginalText: $(ui.item[0]).find(".comment-text").html().trim(),
                 //OriginalText:ui.item[0].OriginalText,
                 PostTimeStamp: $(ui.item[0]).find(".time-stamp").html().trim(),
                 //PostContentUrl:ui.item[0].PostContentUrl,
                 //UserName:ui.item[0].UserName,
                 //IsRetweeted:ui.item[0].IsRetweeted,
                 //Language:ui.item[0].Language,
-                Media: $(ui.item[0]).find(".twit-vid").attr("href"),
+                Media: $(ui.item[0]).find(".media-link").html().trim(),
                 //AddedToPlaylistTimeStamp:ui.item[0].AddedToPlaylistTimeStamp,
                 //UserId:ui.item[0].UserId, 
 
                 PlaylistId: _playListId
-
-
             };
 
             //$("#item").load("runPlaylistSearch" + PlaylistId + "&list=" + $(this).attr('id')); 
@@ -76,7 +75,6 @@ $(function () {
                 dataType: "json",
                 contentType: "application/json",
                 data: JSON.stringify(item)
-
             });
 
         }

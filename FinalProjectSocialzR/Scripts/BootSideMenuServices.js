@@ -20,6 +20,16 @@
 
 
 let runTwitterSearchAdvance = () => {
+    let vid = false;
+    let photo = false;
+    if ($("#mediafilter").val() == "mustcontainvideo") {
+        vid = true;
+    }
+    if ($("#mediafilter").val() == "mustcontainphoto") {
+        photo = true;
+    }
+
+    
     let searchParam = {
         searchKeyWord: $("#twitterSearch").val(),
         Language: $("#language").val(),
@@ -27,9 +37,9 @@ let runTwitterSearchAdvance = () => {
         Latitude: $("#Latitude").val(),
         Longitude: $("#Longitude").val(),
         Radius: $("#Radius").val(),
-        //MustContainVideo: $("#mediafilter").val('Must Contain Video') || $("#mediafilter").val('Must Contain Video and Photo') ?true :false,
-        //MustContainPhoto: $("#mediafilter").val('Must Contain Photo') || $("#mediafilter").val('Must Contain Video and Photo') ?true :false,
-        IncludeRetweet: $('#IncludeRetweets').val() ?true :false,
+        MustContainVideo: vid,
+        //MustContainPhoto: $("#mediafilter").val() == "mustcontainvideo",
+        IncludeRetweet: $('#IncludeRetweets').is(":checked") ?true :false,
     };
 
     pass = JSON.stringify({
@@ -53,11 +63,8 @@ let runTwitterSearchAdvance = () => {
         complete: (data) => {
             console.log("done", data);
         }
-
     });
 }
-
-
 
 //receive: ajax(event, ui) {
 //    alert("Your Twitter account has not been authenticated. Click here to register: https://localhost:44358/OAuth"); 

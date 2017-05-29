@@ -14,7 +14,7 @@ namespace FinalProjectSocialzR.Controllers
 {
     public class SavedSocialMessagesController : ApiController
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();               
 
         // GET: api/SavedSocialMessages
         public IQueryable<SavedSocialMessage> GetSavedSocialMessages()
