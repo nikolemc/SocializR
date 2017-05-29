@@ -46,14 +46,23 @@ function DeleteMessageInPlaylist(that, messageId) {
 function EditMessageInPlaylist(that, messageId) {
     let _playListId = $(".selected-playlist").attr("data-id");
     $("#currentPlaylist").val(_playListId);
-    $.ajax({
-        url: '/SavedSocialMessagesCRUD/Delete?id=' + messageId + "&playListId=" + _playListId, //controller to ping to get data from datbase (GET for saved social media controller)
+    let str = "#exampleInputEmail-" + messageId;
+    let text = $(str).val();
 
+    let MessageToEdit = {
+        id: messageId,
+        playListId: _playListId,
+        newText: text,
+    }    
+
+    $.ajax({
+        url: '/SavedSocialMessagesCRUD/EditMessage',         //controller to ping to get data from datbase (GET for saved social media controller)
+        data: JSON.stringify(MessageToEdit),
         dataType: "html",
         type: "PUT",
+        contentType: "application/json",
         success: (partial) => {
             runPlaylistSearch(null, _playListId);
-            //$("#playlistSearchDisplayFront").html(partial); // make a new PLaylist search results partial
             console.log('works');
         },
         error: (data) => {
