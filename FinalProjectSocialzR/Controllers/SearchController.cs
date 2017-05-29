@@ -21,7 +21,8 @@ namespace FinalProjectSocialzR.Controllers
         [HttpPost]
         [ActionName("TwitterAdvancedSearch")]
         public async Task<ActionResult> TwitterAdvancedSearchAsync(TwitterSearchParam searchParam)
-        {            
+        {
+
             return PartialView("_TwitterSearchResultsPartial", await FinalProjectSocialzR.Services.TwitterSearchServices.GetTweetsAsync(searchParam));
         }
 

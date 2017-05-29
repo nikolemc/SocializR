@@ -224,6 +224,7 @@
     <Compile Include="Controllers\PlaylistSelectionController.cs" />
     <Compile Include="Controllers\PlaylistsController.cs" />
     <Compile Include="Controllers\SavedSocialMessagesController.cs" />
+    <Compile Include="Controllers\SavedSocialMessagesCRUDController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -248,6 +249,7 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MapQuestAPI.cs" />
     <Compile Include="Models\Playlist.cs" />
     <Compile Include="Models\Tweet.cs" />
     <Compile Include="Models\SavedSocialMessage.cs" />
@@ -349,6 +351,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Views\Application\" />
     <Folder Include="Views\PlaylistChoice\" />
+    <Folder Include="Views\SavedSocialMessagesCRUD\" />
     <Folder Include="Views\Search\" />
   </ItemGroup>
   <ItemGroup>
@@ -366,15 +369,19 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705182004533_First.resx">
       <DependentUpon>201705182004533_First.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705191755561_SocialMessageAdded.resx">
       <DependentUpon>201705191755561_SocialMessageAdded.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705221733252_PlaylistCreated.resx">
       <DependentUpon>201705221733252_PlaylistCreated.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705221753302_Playlistcontrooler.resx">
       <DependentUpon>201705221753302_Playlistcontrooler.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
