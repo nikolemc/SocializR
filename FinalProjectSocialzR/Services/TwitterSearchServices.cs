@@ -78,7 +78,9 @@ namespace FinalProjectSocialzR.Services
                 newerTweet.PostTimeStamp = item.CreatedAt;
                 newerTweet.Media = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.ExpandedUrl != null)?.ExpandedUrl.ToString();
                 newerTweet.MediaImage = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.ExpandedUrl != null)?.MediaUrl.ToString();
+
                 newerTweet.StatusId = item.RetweetedStatus.StatusID;
+
                 tweets.Add(newerTweet);
             }
             return tweets; 
