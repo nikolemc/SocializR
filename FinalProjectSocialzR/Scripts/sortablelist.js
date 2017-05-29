@@ -83,20 +83,7 @@ $(function () {
 
 });
 
-////this is where I want to get my playlist ID for runPlaylistSearch
-//function AddPlaylistId(Text, Value) {
-//    // Create an playlist object
 
-//    var pl = document.createElement("playlist");
-
-//    // Add an Option object to Drop Down/List Box
-//    document.getElementById("dropdown-menu").options.add(opt);
-//    // Assign text and value to Option object
-//    pl.text = Text;
-//    pl.value = Value;
-//    ui.item[0].PlaylistId,
-
-//            };
 
 
 
