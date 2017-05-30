@@ -47,7 +47,49 @@ namespace FinalProjectSocialzR.Controllers
             return PartialView("_PlaylistPartial", vm);
         }
 
-        
+        [HttpDelete]
+        public ActionResult Delete(int id)
+        {
+            Playlist playlist = db.Playlists.Find(id);
+            var listToRemove = db.SavedSocialMessages.Where(w => w.PlaylistId == id).ToList();
+
+            foreach (var item in listToRemove)
+            {
+                db.SavedSocialMessages.Remove(item);
+            }
+         
+
+            db.Entry(playlist).State = EntityState.Modified;
+            db.Playlists.Remove(playlist);
+            db.SaveChanges();
+
+            var vm = new PlaylistWithSocialMessagesVM {};
+
+            return PartialView("_PlaylistPartial", vm);
+        }
+
+        [HttpGet]
+        public ActionResult Delete2(int id, int playListId)
+        {
+            SavedSocialMessage savedSocialMessage = db.SavedSocialMessages.Find(id);
+            db.SavedSocialMessages.Remove(savedSocialMessage);
+            db.SaveChanges();
+
+            var rv = db.Playlists.Select(s => new { Playlist = s, Message = s.SavedSocialMessage, }).First(f => f.Playlist.Id == playListId);
+            var playLists = db.Playlists.ToList();
+            var vm = new PlaylistWithSocialMessagesVM
+            {
+                Messages = rv.Message,
+                PlayListName = rv.Playlist.PlaylistName,
+                AllPlaylist = playLists,
+                Id = id
+            };
+
+            return PartialView("_PlaylistSearchResultsPartial", vm);
+        }
+
+
+
     }
 
 }

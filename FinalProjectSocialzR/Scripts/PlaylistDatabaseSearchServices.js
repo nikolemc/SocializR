@@ -24,8 +24,7 @@ function DeleteMessageInPlaylist(that, messageId) {
     let _playListId = $(".selected-playlist").attr("data-id");
     $("#currentPlaylist").val(_playListId);
     $.ajax({
-        url: '/SavedSocialMessagesCRUD/Delete?id=' + messageId + "&playListId=" + _playListId, //controller to ping to get data from datbase (GET for saved social media controller)
-
+        url: '/SavedSocialMessagesCRUD/Delete?id=' + messageId + "&playListId=" + _playListId,
         dataType: "html",
         type: "GET",
         success: (partial) => {
@@ -56,7 +55,7 @@ function EditMessageInPlaylist(that, messageId) {
     }    
 
     $.ajax({
-        url: '/SavedSocialMessagesCRUD/EditMessage',         //controller to ping to get data from datbase (GET for saved social media controller)
+        url: '/SavedSocialMessagesCRUD/EditMessage',       
         data: JSON.stringify(MessageToEdit),
         dataType: "html",
         type: "PUT",
@@ -105,6 +104,28 @@ function EditPlaylist(that, playlistId) {
         }
     });
 }
+
+function DeletePlaylist(that, playlistId) {
+    
+
+    $.ajax({
+        url: '/PlaylistSelection/Delete/?id=' + playlistId,
+        dataType: "html",
+        type: "DELETE",
+        success: (partial) => {
+            $("#myPlaylistContainer").html(partial);
+            console.log('works');
+        },
+        error: (data) => {
+            alert("NOPE");
+            console.log("oops", data)
+        },
+        complete: (data) => {
+            console.log("done", data);
+        }
+    });
+}
+
 
 
 

@@ -120,5 +120,9 @@ namespace FinalProjectSocialzR.Controllers
         {
             return db.Playlists.Count(e => e.Id == id) > 0;
         }
+
+
+
     }
+
 }
