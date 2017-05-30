@@ -26,12 +26,12 @@ namespace FinalProjectSocialzR.Controllers
             db.SavedSocialMessages.Remove(savedSocialMessage);
             db.SaveChanges();
 
-            var rv = db.Playlists.Select(s => new { Playlist = s, Message = s.SavedSocialMessage, }).First(f => f.Playlist.Id == playListId); //take this and put in seperate controller return a partial that is the html.
+            var rv = db.Playlists.Select(s => new { Playlist = s, Message = s.SavedSocialMessage, }).First(f => f.Playlist.Id == playListId); 
             var playLists = db.Playlists.ToList();
             var vm = new PlaylistWithSocialMessagesVM
             {
                 Messages = rv.Message,
-                SelectedPlayListName = rv.Playlist.PlaylistName,
+                PlayListName = rv.Playlist.PlaylistName,
                 AllPlaylist = playLists,
                 Id = id
             };
@@ -52,7 +52,7 @@ namespace FinalProjectSocialzR.Controllers
             var vm = new PlaylistWithSocialMessagesVM
             {
                 Messages = rv.Message,
-                SelectedPlayListName = rv.Playlist.PlaylistName,
+                PlayListName = rv.Playlist.PlaylistName,
                 AllPlaylist = playLists,
                 Id = id
             };

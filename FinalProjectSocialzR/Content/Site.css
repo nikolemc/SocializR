@@ -63,7 +63,7 @@ radio-inline {
 
 
 /*this datalist for thead playlist table*/
-.custab {
+/*.custab {
     border: 1px solid #ccc;
     padding: 5px;
     margin: 5% 0;
@@ -75,4 +75,4 @@ radio-inline {
         box-shadow: 3px 3px 0px transparent;
         transition: 0.5s;
     }
-}
+}*/

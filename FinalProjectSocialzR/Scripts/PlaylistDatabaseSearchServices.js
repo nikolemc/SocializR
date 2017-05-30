@@ -76,6 +76,38 @@ function EditMessageInPlaylist(that, messageId) {
 }
 
 
+function EditPlaylist(that, playlistId) {
+    
+    let str = "#playlistname-" + playlistId
+    let text = $(str).val();
+
+    let ToEdit = {
+        id: playlistId,
+        newPlaylistName: text,
+    }
+
+    $.ajax({
+        url: '/PlaylistSelection/EditPlaylist',       
+        data: JSON.stringify(ToEdit),
+        dataType: "html",
+        type: "PUT",
+        contentType: "application/json",
+        success: (partial) => {
+            $("#myPlaylistContainer").html(partial);
+            console.log('works');
+        },
+        error: (data) => {
+            alert("NOPE");
+            console.log("oops", data)
+        },
+        complete: (data) => {
+            console.log("done", data);
+        }
+    });
+}
+
+
+
 
 
 
