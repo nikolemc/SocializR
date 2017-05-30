@@ -29,12 +29,12 @@
                     <li id="playlist-@item.Id" class="@selected" onclick="runPlaylistSearch(this, @item.Id);" data-id="@item.Id"><a href="#">@item.PlaylistName</a></li>
                 }
             </ul>
-            <buttonplaylist type="button" class="btn btn-success btn-xs" title="Export Playlist" data-toggle="modal" data-target="#rssdownloadmodal">
+            <buttonplaylist type="button" class="btn btn-success btn-xs" title="Export Playlist" data-toggle="modal" data-target="#rssdownloadmodal1" onclick="setRSSUrl();">
                 <span class="glyphicon glyphicon-save"></span>
             </buttonplaylist>
 
             <!-- line modal -->
-            <div class="modal" id="rssdownloadmodal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal" id="rssdownloadmodal1" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -47,7 +47,7 @@
                             <form>
                                 <div class="form-group">
                                     <label for="rssdownloadmodal">RSS URL:</label>
-                                    <input type="email" class="form-control" id="rssdownloadmodal" placeholder="No URL Found" value=" http://localhost:61066/MediaExport?id=" + $(".selected-playlist").attr("data-id") ">
+                                    <input type="email" class="form-control" id="rssdownloadmodal" placeholder="No URL Found" value="">
                                 </div>
 
                         </div>
