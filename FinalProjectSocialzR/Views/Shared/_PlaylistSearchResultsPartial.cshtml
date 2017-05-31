@@ -1,6 +1,5 @@
 ﻿@model FinalProjectSocialzR.ViewModel.PlaylistWithSocialMessagesVM
 
-
 <div class="panel-heading">
     <span class="glyphicon glyphicon-comment"></span>
     <h3 class="panel-title">
@@ -10,119 +9,80 @@
 
         </span>*@
 
-   
     <div class="playlist-buttons pull-right">
         <!-- Trigger the modal with a button -->
-        
 
-            <div class="dropdown">
-               
+        <div class="dropdown">
 
-                <buttonplaylist type="button" class="btn btn-primary btn-xs" title="Select Playlist" data-toggle="dropdown">
-                    <span class="glyphicon glyphicon-search"></span>
-                    <span class="caret"></span>
-                </buttonplaylist>
-                <ul id="drop-menu" class="dropdown-menu">
+            <buttonplaylist type="button" class="btn btn-primary btn-xs" title="Select Playlist" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-search"></span>
+                <span class="caret"></span>
+            </buttonplaylist>
+            <ul id="drop-menu" class="dropdown-menu">
+                @foreach (var item in Model.AllPlaylist)
+                {
 
-                    @foreach (var item in Model.AllPlaylist)
+                    var selected = "";
+                    if (item.Id == Model.Id)
                     {
-
-                        var selected = "";
-                        if (item.Id == Model.Id)
-                        {
-                            selected = "selected-playlist";
-                        }
-
-                        <li id="playlist-@item.Id" class="@selected" onclick="runPlaylistSearch(this, @item.Id);" data-id="@item.Id"><a href="#">@item.PlaylistName</a></li>
+                        selected = "selected-playlist";
                     }
-                </ul>
-                <buttonplaylist type="button" class="btn btn-success btn-xs" title="Export Playlist" data-toggle="modal" data-target="#rssdownloadmodal1" onclick="setRSSUrl();">
-                    <span class="glyphicon glyphicon-save"></span>
-                </buttonplaylist>
-                <buttonplaylist type="button" class="btn btn-danger btn-xs" title="Playlist Configuration" data-toggle="modal" data-target="#myModal">
-                    <span class="glyphicon glyphicon-cog"></span>
-                </buttonplaylist>
 
-                @Html.Partial("_PlaylistPartial", Model)
+                    <li id="playlist-@item.Id" class="@selected" onclick="runPlaylistSearch(this, @item.Id);" data-id="@item.Id"><a href="#">@item.PlaylistName</a></li>
+                }
+            </ul>
+            <buttonplaylist type="button" class="btn btn-success btn-xs" title="Export Playlist" data-toggle="modal" data-target="#rssdownloadmodal">
+                <span class="glyphicon glyphicon-save"></span>
+            </buttonplaylist>
+            <buttonplaylist type="button" class="btn btn-danger btn-xs" title="Playlist Configuration" data-toggle="modal" data-target="#myModal">
+                <span class="glyphicon glyphicon-cog"></span>
+            </buttonplaylist>
+            @Html.Partial("_PlaylistPartial", Model)
 
-          
+        </div>
 
-            <!-- line modal -->
-            <div class="modal" id="rssdownloadmodal1" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                            <h3 class="modal-title" id="lineModalLabel">Playlist Export</h3>
-                        </div>
-                        <div class="modal-body">
-
-                            <!-- content goes here -->
-                            <form>
-                                <div class="form-group">
-                                    <label for="rssdownloadmodal">RSS URL:</label>
-                                    <input type="email" class="form-control" id="rssdownloadmodal" placeholder="No URL Found" value="">
-                                </div>
-
-
-                </div>
-             
-
-                <!-- line modal -->
-                <div class="modal" id="rssdownloadmodal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                                <h3 class="modal-title" id="lineModalLabel">Playlist Export</h3>
+        <!-- line modal -->
+        <div class="modal" id="rssdownloadmodal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                        <h3 class="modal-title" id="lineModalLabel">Playlist Export</h3>
+                    </div>
+                    <div class="modal-body">
+                        <!-- content goes here -->
+                        <form>
+                            <div class="form-group">
+                                <label for="rssdownloadmodal">RSS URL:</label>
+                                <input type="email" class="form-control" id="rssdownloadmodal" placeholder="No URL Found" value=" http://localhost:61066/MediaExport?id=" + $(".selected-playlist").attr("data-id") ">
                             </div>
-                            <div class="modal-body">
-
-                                <!-- content goes here -->
-                                <form>
-                                    <div class="form-group">
-                                        <label for="rssdownloadmodal">RSS URL:</label>
-                                        <input type="email" class="form-control" id="rssdownloadmodal" placeholder="No URL Found" value=" http://localhost:61066/MediaExport?id=" + $(".selected-playlist").attr("data-id") ">
-                                    </div>
-                                </form>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="btn-group btn-group-justified" role="group" aria-label="group button">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-default" data-dismiss="modal" role="button">Close</button>
                             </div>
-                            <div class="modal-footer">
-                                <div class="btn-group btn-group-justified" role="group" aria-label="group button">
-                                    <div class="btn-group" role="group">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal" role="button">Close</button>
-                                    </div>
-                                    <div class="btn-group btn-delete hidden" role="group">
-                                        <button type="button" id="delImage" class="btn btn-default btn-hover-red" data-dismiss="modal" role="button">Delete</button>
-                                    </div>
-                                    <div class="btn-group" role="group">
-                                        <button type="button" id="saveImage" class="btn btn-default btn-hover-green close" role="button" data-dismiss="modal" onclick="somethinedosomething();">Save</button>
-                                    </div>
-                                </div>
+                            <div class="btn-group btn-delete hidden" role="group">
+                                <button type="button" id="delImage" class="btn btn-default btn-hover-red" data-dismiss="modal" role="button">Delete</button>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button type="button" id="saveImage" class="btn btn-default btn-hover-green close" role="button" data-dismiss="modal" onclick="somethinedosomething();">Save</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!--modal stuff-->
-
-
-
             </div>
+        </div>
+        <!--modal stuff-->
+    </div>
 </div>
-
-
 </div>
-
-
-
-
 @if (Model != null && Model.Messages != null)
 {
-
-
     foreach (var item in Model.Messages)
     {
         <div class="ui-state-highlight">
-
             <div class="list-group-item">
                 <div class="row">
                     <div class="col-xs-3 col-md-2">
@@ -137,7 +97,6 @@
                         </div>
                         <div class="comment-text">
                             @item.Text
-
 
                             @if (item.Media != null)
                             {
@@ -157,9 +116,7 @@
 
 
                             }
-
                         </div>
-
                         <div class="action">
                             <button class="upbutton btn btn-default btn-xs" title="Up">
                                 <span class="glyphicon glyphicon-arrow-up"></span>
@@ -186,14 +143,12 @@
                                         <h3 class="modal-title" id="lineModalLabel">Text Edit</h3>
                                     </div>
                                     <div class="modal-body">
-
                                         <!-- content goes here -->
                                         <form>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail-@item.Id">Text Body</label>
                                                 <input type="email" class="form-control" id="exampleInputEmail-@item.Id" placeholder="Enter email" value="@item.Text">
                                             </div>
-
                                     </div>
                                     <div class="modal-footer">
                                         <div class="btn-group btn-group-justified" role="group" aria-label="group button">
@@ -212,12 +167,9 @@
                             </div>
                         </div>
                         <!--modal stuff-->
-
                     </div>
                 </div>
             </div>
         </div>
     }
-
 }
-
