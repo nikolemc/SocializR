@@ -245,6 +245,10 @@
     <Compile Include="Migrations\201705221753302_Playlistcontrooler.Designer.cs">
       <DependentUpon>201705221753302_Playlistcontrooler.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705311442346_Hosted.cs" />
+    <Compile Include="Migrations\201705311442346_Hosted.Designer.cs">
+      <DependentUpon>201705311442346_Hosted.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -291,6 +295,8 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
+    <None Include="Properties\PublishProfiles\SocializrMedia - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\SocializrMedia - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\commentpanel.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -384,6 +390,9 @@
     <EmbeddedResource Include="Migrations\201705221753302_Playlistcontrooler.resx">
       <DependentUpon>201705221753302_Playlistcontrooler.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705311442346_Hosted.resx">
+      <DependentUpon>201705311442346_Hosted.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
