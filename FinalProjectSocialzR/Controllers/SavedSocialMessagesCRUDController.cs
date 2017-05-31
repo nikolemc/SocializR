@@ -59,7 +59,5 @@ namespace FinalProjectSocialzR.Controllers
 
             return PartialView("_PlaylistSearchResultsPartial", vm);
         }
-
-
     }
 }
