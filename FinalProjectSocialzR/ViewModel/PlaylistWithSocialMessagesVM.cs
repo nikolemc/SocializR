@@ -6,7 +6,7 @@ namespace FinalProjectSocialzR.ViewModel
     public class PlaylistWithSocialMessagesVM
     {
         
-        public int Id { get; set; }
+        public int? Id { get; set; }
         public string PlayListName { get; set; }
 
         public IEnumerable<Playlist> AllPlaylist { get; set; }

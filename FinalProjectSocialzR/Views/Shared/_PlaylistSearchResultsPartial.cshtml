@@ -2,6 +2,8 @@
 
 
 
+
+
     @if (Model != null && Model.Messages != null)
     {
         foreach (var item in Model.Messages)
@@ -21,6 +23,7 @@
                             </div>
                             <div class="comment-text">
                                 @item.Text
+
 
                                 @if (item.Media != null)
                                 {
@@ -61,6 +64,8 @@
                                 @*<button type="button" class="btn btn-default btn-xs" title="TransfertoSearch">
                                     <span class="glyphicon glyphicon-arrow-left"></span>
                                 </button>*@
+
+
 
                             </div>
 

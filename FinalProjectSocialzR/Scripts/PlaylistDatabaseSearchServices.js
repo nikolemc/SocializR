@@ -131,11 +131,25 @@ function DeletePlaylist(that, playlistId) {
     });
 }
 
+function AddPlaylist() {
+    let text = $("#addplaylisttext").val();
 
+    let playlistName = text;
 
-
-
-
-
-
-
+    $.ajax({
+        url: '/PlaylistSelection/AddPlaylist?playlistName=' + playlistName,
+        dataType: "html",
+        type: "POST",
+        success: (partial) => {
+            $("#myPlaylistContainer").html(partial);
+            console.log('works');
+        },
+        error: (data) => {
+            alert("NOPE");
+            console.log("oops", data)
+        },
+        complete: (data) => {
+            console.log("done", data);
+        }
+    });
+}

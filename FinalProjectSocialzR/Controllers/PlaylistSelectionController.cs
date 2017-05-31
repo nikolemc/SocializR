@@ -49,6 +49,32 @@ namespace FinalProjectSocialzR.Controllers
         }
 
         [HttpPost]
+        public ActionResult AddPlaylist(string playlistName)
+        {
+            var playlisttoadd = new Playlist();
+            playlisttoadd.PlaylistName = playlistName;
+            playlisttoadd.LastModifiedTimeStamp = DateTime.Now;
+            db.Playlists.Add(playlisttoadd);
+            db.SaveChanges();
+
+            var rv = db.Playlists.Select(s => new { Playlist = s, }).First();
+            var playLists = db.Playlists.ToList();
+            var vm = new PlaylistWithSocialMessagesVM
+            {
+                Id = 2,
+                PlayListName = rv.Playlist.PlaylistName,
+                AllPlaylist = db.Playlists.ToList()
+
+            };
+
+
+            return PartialView("_PlaylistPartial", vm);
+        }
+
+
+
+
+        [HttpPost]
         public ActionResult Create([Bind(Include =
         "Id,PlaylistName,LastModifiedTimeStamp")] Playlist playlist)
         {
