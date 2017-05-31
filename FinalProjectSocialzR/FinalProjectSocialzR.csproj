@@ -347,6 +347,7 @@
     <Content Include="Views\Oauth\Index.cshtml" />
     <Content Include="Views\Shared\_PlaylistSearchResultsPartial.cshtml" />
     <Content Include="Views\MediaExport\Index.cshtml" />
+    <Content Include="Views\Shared\_PlaylistPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

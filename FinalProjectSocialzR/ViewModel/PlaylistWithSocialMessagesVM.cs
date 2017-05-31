@@ -7,7 +7,7 @@ namespace FinalProjectSocialzR.ViewModel
     {
         
         public int Id { get; set; }
-        public string SelectedPlayListName { get; set; }
+        public string PlayListName { get; set; }
 
         public IEnumerable<Playlist> AllPlaylist { get; set; }
     
