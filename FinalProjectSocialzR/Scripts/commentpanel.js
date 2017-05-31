@@ -15,3 +15,26 @@ $('.downbutton').on('click', function () {
 });
 
 
+
+
+//$('TransfertoSearch').on('click', function () {
+//    $('.destination').appendTo('.source');
+//});
+
+//$('TransferAcross').on('click', function () {
+//    $('.source').appendTo('.destination');
+//});
+
+$(function () {
+
+    $('#ui-state-highlight destination').on('dblclick', '.list-group-item', function () {
+        $(this).appendTo('#ui-state-highlight source');
+    });
+
+    $('#ui-state-highlight source').on('dblclick', '.list-group-item', function () {
+        $(this).appendTo('#ui-state-highlight destination');
+    });
+
+});
+
+
