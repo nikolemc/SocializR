@@ -74,6 +74,11 @@ function EditMessageInPlaylist(that, messageId) {
     });
 }
 
+function setRSSUrl() {
+    let _playListId = $(".selected-playlist").attr("data-id");
+    let rssurl = "http://localhost:61066/MediaExport?id=" + _playListId;
+    $("#rssdownloadmodal").val(rssurl);
+}
 
 function EditPlaylist(that, playlistId) {
     
