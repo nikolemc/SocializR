@@ -36,7 +36,7 @@
                         <li id="playlist-@item.Id" class="@selected" onclick="runPlaylistSearch(this, @item.Id);" data-id="@item.Id"><a href="#">@item.PlaylistName</a></li>
                     }
                 </ul>
-                <buttonplaylist type="button" class="btn btn-success btn-xs" title="Export Playlist" data-toggle="modal" data-target="#rssdownloadmodal">
+                <buttonplaylist type="button" class="btn btn-success btn-xs" title="Export Playlist" data-toggle="modal" data-target="#rssdownloadmodal1" onclick="setRSSUrl();">
                     <span class="glyphicon glyphicon-save"></span>
                 </buttonplaylist>
                 <buttonplaylist type="button" class="btn btn-danger btn-xs" title="Playlist Configuration" data-toggle="modal" data-target="#myModal">
@@ -45,12 +45,7 @@
 
                 @Html.Partial("_PlaylistPartial", Model)
 
-                    <li id="playlist-@item.Id" class="@selected" onclick="runPlaylistSearch(this, @item.Id);" data-id="@item.Id"><a href="#">@item.PlaylistName</a></li>
-                }
-            </ul>
-            <buttonplaylist type="button" class="btn btn-success btn-xs" title="Export Playlist" data-toggle="modal" data-target="#rssdownloadmodal1" onclick="setRSSUrl();">
-                <span class="glyphicon glyphicon-save"></span>
-            </buttonplaylist>
+          
 
             <!-- line modal -->
             <div class="modal" id="rssdownloadmodal1" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
