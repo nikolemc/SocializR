@@ -233,7 +233,7 @@
 
                         <div class="panel-body">
                             <div id="playlistSearchDisplayFront" style="max-height: 80vh" class="sortable_list connectedSortable">
-                                @Html.Partial("_PlaylistSearchResultsPartial", new FinalProjectSocialzR.ViewModel.PlaylistWithSocialMessagesVM { AllPlaylist = Model })
+                                @Html.Partial("_PlaylistSearchResultsPartial", new FinalProjectSocialzR.ViewModel.PlaylistWithSocialMessagesVM { AllPlaylist = Model, Id = Model.First().Id })
 
 
                                 <a href="#" class="btn btn-primary btn-sm btn-block" role="button"><span class="glyphicon glyphicon-refresh"></span> More</a>

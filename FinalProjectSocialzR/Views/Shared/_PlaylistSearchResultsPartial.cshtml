@@ -5,9 +5,7 @@
     <h3 class="panel-title">
         Moderated Comments
     </h3>
-    @*<span class="label label-info">
-
-        </span>*@
+ 
 
     <div class="playlist-buttons pull-right">
         <!-- Trigger the modal with a button -->
@@ -21,23 +19,34 @@
             <ul id="drop-menu" class="dropdown-menu">
                 @foreach (var item in Model.AllPlaylist)
                 {
-
+                    var length = Model.AllPlaylist.Count();
+                    var counter = 2;
                     var selected = "";
+                    var word = "";
                     if (item.Id == Model.Id)
                     {
                         selected = "selected-playlist";
                     }
+  
 
                     <li id="playlist-@item.Id" class="@selected" onclick="runPlaylistSearch(this, @item.Id);" data-id="@item.Id"><a href="#">@item.PlaylistName</a></li>
+                    counter++;
                 }
             </ul>
+            <span class="label label-info pull-left" placeholder="No Playlist Selected" id="playlistDisplayName">
+                @Model.PlayListName
+                @if (Model.PlayListName == null)
+                {
+                    <span>No PlayList Selected</span>
+                }
+            </span>
             <buttonplaylist type="button" class="btn btn-success btn-xs" title="Export Playlist" data-toggle="modal" data-target="#rssdownloadmodal">
                 <span class="glyphicon glyphicon-save"></span>
             </buttonplaylist>
             <buttonplaylist type="button" class="btn btn-danger btn-xs" title="Playlist Configuration" data-toggle="modal" data-target="#myModal">
                 <span class="glyphicon glyphicon-cog"></span>
             </buttonplaylist>
-            @Html.Partial("_PlaylistPartial", Model)
+           @Html.Partial("_PlaylistPartial", Model)
 
         </div>
 
