@@ -1,10 +1,7 @@
 ﻿@model FinalProjectSocialzR.ViewModel.PlaylistWithSocialMessagesVM
 
-
-
 <!-- Trigger the modal with a button -->
 @*<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Playlist</button>*@
-
 <!-- Modal -->
 <div id="myPlaylistContainer">
     <div class="modal" id="myModal" role="dialog">
@@ -12,26 +9,25 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <a href="#" class="btn btn-primary btn-xs pull-left" data-toggle="modal" data-target="#addModal"><span class="glyphicon glyphicon-plus"></span> Add new playlist</a>
                 </div>
-
                 <table class="table table-striped custab">
                     <thead>
-                     <th>ID</th>
-                    <th>Playlist Name</th>
+                        <a href="#" class="btn btn-primary btn-xs pull-right" data-toggle="modal" data-target="#addModal"><span class="glyphicon glyphicon-plus"></span> Add new playlist</a>
 
+                        <tr>
+                            <th>ID</th>
+                            <th>Playlist Name</th>
+                        </tr>
                     </thead>
-
                     <!-- line modal -->
                     <div class="modal" id="addModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                                    <h3 class="modal-title" id="lineModalLabel">Create New Playlist</h3>
+                                    <h3 class="modal-title" id="lineModalLabel">Text Edit</h3>
                                 </div>
                                 <div class="modal-body">
-
                                     <!-- content goes here -->
                                     <form>
                                         <div class="form-group">
@@ -59,7 +55,6 @@
             </div>
             <!--modal stuff-->
             <tbody id="playListContainer">
-
                 @foreach (var item in Model.AllPlaylist)
                 {
 
@@ -74,9 +69,7 @@
                             <a href="#" class="btn btn-danger btn-xs" title="Delete" onclick="DeletePlaylist(this, @item.Id);">
                                 <span class="glyphicon glyphicon-trash"></span>
                             </a>
-
                         </td>
-
                     </tr>
 
                         <!-- line modal -->
@@ -88,7 +81,6 @@
                                     <h3 class="modal-title" id="lineModalLabel">Text Edit</h3>
                                 </div>
                                 <div class="modal-body">
-
                                     <!-- content goes here -->
                                     <form>
                                         <div class="form-group">
@@ -117,12 +109,9 @@
 
 
                 }
-
             </tbody>
-
             </table>
         </div>
-
     </div>
 </div>
 </div>
