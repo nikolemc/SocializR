@@ -28,9 +28,6 @@ namespace FinalProjectSocialzR.Controllers
             return PartialView("_TwitterSearchResultsPartial", await FinalProjectSocialzR.Services.TwitterSearchServices.GetTweetsAsync(searchParam));
         }
 
-
-
-
         //this is the stuff for Instagram
 
         //private List<Instagram> _instagramItems;
