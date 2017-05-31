@@ -84,6 +84,11 @@ $(function () {
 });
 
 
+
+
+
+
+
         /*stop: function(event, ui) {
             var item_sortable_list_id = $(this).attr('id');
             console.log(ui);
