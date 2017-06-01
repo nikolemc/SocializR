@@ -9,11 +9,11 @@ namespace FinalProjectSocialzR.Controllers
 {
     public class MediaExportController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
             ApplicationDbContext db = new ApplicationDbContext();
 
-            var mediaToExport = db.SavedSocialMessages.ToList();
+            var mediaToExport = db.SavedSocialMessages.Where(w => w.Playlist.Id == id).ToList();
 
             Response.ContentType = "text/xml";
 
@@ -24,7 +24,7 @@ namespace FinalProjectSocialzR.Controllers
         {
             ApplicationDbContext db = new ApplicationDbContext();
 
-            var mediaToExport = db.SavedSocialMessages.ToList();
+            var mediaToExport = db.SavedSocialMessages.Where(w => w.Playlist.Id == id).ToList();
 
             Response.ContentType = "text/xml";
 
