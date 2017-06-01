@@ -2,44 +2,7 @@ $(function () {
     $(".sortable_list").sortable({
         connectWith: ".connectedSortable",
         //need to use receive command to look only at right hand list. Update looks at both
-        beforeStop: function (event, ui) {
-            console.log("Before beforestop");
-        },
-        activate: function (event, ui) {
-            console.log("Before activate");
-        },
-        change: function (event, ui) {
-            console.log("Before change");
-        },
-        create: function (event, ui) {
-            console.log("Before create");
-        },
-        deactivate: function (event, ui) {
-            console.log("Before deactivate");
-        },
-        out: function (event, ui) {
-            console.log("Before out");
-        },
-        over: function (event, ui) {
-            console.log("Before over");
-        },
-        remove: function (event, ui) {
-            console.log("Before remove");
-        },
-        sort: function (event, ui) {
-            console.log("Before sort");
-        },
-        start: function (event, ui) {
-            console.log("Before start");
-            ui.item[0].Text = "blah blah";
-        },
-        stop: function (event, ui) {
-            console.log("Before stop");
-        },
-        update: function (event, ui) {
-            console.log("Before update");
-            ui.item[0].Media = "blah blah";
-        },
+
 
         receive: function (event, ui) {
 
@@ -82,6 +45,8 @@ $(function () {
 
 
 });
+
+
 
 
 
