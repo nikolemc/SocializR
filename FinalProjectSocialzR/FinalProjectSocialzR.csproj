@@ -217,6 +217,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BlacklistsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MediaExportController.cs" />
@@ -229,8 +230,40 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+<<<<<<< HEAD
+    <Compile Include="Migrations\201705182004533_First.cs" />
+    <Compile Include="Migrations\201705182004533_First.Designer.cs">
+      <DependentUpon>201705182004533_First.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705191755561_SocialMessageAdded.cs" />
+    <Compile Include="Migrations\201705191755561_SocialMessageAdded.Designer.cs">
+      <DependentUpon>201705191755561_SocialMessageAdded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705221733252_PlaylistCreated.cs" />
+    <Compile Include="Migrations\201705221733252_PlaylistCreated.Designer.cs">
+      <DependentUpon>201705221733252_PlaylistCreated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705221753302_Playlistcontrooler.cs" />
+    <Compile Include="Migrations\201705221753302_Playlistcontrooler.Designer.cs">
+      <DependentUpon>201705221753302_Playlistcontrooler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705311442346_Hosted.cs" />
+    <Compile Include="Migrations\201705311442346_Hosted.Designer.cs">
+      <DependentUpon>201705311442346_Hosted.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706011953398_UpdatePhoto.cs" />
+    <Compile Include="Migrations\201706011953398_UpdatePhoto.Designer.cs">
+      <DependentUpon>201706011953398_UpdatePhoto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706081535484_blacklist.cs" />
+    <Compile Include="Migrations\201706081535484_blacklist.Designer.cs">
+      <DependentUpon>201706081535484_blacklist.cs</DependentUpon>
+    </Compile>
+=======
+>>>>>>> c19e76c24ef5fbdc5842eaca0e9d33a38c157865
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Blacklist.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Instagram.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -338,6 +371,11 @@
     <Content Include="Views\MediaExport\Index.cshtml" />
     <Content Include="Views\Shared\_PlaylistPartial.cshtml" />
     <Content Include="Views\Shared\_PlaylistSearchResultsUpperPartial.cshtml" />
+    <Content Include="Views\Blacklists\Create.cshtml" />
+    <Content Include="Views\Blacklists\Delete.cshtml" />
+    <Content Include="Views\Blacklists\Details.cshtml" />
+    <Content Include="Views\Blacklists\Edit.cshtml" />
+    <Content Include="Views\Blacklists\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -358,6 +396,36 @@
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+<<<<<<< HEAD
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201705182004533_First.resx">
+      <DependentUpon>201705182004533_First.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705191755561_SocialMessageAdded.resx">
+      <DependentUpon>201705191755561_SocialMessageAdded.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705221733252_PlaylistCreated.resx">
+      <DependentUpon>201705221733252_PlaylistCreated.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705221753302_Playlistcontrooler.resx">
+      <DependentUpon>201705221753302_Playlistcontrooler.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705311442346_Hosted.resx">
+      <DependentUpon>201705311442346_Hosted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706011953398_UpdatePhoto.resx">
+      <DependentUpon>201706011953398_UpdatePhoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706081535484_blacklist.resx">
+      <DependentUpon>201706081535484_blacklist.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+=======
+>>>>>>> c19e76c24ef5fbdc5842eaca0e9d33a38c157865
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
