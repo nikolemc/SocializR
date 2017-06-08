@@ -1,4 +1,4 @@
-$(function () {
+var initList = () => {
     $(".sortable_list").sortable({
         connectWith: ".connectedSortable",
         //need to use receive command to look only at right hand list. Update looks at both
@@ -17,7 +17,7 @@ $(function () {
                 OriginalText: $(ui.item[0]).find(".comment-text").html().trim(),
                 //OriginalText:ui.item[0].OriginalText,
                 PostTimeStamp: $(ui.item[0]).find(".time-stamp").html().trim(),
-                //PostContentUrl:ui.item[0].PostContentUrl,
+                MediaImage: $(ui.item[0]).find(".photo-link").html().trim(),
                 //UserName:ui.item[0].UserName,
                 //IsRetweeted:ui.item[0].IsRetweeted,
                 //Language:ui.item[0].Language,
@@ -29,7 +29,7 @@ $(function () {
             };
 
             //$("#item").load("runPlaylistSearch" + PlaylistId + "&list=" + $(this).attr('id')); 
-                      
+
             console.log(item); //Which item (or ui.item[0].id)
             // POST to server using $.post or $.ajax
             $.ajax({
@@ -42,10 +42,11 @@ $(function () {
 
         }
     }).disableSelection();
+}
 
-
+$(function () {
+    initList();
 });
-
 
 
 

@@ -249,6 +249,10 @@
     <Compile Include="Migrations\201705311442346_Hosted.Designer.cs">
       <DependentUpon>201705311442346_Hosted.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706011953398_UpdatePhoto.cs" />
+    <Compile Include="Migrations\201706011953398_UpdatePhoto.Designer.cs">
+      <DependentUpon>201706011953398_UpdatePhoto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -397,6 +401,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705311442346_Hosted.resx">
       <DependentUpon>201705311442346_Hosted.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706011953398_UpdatePhoto.resx">
+      <DependentUpon>201706011953398_UpdatePhoto.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

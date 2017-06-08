@@ -7,6 +7,7 @@
         success: (partial) => {
             UpdateRightUpper(null, playlistNumber);
             $("#playlistSearchDisplayFront").html(partial); // make a new PLaylist search results partial
+            initList();
             console.log('works');
         },
         error: (data) => {
