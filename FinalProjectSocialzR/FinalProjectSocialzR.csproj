@@ -229,30 +229,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705182004533_First.cs" />
-    <Compile Include="Migrations\201705182004533_First.Designer.cs">
-      <DependentUpon>201705182004533_First.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705191755561_SocialMessageAdded.cs" />
-    <Compile Include="Migrations\201705191755561_SocialMessageAdded.Designer.cs">
-      <DependentUpon>201705191755561_SocialMessageAdded.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705221733252_PlaylistCreated.cs" />
-    <Compile Include="Migrations\201705221733252_PlaylistCreated.Designer.cs">
-      <DependentUpon>201705221733252_PlaylistCreated.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705221753302_Playlistcontrooler.cs" />
-    <Compile Include="Migrations\201705221753302_Playlistcontrooler.Designer.cs">
-      <DependentUpon>201705221753302_Playlistcontrooler.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705311442346_Hosted.cs" />
-    <Compile Include="Migrations\201705311442346_Hosted.Designer.cs">
-      <DependentUpon>201705311442346_Hosted.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706011953398_UpdatePhoto.cs" />
-    <Compile Include="Migrations\201706011953398_UpdatePhoto.Designer.cs">
-      <DependentUpon>201706011953398_UpdatePhoto.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -381,30 +357,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705182004533_First.resx">
-      <DependentUpon>201705182004533_First.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705191755561_SocialMessageAdded.resx">
-      <DependentUpon>201705191755561_SocialMessageAdded.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705221733252_PlaylistCreated.resx">
-      <DependentUpon>201705221733252_PlaylistCreated.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705221753302_Playlistcontrooler.resx">
-      <DependentUpon>201705221753302_Playlistcontrooler.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705311442346_Hosted.resx">
-      <DependentUpon>201705311442346_Hosted.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706011953398_UpdatePhoto.resx">
-      <DependentUpon>201706011953398_UpdatePhoto.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

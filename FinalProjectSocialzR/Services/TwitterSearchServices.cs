@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity;
 using System.Net;
 using System.IO;
 using Newtonsoft.Json;
+using System.Text.RegularExpressions;
 
 namespace FinalProjectSocialzR.Services
 {
@@ -74,7 +75,7 @@ namespace FinalProjectSocialzR.Services
                 var newerTweet = new Tweet();
                 newerTweet.ImageUrl = item.User.ProfileImageUrl;
                 newerTweet.ScreenName = item.User.ScreenNameResponse;
-                newerTweet.Text = item.Text;
+                newerTweet.Text = Regex.Replace(item.Text, @"http[^\s]+", "");
                 newerTweet.PostTimeStamp = item.CreatedAt;
                 newerTweet.Media = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.ExpandedUrl != null)?.ExpandedUrl.ToString();
                 newerTweet.MediaImage = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.ExpandedUrl != null)?.MediaUrl.ToString();
