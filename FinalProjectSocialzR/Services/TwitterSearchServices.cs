@@ -16,6 +16,7 @@ namespace FinalProjectSocialzR.Services
 {
     public class TwitterSearchServices
     {
+
         public static async Task<List<Tweet>> GetTweetsAsync(TwitterSearchParam searchParam)
         {
             var auth = new MvcAuthorizer
@@ -75,14 +76,16 @@ namespace FinalProjectSocialzR.Services
                 var newerTweet = new Tweet();
                 newerTweet.ImageUrl = item.User.ProfileImageUrl;
                 newerTweet.ScreenName = item.User.ScreenNameResponse;
-                newerTweet.Text = Regex.Replace(item.Text, @"http[^\s]+", "");
+                newerTweet.Text = FilterBadWords(Regex.Replace(item.Text, @"http[^\s]+", "")).ToString();
                 newerTweet.PostTimeStamp = item.CreatedAt;
                 newerTweet.Media = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.ExpandedUrl != null)?.ExpandedUrl.ToString();
                 newerTweet.MediaImage = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.ExpandedUrl != null)?.MediaUrl.ToString();
 
-                newerTweet.StatusId = item.RetweetedStatus.StatusID;
-
-                tweets.Add(newerTweet);
+              
+                if (newerTweet.Text == (Regex.Replace(item.Text, @"http[^\s]+", "")).ToString())
+                {
+                    tweets.Add(newerTweet);
+                }
             }
             return tweets; 
         }
@@ -107,6 +110,35 @@ namespace FinalProjectSocialzR.Services
 
             return theWeather;
         }
+
+
+      
+        public static string FilterBadWords(string input)
+        {
+
+            //ApplicationDbContext db2 = new ApplicationDbContext();
+
+            //var listOfBadWords = db2.Blacklists.ToList();
+
+            var listOfBadWords = new List<string> { "shit", "fuck" };
+            
+            foreach (var item in listOfBadWords)
+            {
+                if (input.ToLower().Contains(item.ToString())) //Checks BadWords list has the current input tweet text.
+                {
+                    input = "Contains Bad Words";
+                    //remove item from list
+                }
+                else
+                {
+                    //continue;
+                }
+            }
+
+
+            return input;
+        }  
+           
 
     }
 }
