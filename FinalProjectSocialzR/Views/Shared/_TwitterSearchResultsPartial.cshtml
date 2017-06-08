@@ -19,7 +19,10 @@
                             @item.PostTimeStamp
                         </div>
                         <div class="comment-text">
-                            @item.Text
+                            <span class="text-body">
+                                @item.Text
+                            </span>
+                            
 
 
                             @if (item.Media != null)
@@ -43,10 +46,8 @@
 
                         </div>
                         <div class="media-link" value="@item.Media">
-                            @*@item.Media*@
                         </div>
                         <div class="photo-link" value="@item.MediaImage">
-                            @*@item.MediaImage*@
                         </div>
                         <div class="action">
                             <button class="upbutton btn btn-default btn-xs" title="Up">
