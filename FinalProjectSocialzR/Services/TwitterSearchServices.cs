@@ -16,6 +16,7 @@ namespace FinalProjectSocialzR.Services
 {
     public class TwitterSearchServices
     {
+
         public static async Task<List<Tweet>> GetTweetsAsync(TwitterSearchParam searchParam)
         {
             var auth = new MvcAuthorizer
@@ -80,9 +81,11 @@ namespace FinalProjectSocialzR.Services
                 newerTweet.Media = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.ExpandedUrl != null)?.ExpandedUrl.ToString();
                 newerTweet.MediaImage = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.ExpandedUrl != null)?.MediaUrl.ToString();
 
-                newerTweet.StatusId = item.RetweetedStatus.StatusID;
-
-                tweets.Add(newerTweet);
+              
+                if (newerTweet.Text == (Regex.Replace(item.Text, @"http[^\s]+", "")).ToString())
+                {
+                    tweets.Add(newerTweet);
+                }
             }
             return tweets; 
         }
@@ -109,53 +112,33 @@ namespace FinalProjectSocialzR.Services
         }
 
 
-
-        public static async Task<string>FilterBadWords(string input)
+      
+        public static string FilterBadWords(string input)
         {
-            ApplicationDbContext db2 = new ApplicationDbContext();
 
-            var listOfBadWords = await db2.Blacklists.ToListAsync();
+            //ApplicationDbContext db2 = new ApplicationDbContext();
 
+            //var listOfBadWords = db2.Blacklists.ToList();
+
+            var listOfBadWords = new List<string> { "shit", "fuck" };
+            
             foreach (var item in listOfBadWords)
             {
-                if (item.ToString() == input) //Checks BadWords list has the current input tweet text.
+                if (input.ToLower().Contains(item.ToString())) //Checks BadWords list has the current input tweet text.
                 {
-                    listOfBadWords.Remove(item);
+                    input = "Contains Bad Words";
                     //remove item from list
                 }
                 else
                 {
-                    continue;
+                    //continue;
                 }
             }
 
 
-            return "";
-        }
-
-
-
-        //need to compare Tweets against the black list. If the message hits against the blacklist then it shouldn't appear in search results
-        public string BlacklistFilter(string text)
-        {
-
-
-            //bool b = listOfTweets.Any(s => myString.Contains(s));
-
-            var rv = "";
-
-
-
-
-
-            return rv;
-        }
-
-       
-
-
-
-
+            return input;
+        }  
+           
 
     }
 }
