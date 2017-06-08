@@ -47,6 +47,7 @@ namespace FinalProjectSocialzR.Models
 
         public string Media { get; set; }
 
+        public string MediaImage { get; set; }
 
         // extra data wanted for playlist: time it was added to playlist and by whom
         public DateTime AddedToPlaylistTimeStamp { get; set; } = DateTime.Now;
