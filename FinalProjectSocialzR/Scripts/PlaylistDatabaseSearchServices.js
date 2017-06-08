@@ -2,11 +2,12 @@
     $("#currentPlaylist").val(playlistNumber);
     $.ajax({
         url: '/PlaylistSelection/GetPlaylist?id=' + playlistNumber , //controller to ping to get data from datbase (GET for saved social media controller)
-
         dataType: "html",
         type: "GET",
         success: (partial) => {
+            UpdateRightUpper(null, playlistNumber);
             $("#playlistSearchDisplayFront").html(partial); // make a new PLaylist search results partial
+            initList();
             console.log('works');
         },
         error: (data) => {
@@ -29,7 +30,6 @@ function DeleteMessageInPlaylist(that, messageId) {
         type: "GET",
         success: (partial) => {
             runPlaylistSearch(null, _playListId);
-            //$("#playlistSearchDisplayFront").html(partial); // make a new PLaylist search results partial
             console.log('works');
         },
         error: (data) => {
@@ -76,8 +76,8 @@ function EditMessageInPlaylist(that, messageId) {
 
 function setRSSUrl() {
     let _playListId = $(".selected-playlist").attr("data-id");
-    let rssurl = "http://localhost:61066/MediaExport?id=" + _playListId;
-    $("#rssdownloadmodal").val(rssurl);
+    let rssurl = "https://socializrmedia.azurewebsites.net/MediaExport?id=" + _playListId;
+    $("#rssdownloadmodaltextbox").val(rssurl);
 }
 
 function EditPlaylist(that, playlistId) {
@@ -98,6 +98,7 @@ function EditPlaylist(that, playlistId) {
         contentType: "application/json",
         success: (partial) => {
             $("#myPlaylistContainer").html(partial);
+            UpdateUpper();
             console.log('works');
         },
         error: (data) => {
@@ -119,6 +120,7 @@ function DeletePlaylist(that, playlistId) {
         type: "DELETE",
         success: (partial) => {
             $("#myPlaylistContainer").html(partial);
+            UpdateUpper();
             console.log('works');
         },
         error: (data) => {
@@ -141,6 +143,7 @@ function AddPlaylist() {
         dataType: "html",
         type: "POST",
         success: (partial) => {
+            UpdateUpper();
             $("#myPlaylistContainer").html(partial);
             console.log('works');
         },
@@ -151,5 +154,45 @@ function AddPlaylist() {
         complete: (data) => {
             console.log("done", data);
         }
+    });
+}
+
+function UpdateUpper() {
+    $.ajax({
+        url: '/PlaylistSelection/RefreshUpperNoId', //controller to ping to get data from datbase (GET for saved social media controller)
+        dataType: "html",
+        type: "GET",
+        success: (partial) => {
+            $("#playlistSearchDisplayFrontUpper").html(partial); // make a new PLaylist search results partial
+            console.log('works');
+        },
+        error: (data) => {
+            console.log("oops", data)
+        },
+        complete: (data) => {
+            console.log("done", data);
+        }
+
+    });
+}
+
+
+function UpdateRightUpper(that, playlistNumber) {
+    $("#currentPlaylist").val(playlistNumber);
+    $.ajax({
+        url: '/PlaylistSelection/RefreshUpper?id=' + playlistNumber, //controller to ping to get data from datbase (GET for saved social media controller)
+        dataType: "html",
+        type: "GET",
+        success: (partial) => {
+            $("#playlistSearchDisplayFrontUpper").html(partial); // make a new PLaylist search results partial
+            console.log('works');
+        },
+        error: (data) => {            
+            console.log("oops", data)
+        },
+        complete: (data) => {
+            console.log("done", data);
+        }
+
     });
 }

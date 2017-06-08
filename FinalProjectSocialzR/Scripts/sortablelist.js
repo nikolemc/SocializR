@@ -1,7 +1,8 @@
-$(function () {
+var initList = () => {
     $(".sortable_list").sortable({
         connectWith: ".connectedSortable",
         //need to use receive command to look only at right hand list. Update looks at both
+<<<<<<< HEAD
         //beforeStop: function (event, ui) {
         //    console.log("Before beforestop");
         //},
@@ -40,6 +41,9 @@ $(function () {
         //    console.log("Before update");
         //    ui.item[0].Media = "blah blah";
         //},
+=======
+
+>>>>>>> 4a68fae365a41e769060d4557f3dbf320e76ce27
 
         receive: function (event, ui) {
 
@@ -54,7 +58,7 @@ $(function () {
                 OriginalText: $(ui.item[0]).find(".comment-text").html().trim(),
                 //OriginalText:ui.item[0].OriginalText,
                 PostTimeStamp: $(ui.item[0]).find(".time-stamp").html().trim(),
-                //PostContentUrl:ui.item[0].PostContentUrl,
+                MediaImage: $(ui.item[0]).find(".photo-link").html().trim(),
                 //UserName:ui.item[0].UserName,
                 //IsRetweeted:ui.item[0].IsRetweeted,
                 //Language:ui.item[0].Language,
@@ -66,7 +70,7 @@ $(function () {
             };
 
             //$("#item").load("runPlaylistSearch" + PlaylistId + "&list=" + $(this).attr('id')); 
-                      
+
             console.log(item); //Which item (or ui.item[0].id)
             // POST to server using $.post or $.ajax
             $.ajax({
@@ -79,9 +83,12 @@ $(function () {
 
         }
     }).disableSelection();
+}
 
-
+$(function () {
+    initList();
 });
+
 
 
 

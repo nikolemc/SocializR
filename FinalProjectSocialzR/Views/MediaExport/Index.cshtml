@@ -14,13 +14,15 @@
         @foreach (var item in Model)
         {
             <item>
-                <title>@item.ScreenName</title>
+                <realname>@item.ScreenName</realname>
+                <username>@item.UserName</username>
                 @Html.Raw(string.Format("<link>{0}</link>", item.ImageUrl))
                 <source />
-                <avatar />
+                <avatar>@item.ImageUrl</avatar>
+                <photo>@item.MediaImage </photo>
                 <createdate />
                 <media>@item.Media</media>
-                <textbody>@item.Text</textbody>                
+                <textbody>@item.Text</textbody>                        
             </item>
         }
     </channel>
