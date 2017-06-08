@@ -75,7 +75,7 @@ namespace FinalProjectSocialzR.Services
                 var newerTweet = new Tweet();
                 newerTweet.ImageUrl = item.User.ProfileImageUrl;
                 newerTweet.ScreenName = item.User.ScreenNameResponse;
-                newerTweet.Text = Regex.Replace(item.Text, @"http[^\s]+", "");
+                newerTweet.Text = filterTheWords(Regex.Replace(item.Text, @"http[^\s]+", "")).ToString();
                 newerTweet.PostTimeStamp = item.CreatedAt;
                 newerTweet.Media = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.ExpandedUrl != null)?.ExpandedUrl.ToString();
                 newerTweet.MediaImage = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.ExpandedUrl != null)?.MediaUrl.ToString();
@@ -107,6 +107,54 @@ namespace FinalProjectSocialzR.Services
 
             return theWeather;
         }
+
+
+
+        public static async Task<string> filterTheWords(string input)
+        {
+            ApplicationDbContext db2 = new ApplicationDbContext();
+
+            var listOfBadWords = await db2.Blacklists.ToListAsync();
+
+            foreach (var item in listOfBadWords)
+            {
+                if (item.ToString() == input) //Checks BadWords list has the current input tweet text.
+                {
+                    //remove item from list
+                }
+                else
+                {
+                    continue;
+                }
+            }
+
+
+            return "";
+        }
+
+
+
+        //need to compare Tweets against the black list. If the message hits against the blacklist then it shouldn't appear in search results
+        public string BlacklistFilter(string text)
+        {
+
+
+            //bool b = listOfTweets.Any(s => myString.Contains(s));
+
+            var rv = "";
+
+
+
+
+
+            return rv;
+        }
+
+       
+
+
+
+
 
     }
 }
