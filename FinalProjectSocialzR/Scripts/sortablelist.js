@@ -2,7 +2,6 @@ var initList = () => {
     $(".sortable_list").sortable({
         connectWith: ".connectedSortable",
         //need to use receive command to look only at right hand list. Update looks at both
-<<<<<<< HEAD
         //beforeStop: function (event, ui) {
         //    console.log("Before beforestop");
         //},
@@ -41,9 +40,7 @@ var initList = () => {
         //    console.log("Before update");
         //    ui.item[0].Media = "blah blah";
         //},
-=======
 
->>>>>>> 4a68fae365a41e769060d4557f3dbf320e76ce27
 
         receive: function (event, ui) {
 
