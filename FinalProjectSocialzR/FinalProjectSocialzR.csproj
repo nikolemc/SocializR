@@ -217,6 +217,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BlacklistsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MediaExportController.cs" />
@@ -253,8 +254,13 @@
     <Compile Include="Migrations\201706011953398_UpdatePhoto.Designer.cs">
       <DependentUpon>201706011953398_UpdatePhoto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706081535484_blacklist.cs" />
+    <Compile Include="Migrations\201706081535484_blacklist.Designer.cs">
+      <DependentUpon>201706081535484_blacklist.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Blacklist.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Instagram.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -362,6 +368,11 @@
     <Content Include="Views\MediaExport\Index.cshtml" />
     <Content Include="Views\Shared\_PlaylistPartial.cshtml" />
     <Content Include="Views\Shared\_PlaylistSearchResultsUpperPartial.cshtml" />
+    <Content Include="Views\Blacklists\Create.cshtml" />
+    <Content Include="Views\Blacklists\Delete.cshtml" />
+    <Content Include="Views\Blacklists\Details.cshtml" />
+    <Content Include="Views\Blacklists\Edit.cshtml" />
+    <Content Include="Views\Blacklists\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -404,6 +415,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706011953398_UpdatePhoto.resx">
       <DependentUpon>201706011953398_UpdatePhoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706081535484_blacklist.resx">
+      <DependentUpon>201706081535484_blacklist.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
