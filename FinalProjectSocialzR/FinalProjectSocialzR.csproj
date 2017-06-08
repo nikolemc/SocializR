@@ -230,6 +230,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Migrations\201705182004533_First.cs" />
     <Compile Include="Migrations\201705182004533_First.Designer.cs">
       <DependentUpon>201705182004533_First.cs</DependentUpon>
@@ -258,6 +259,8 @@
     <Compile Include="Migrations\201706081535484_blacklist.Designer.cs">
       <DependentUpon>201706081535484_blacklist.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> c19e76c24ef5fbdc5842eaca0e9d33a38c157865
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Blacklist.cs" />
@@ -393,6 +396,7 @@
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+<<<<<<< HEAD
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705182004533_First.resx">
       <DependentUpon>201705182004533_First.cs</DependentUpon>
@@ -420,6 +424,8 @@
       <DependentUpon>201706081535484_blacklist.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+=======
+>>>>>>> c19e76c24ef5fbdc5842eaca0e9d33a38c157865
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
