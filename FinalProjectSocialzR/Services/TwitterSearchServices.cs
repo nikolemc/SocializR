@@ -75,7 +75,7 @@ namespace FinalProjectSocialzR.Services
                 var newerTweet = new Tweet();
                 newerTweet.ImageUrl = item.User.ProfileImageUrl;
                 newerTweet.ScreenName = item.User.ScreenNameResponse;
-                newerTweet.Text = filterTheWords(Regex.Replace(item.Text, @"http[^\s]+", "")).ToString();
+                newerTweet.Text = FilterBadWords(Regex.Replace(item.Text, @"http[^\s]+", "")).ToString();
                 newerTweet.PostTimeStamp = item.CreatedAt;
                 newerTweet.Media = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.ExpandedUrl != null)?.ExpandedUrl.ToString();
                 newerTweet.MediaImage = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.ExpandedUrl != null)?.MediaUrl.ToString();
@@ -110,7 +110,7 @@ namespace FinalProjectSocialzR.Services
 
 
 
-        public static async Task<string> filterTheWords(string input)
+        public static async Task<string>FilterBadWords(string input)
         {
             ApplicationDbContext db2 = new ApplicationDbContext();
 
@@ -120,6 +120,7 @@ namespace FinalProjectSocialzR.Services
             {
                 if (item.ToString() == input) //Checks BadWords list has the current input tweet text.
                 {
+                    listOfBadWords.Remove(item);
                     //remove item from list
                 }
                 else
