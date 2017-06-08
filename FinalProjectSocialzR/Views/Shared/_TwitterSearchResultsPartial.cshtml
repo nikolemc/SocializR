@@ -18,7 +18,7 @@
                         <div class="time-stamp">
                             @item.PostTimeStamp
                         </div>
-                        <div class="comment-text" >
+                        <div class="comment-text">
                             @item.Text
 
 
@@ -27,12 +27,12 @@
                                 if (item.Media.Contains("video"))
                                 {
                                     @*<div class="video">*@
-                                        <blockquote class="twitter-video" data-lang="en">
-                                            <p lang="en" dir="ltr"></p>
-                                            <a class="twit-vid" href="@item.Media"></a>
-                                        </blockquote>
+                                    <blockquote class="twitter-video" data-lang="en">
+                                        <p lang="en" dir="ltr"></p>
+                                        <a class="twit-vid" href="@item.Media"></a>
+                                    </blockquote>
                                         <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                                    @*</div>*@
+                                        @*</div>*@
                                 }
                                 else
                                 {
@@ -40,7 +40,7 @@
                                     <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                                 }
                             }
-                            
+
                         </div>
                         <div class="media-link">
                             @item.Media
@@ -59,14 +59,14 @@
                                 <span class="glyphicon glyphicon-pencil"></span>
                             </button>
                             @*<button type="button" class="btn btn-success btn-xs" title="Approved">
-                                <span class="glyphicon glyphicon-ok"></span>
-                            </button>*@
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </button>*@
                             <button type="button" class="btn btn-danger btn-xs" title="Delete">
                                 <span class="glyphicon glyphicon-trash"></span>
                             </button>
                             @*<button type="button" class="btn btn-default btn-xs" title="TransferAcross">
-                                <span class="glyphicon glyphicon-arrow-right"></span>
-                            </button>*@
+                                    <span class="glyphicon glyphicon-arrow-right"></span>
+                                </button>*@
                         </div>
                     </div>
                 </div>
