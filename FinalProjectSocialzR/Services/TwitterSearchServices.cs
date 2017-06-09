@@ -11,6 +11,7 @@ using System.Net;
 using System.IO;
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
 
 namespace FinalProjectSocialzR.Services
 {
@@ -38,7 +39,7 @@ namespace FinalProjectSocialzR.Services
                 {
                     searchParam.Radius = "50";
                 }
-                var longLat = GetLongLatFromMapQuest(searchParam.ZipCode);
+                var longLat = await GetLongLatFromMapQuestAsync(searchParam.ZipCode);
                 query = query.Where(w => w.GeoCode == (longLat.results.FirstOrDefault().locations.FirstOrDefault().latLng.lat + ","
                                                         + longLat.results.FirstOrDefault().locations.FirstOrDefault().latLng.lng + ","
                                                         + searchParam.Radius + "mi"));
@@ -48,8 +49,8 @@ namespace FinalProjectSocialzR.Services
                 query = query.Where(w => w.SearchLanguage == searchParam.Language);
             }            
 
-            var searchResponse = await query.Where(w => w.Count == 100).SingleOrDefaultAsync();
-            var tweets = SearchResponseToTweets(searchResponse);
+            var searchResponse = query.Where(w => w.Count == 100).SingleOrDefaultAsync();
+            var tweets = await SearchResponseToTweetsAsync(await searchResponse);
 
             if (!searchParam.IncludeRetweet)
             {
@@ -67,30 +68,73 @@ namespace FinalProjectSocialzR.Services
             return tweets;
         }
 
-        public static List<Tweet> SearchResponseToTweets(LinqToTwitter.Search result)
+        const string connectionString = "Server=tcp:socializrmedia-db.database.windows.net,1433;Initial Catalog=SocializrMediaDB;Persist Security Info=False;User ID=SocializrAdmin;Password=MediaFounders1!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+
+        public static List<string> GetAllBadWords()
+        {
+            var rv = new List<string>();
+            using (var connection = new SqlConnection(connectionString))
+            {
+                var sqlQuery = "SELECT * FROM Blacklists";
+                var cmd = new SqlCommand(sqlQuery, connection);
+
+                connection.Open();
+                var sqlrv = cmd.ExecuteReader();
+                while (sqlrv.Read())
+                {
+                    var wordToAdd = sqlrv["Word"].ToString();
+                    rv.Add(wordToAdd);
+                }
+
+                connection.Close();
+            }
+            return rv;
+        }
+
+
+        public static async Task<List<Tweet>> SearchResponseToTweetsAsync(LinqToTwitter.Search result)
         {
             var tweets = new List<Tweet>();
+
+            //ApplicationDbContext db2 = new ApplicationDbContext();
+
+            //var listOfBadWords = db2.Blacklists.Select(w => w.Word);
+
+            var listOfBadWords = GetAllBadWords();
 
             foreach (var item in result.Statuses)
             {
                 var newerTweet = new Tweet();
                 newerTweet.ImageUrl = item.User.ProfileImageUrl;
                 newerTweet.ScreenName = item.User.ScreenNameResponse;
-                newerTweet.Text = FilterBadWords(Regex.Replace(item.Text, @"http[^\s]+", "")).ToString();
+                newerTweet.Text = (Regex.Replace(item.Text, @"http[^\s]+", ""));
+
+
+                foreach (var item2 in listOfBadWords)
+                {
+                    if (newerTweet.Text.ToLower().Contains(item2)) //Checks BadWords list has the current input tweet text.
+                    {
+                        newerTweet.Text = "Contains Bad Words";
+                    }
+                }
+
+
                 newerTweet.PostTimeStamp = item.CreatedAt;
                 newerTweet.Media = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.ExpandedUrl != null)?.ExpandedUrl.ToString();
                 newerTweet.MediaImage = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.ExpandedUrl != null)?.MediaUrl.ToString();
 
-              
-                if (newerTweet.Text == (Regex.Replace(item.Text, @"http[^\s]+", "")).ToString())
-                {
-                    tweets.Add(newerTweet);
-                }
+
+                //if (newerTweet.Text == (Regex.Replace(item.Text, @"http[^\s]+", "")).ToString())
+                //{
+                //    tweets.Add(newerTweet);
+                //}
+
+                tweets.Add(newerTweet);
             }
             return tweets; 
         }
 
-        public static MapQuestAPI GetLongLatFromMapQuest(string locationKeyWord)
+        public static async Task<MapQuestAPI> GetLongLatFromMapQuestAsync(string locationKeyWord)
         {
             var sourceURL = "http://www.mapquestapi.com/geocoding/v1/address?key=vNk6zEQGUM2jOLdMZM98A72SrZIYR5CU&location=" + locationKeyWord;
 
@@ -110,17 +154,15 @@ namespace FinalProjectSocialzR.Services
 
             return theWeather;
         }
-
-
       
-        public static string FilterBadWords(string input)
+        public static async Task<string> FilterBadWordsAsync(string input)
         {
 
-            //ApplicationDbContext db2 = new ApplicationDbContext();
+            ApplicationDbContext db2 = new ApplicationDbContext();
 
-            //var listOfBadWords = db2.Blacklists.ToList();
+            var listOfBadWords = await db2.Blacklists.ToListAsync();
 
-            var listOfBadWords = new List<string> { "shit", "fuck" };
+            //var listOfBadWords = new List<string> { "shit", "fuck" };
             
             foreach (var item in listOfBadWords)
             {
