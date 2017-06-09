@@ -18,26 +18,31 @@
                             @item.PostTimeStamp
                         </div>
                         <div class="comment-text">
-                            @item.Text
+                            <span class="text-body">
+                                @item.Text
+                            </span>
 
-                            @if (item.Media != null)
-                            {
-                                if (item.Media.Contains("video"))
+                                @if (item.Media != null)
                                 {
-                                    <blockquote class="twitter-video" data-lang="en">
-                                        <p lang="en" dir="ltr"></p>
-                                        <a href="@item.Media"></a>
-                                    </blockquote>
-                                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                                }
-                                else
-                                {
-                                    <img  src="@item.MediaImage" alt="Alternate Text" />
-                                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                                }
+                                    if (item.Media.Contains("video"))
+                                    {
+                                        <blockquote class="twitter-video" data-lang="en">
+                                            <p lang="en" dir="ltr"></p>
+                                            <a class="twit-vid" href="@item.Media"></a>
+                                        </blockquote>
+                                        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                    }
+                                    else
+                                    {
+                                        <img src="@item.MediaImage" alt="Alternate Text" class="img-responsive" />
+                                        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                    }
 
-
-                            }
+                                }
+</div>
+                        <div class="media-link" value="@item.Media">
+                        </div>
+                        <div class="photo-link" value="@item.MediaImage">
                         </div>
                         <div class="action">
                             <button class="upbutton btn btn-default btn-xs" title="Up">
@@ -85,7 +90,7 @@
                                                 </div>
                                             </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
