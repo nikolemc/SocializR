@@ -3,6 +3,7 @@
         url: '/Home/CustomSearch?searchTerm='+ $("#twitterSearch").val(),
         dataType: "html",
         type: "GET",
+       
         success: (partial) => {
             $("#twitterSearchDisplayFront").html(partial);
             console.log('works');
@@ -17,6 +18,15 @@
 
     });
 }
+
+//allows search to happen by pressing enter
+document.getElementById("twitterSearch")
+    .addEventListener("keyup", function (event) {
+        event.preventDefault();
+        if (event.keyCode == 13) {
+            document.getElementById("SearchButton").click();
+        }
+    });
 
 
 let runTwitterSearchAdvance = () => {
@@ -64,6 +74,15 @@ let runTwitterSearchAdvance = () => {
             console.log("done", data);
         }
     });
+
+    //allows search to happen by pressing enter after entering location
+    document.getElementById("Location")
+        .addEventListener("keyup", function (event) {
+            event.preventDefault();
+            if (event.keyCode == 13) {
+                document.getElementById("SearchButton").click();
+            }
+        });
 }
 
 //receive: ajax(event, ui) {
