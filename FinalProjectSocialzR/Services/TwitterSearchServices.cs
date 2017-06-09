@@ -112,24 +112,20 @@ namespace FinalProjectSocialzR.Services
 
                 foreach (var item2 in listOfBadWords)
                 {
-                    if (newerTweet.Text.ToLower().Contains(item2)) //Checks BadWords list has the current input tweet text.
+                    if (Regex.IsMatch(newerTweet.Text.ToLower(), item2))
                     {
                         newerTweet.Text = "Contains Bad Words";
                     }
                 }
-
-
+                
                 newerTweet.PostTimeStamp = item.CreatedAt;
                 newerTweet.Media = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.ExpandedUrl != null)?.ExpandedUrl.ToString();
                 newerTweet.MediaImage = item.ExtendedEntities.MediaEntities.FirstOrDefault(f => f.ExpandedUrl != null)?.MediaUrl.ToString();
 
-
-                //if (newerTweet.Text == (Regex.Replace(item.Text, @"http[^\s]+", "")).ToString())
-                //{
-                //    tweets.Add(newerTweet);
-                //}
-
-                tweets.Add(newerTweet);
+                if (newerTweet.Text == (Regex.Replace(item.Text, @"http[^\s]+", "")).ToString())
+                {
+                    tweets.Add(newerTweet);
+                }
             }
             return tweets; 
         }
