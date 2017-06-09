@@ -18,6 +18,11 @@
 	white-space: normal;
 }
 
+input[type=email], select,
+textarea {
+    max-width: 580px;
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
@@ -61,6 +66,10 @@ radio-inline {
 	padding-top: 0;
 }
 
+.text-center {
+    text-align: right;
+}
+
 
 /*this datalist for thead playlist table*/
 /*.custab {
@@ -78,3 +87,6 @@ radio-inline {
 }*/
 
 
+
+
+ 

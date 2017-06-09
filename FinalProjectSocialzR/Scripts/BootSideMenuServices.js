@@ -19,6 +19,7 @@
     });
 }
 
+//allows search to happen by pressing enter
 document.getElementById("twitterSearch")
     .addEventListener("keyup", function (event) {
         event.preventDefault();
@@ -74,6 +75,7 @@ let runTwitterSearchAdvance = () => {
         }
     });
 
+    //allows search to happen by pressing enter after entering location
     document.getElementById("Location")
         .addEventListener("keyup", function (event) {
             event.preventDefault();
