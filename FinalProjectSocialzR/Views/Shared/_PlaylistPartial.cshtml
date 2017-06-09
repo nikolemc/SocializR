@@ -16,10 +16,10 @@
                     <div class="btn-group btn-group-justified" role="group" aria-label="group button">
                         <a href="#" class="btn btn-sm btn-default" data-toggle="modal" data-target="#addModal"><span class="glyphicon glyphicon-plus"></span>Create new playlist</a>
                     </div>
-                    </div>
+                </div>
                 <table class="table table-striped custab">
                     <thead>
-                        
+
 
                         <tr>
                             <th>ID</th>
@@ -28,107 +28,97 @@
                     </thead>
                     <!-- line modal -->
                     <div class="modal" id="addModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-                        <div class="glyphicon-modal-window">
+                        <div class="modal-content">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                                    <h3 class="modal-title" id="lineModalLabel">Text Edit</h3>
+                                    <h3 class="modal-title" id="lineModalLabel">Create New Playlist</h3>
                                 </div>
                                 <div class="modal-body">
                                     <!-- content goes here -->
+
                                     <form>
                                         <div class="form-group">
                                             <label for="exampleInputEmail-">Playlist Name</label>
-                                            <input type="text" class="form-control" id="addplaylisttext" placeholder="Enter Playlist Name" value="">
+                                            <input type="email" class="form-control" id="addplaylisttext" placeholder="Enter Playlist Name" value="">
+                                            <div class="btn-group bt" role="group">
+                                                <button type="button" id="saveImage" class="btn btn-success" data-dismiss="modal" role="button" onclick="AddPlaylist();">Save&nbsp;<i class="fa fa-save" aria-hidden="true"></i></button>
+                                            </div>
                                         </div>
                                     </form>
+
                                 </div>
                                 <div class="modal-footer">
-                                    <div class="btn-group btn-group-justified" role="group" aria-label="group button">
-                                        <div class="btn-group" role="group">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal" role="button">Close</button>
-                                        </div>
-                                        <div class="btn-group btn-delete hidden" role="group">
-                                            <button type="button" id="delImage" class="btn btn-default btn-hover-red" data-dismiss="modal" role="button">Delete</button>
-                                        </div>
-                                        <div class="btn-group" role="group">
-                                            <button type="button" id="saveImage" class="btn btn-default btn-hover-green close" role="button" data-dismiss="modal" onclick="AddPlaylist();">Save</button>
-                                        </div>
-                                    </div>
+
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <!--modal stuff-->
-            <tbody id="playListContainer">
 
-
-                @if (Model.AllPlaylist != null)
-                {
-
-
-
-                    foreach (var item in Model.AllPlaylist)
-                    {
-
-
-                        <tr>
-                            <td>@item.Id</td>
-                            <td>@item.PlaylistName</td>
-                            <td class="text-center">
-                                <a class="btn btn-primary btn-xs" data-toggle="modal" data-target="#editModal-@item.Id" title="Edit">
-                                    <span class="glyphicon glyphicon-pencil"></span>
-                                </a>
-                                <a href="#" class="btn btn-danger btn-xs" title="Delete" data-dismiss="modal" onclick="DeletePlaylist(this, @item.Id);">
-                                    <span class="glyphicon glyphicon-trash"></span>
-                                </a>
-                            </td>
-                        </tr>
-
-                        <!-- line modal -->
-                        <div class="modal" id="editModal-@item.Id" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                                        <h3 class="modal-title" id="lineModalLabel">Text Edit</h3>
-                                    </div>
-                                    <div class="modal-body">
-                                        <!-- content goes here -->
-                                        <form>
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail-@item.Id">Playlist Name</label>
-                                                <input type="text" class="form-control" id="playlistname-@item.Id" placeholder="Enter Playlist Name" value="@item.PlaylistName">
-                                            
-                                            </div>
-                                            <div class="btn-group btn-group-justified" role="group" aria-label="group button">
-                                                <div class="btn-group" role="group">
-                                                    <button type="button" class="btn btn-default" data-dismiss="modal" role="button">Close</button>
-                                                </div>
-                                                <div class="btn-group btn-delete hidden" role="group">
-                                                    <button type="button" id="delImage" class="btn btn-default btn-hover-red" data-dismiss="modal" role="button">Delete</button>
-                                                </div>
-                                                <div class="btn-group" role="group">
-                                                    <button type="button" id="saveImage" class="btn btn-default btn-hover-green close" role="button" data-dismiss="modal" onclick="EditPlaylist(this, @item.Id);">Save</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        
-                                    </div>
-                                </div>
                             </div>
                         </div>
                         <!--modal stuff-->
+                        <tbody id="playListContainer">
 
 
-                    }
-                }
-            </tbody>
-            </table>
+                            @if (Model.AllPlaylist != null)
+                            {
+
+
+
+                                foreach (var item in Model.AllPlaylist)
+                                {
+
+
+                                    <tr>
+                                        <td>@item.Id</td>
+                                        <td>@item.PlaylistName</td>
+                                        <td class="text-center">
+                                            <a class="btn btn-primary btn-xs" data-toggle="modal" data-target="#editModal-@item.Id" title="Edit">
+                                                <span class="glyphicon glyphicon-pencil"></span>
+                                            </a>
+                                            <a href="#" class="btn btn-danger btn-xs" title="Delete" data-dismiss="modal" onclick="DeletePlaylist(this, @item.Id);">
+                                                <span class="glyphicon glyphicon-trash"></span>
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                        <!-- line modal -->
+                                    <div class="modal" id="editModal-@item.Id" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                                        <div class="modal-content">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                                                    <h3 class="modal-title" id="lineModalLabel">Edit Playlist Name</h3>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <!-- content goes here -->
+
+                                                    <form>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputEmail-@item.Id">Playlist Name</label>
+                                                            <input type="email" class="form-control" id="playlistname-@item.Id" placeholder="Enter Playlist Name" value="@item.PlaylistName">
+                                                            @*<div class="btn-group" role="group">
+                                                                <button type="button" id="delImage" class="btn btn-danger" data-dismiss="modal" role="button">Delete &nbsp;<i class="fa fa-trash" aria-hidden="true"></i></button>
+                                                            </div>*@
+                                                            <div class="btn-group" role="group">
+                                                                <button type="button" id="saveImage" class="btn btn-success" data-dismiss="modal" role="button" onclick="EditPlaylist(this, @item.Id);">Save &nbsp;<i class="fa fa-save" aria-hidden="true"></i></button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+
+                                                </div>
+                                                <div class="modal-footer">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        <!--modal stuff-->
+
+
+                                }
+                            }
+                        </tbody>
+                </table>
+            </div>
         </div>
     </div>
-</div>
 </div>
