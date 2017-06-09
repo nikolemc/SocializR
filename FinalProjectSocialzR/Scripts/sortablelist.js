@@ -1,6 +1,7 @@
 var initList = () => {
     $(".sortable_list").sortable({
         connectWith: ".connectedSortable",
+
         //need to use receive command to look only at right hand list. Update looks at both
         //beforeStop: function (event, ui) {
         //    console.log("Before beforestop");
@@ -77,13 +78,23 @@ var initList = () => {
                 contentType: "application/json",
                 data: JSON.stringify(item)
             });
+            
 
         }
+
     }).disableSelection();
 }
 
 $(function () {
     initList();
+});
+
+
+$(".playlistFooter").draggable({
+    disabled: true
+});
+$("#btn btn-primary btn-sm btn-block").draggable({
+    disabled: true
 });
 
 
