@@ -20,6 +20,13 @@ namespace FinalProjectSocialzR.Controllers
             return View(db.Blacklists.ToList());
         }
 
+        public ActionResult GetAfter300()
+        {
+            var vm = db.Blacklists.ToList();
+
+            return PartialView("_blacklistPartial", vm);
+        }
+        
         // GET: Blacklists/Details/5
         public ActionResult Details(int? id)
         {

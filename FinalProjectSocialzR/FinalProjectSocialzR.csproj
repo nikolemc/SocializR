@@ -257,7 +257,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Controllers\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\SocializR1.png" />
@@ -275,13 +275,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\font-awesome.css.map" />
-    <Content Include="fonts\fontawesome-webfont.ttf" />
-    <Content Include="fonts\fontawesome-webfont.woff" />
-    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="Controllers\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Controllers\fonts\fontawesome-webfont.woff" />
+    <Content Include="Controllers\fonts\fontawesome-webfont.woff2" />
     <None Include="Properties\PublishProfiles\SocializrMedia - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\SocializrMedia - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\commentpanel.js" />
+    <Content Include="Scripts\CRUDServices.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -345,6 +346,7 @@
     <Content Include="Views\Blacklists\Details.cshtml" />
     <Content Include="Views\Blacklists\Edit.cshtml" />
     <Content Include="Views\Blacklists\Index.cshtml" />
+    <Content Include="Views\Shared\_blacklistPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -354,10 +356,10 @@
     <Folder Include="Views\Search\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Controllers\fonts\glyphicons-halflings-regular.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Controllers\fonts\glyphicons-halflings-regular.eot" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

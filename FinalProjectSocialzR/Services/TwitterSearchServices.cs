@@ -90,7 +90,11 @@ namespace FinalProjectSocialzR.Services
             }
             return rv;
         }
-
+        public static async Task<List<string>> FilterBadWordsAsync(string input)
+        {
+            ApplicationDbContext db2 = new ApplicationDbContext();
+            return await db2.Blacklists.Select(w => w.Word).ToListAsync();
+        }
 
         public static async Task<List<Tweet>> SearchResponseToTweetsAsync(LinqToTwitter.Search result)
         {
@@ -150,33 +154,7 @@ namespace FinalProjectSocialzR.Services
 
             return theWeather;
         }
-      
-        public static async Task<string> FilterBadWordsAsync(string input)
-        {
 
-            ApplicationDbContext db2 = new ApplicationDbContext();
-
-            var listOfBadWords = await db2.Blacklists.ToListAsync();
-
-            //var listOfBadWords = new List<string> { "shit", "fuck" };
-            
-            foreach (var item in listOfBadWords)
-            {
-                if (input.ToLower().Contains(item.ToString())) //Checks BadWords list has the current input tweet text.
-                {
-                    input = "Contains Bad Words";
-                    //remove item from list
-                }
-                else
-                {
-                    //continue;
-                }
-            }
-
-
-            return input;
-        }  
-           
 
     }
 }
