@@ -13,7 +13,9 @@ namespace FinalProjectSocialzR.Controllers
 {
     public class HomeController : Controller
     {
-        
+        private ApplicationDbContext db = new ApplicationDbContext();
+
+
         public ActionResult Index()
         {
             
@@ -39,9 +41,9 @@ namespace FinalProjectSocialzR.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            var vm = db.Blacklists.Where(w => w.Id > 300).ToList();
 
-            return View();
+            return View("_blacklistPartial", vm);
         }
 
         public ActionResult Contact()
