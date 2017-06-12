@@ -3,23 +3,15 @@
 }
 
 
-/*.sortable_list {*/
-    /*border: 1px solid #0094ff;*/
-    /*width: 300px;
-    min-height: 20px;
-    list-style-type: none;
-    margin: 0;
-    padding: 5px 0 0 0;
-    float: left;*/
-    /*margin-right: 10px;*/
-/*}*/
+.sortable_list {
+    border: 1px solid #0094ff;
+   
+}
 
-    /*.sortable_list li {
+    .sortable_list li {
         margin: 0 5px 5px 5px;
-        padding: 5px;
         font-size: 1.2em;
-        width: 250px;
-    }*/
+    }
 
 
 rowbody{
@@ -32,7 +24,7 @@ margin-left: 0px
 }
 
 .widget .list-group {
-    margin-bottom: 0;
+    margin-bottom: 0px;
 }
 
 .widget .panel-title {
@@ -59,11 +51,13 @@ margin-left: 0px
 }
 
 .widget .action {
-    margin-top: 5px;
+    margin-top: 0px;
+    margin-bottom: px;
 }
 
 .widget .comment-text {
     font-size: 12px;
+    padding-top: 8px;
 }
 
 .widget .btn-block {
@@ -75,13 +69,13 @@ margin-left: 0px
     background: #2bc1f2;
     border: none;
     color: #fff;
-    /* width: 100%; */
+     width: 100%; 
     font-size: 22px;
     font-weight: bolder;
-    padding: 8px 0;
+    padding: 0px 0;
     border-radius: 3px;
     cursor: pointer;
-    margin-top: 25px;
+    margin-top: 10px;
 }
 
 
@@ -110,5 +104,39 @@ margin-left: 0px
 
 .screen-name{
     font-weight: bold;
+    color: steelblue;
 }
+
+.time-stamp{
+ font-size: 12px;
+ color: dimgrey;
+}
+
+.span .list-group-item .glyphicon {
+    margin-right: 0px;
+}
+
+button .btn btn-danger btn-xs {
+    margin-right: 0px;
+    padding-top: 0px
+}
+
+.list-group-item .action .glyphicon {
+    margin-right: 0px;
+}
+
+.text-body{
+    padding-bottom: 10px;
+}
+imagemovie {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.img-responsive {
+    margin-top: 10px;
+}
+
+
+
 

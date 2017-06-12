@@ -6,9 +6,5 @@
         //let _formattedDate = moment($(this).html()).startOf("minute").fromNow();
         $(this).html(_formattedDate);
     });
-    
+
 });
-
-
-
-
