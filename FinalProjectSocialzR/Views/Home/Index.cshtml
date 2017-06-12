@@ -95,16 +95,17 @@
                         <label for="blacklist" placeholder="Words and regular expression patterns in this list will be used for blacklisting"></label>
                         <div class="form-group1">
                             <label for="search">Search words for censoring</label>
-                            <input type="text" id="search" name="search" placeholder="Search here...">
+                            <input type="text" id="searchBlacklistWord" name="search" placeholder="Search here...">
                         </div>
 
                         
                         <div class="search">
-                            <button class="btn btn-primary" id="SearchButton" onclick="runTwitterSearchAdvance();" type="button">Search</button>
-                            <button class="btn btn-default" id="SearchButton" onclick="runTwitterSearchAdvance();" type="button">Edit</button>
-                            <div id="blacklistcatelog">
+                            <button class="btn btn-primary" id="SearchButtonBlacklist" onclick="runBlacklistWordSearch();" type="button">Search</button>
+ @*                           <button class="btn btn-default" id="EditButtonBlacklist" onclick="runBlacklistWordSearch();" type="button">Edit</button>*@
+                            @Html.Partial("_blacklistPartial", Model.Blacklists)
+                             <span id="blacklistcatelog">
                                 @Html.Partial("_entireBlacklistCatelog", Model.Blacklists)                               
-                            </div>                           
+                            </span>                           
                         </div>
                         
 

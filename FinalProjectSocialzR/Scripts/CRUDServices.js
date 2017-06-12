@@ -1,22 +1,13 @@
-﻿function EditBlacklist(that, playlistId) {
-
-    let str = "#playlistname-" + playlistId
+﻿function SaveBlacklistEdit(that, blacklistId) {
+    let str = "#BlacklistedWord-" + blacklistId;
     let text = $(str).val();
 
-    let ToEdit = {
-        id: playlistId,
-        newPlaylistName: text,
-    }
-
     $.ajax({
-        url: '/Blacklists/EditPlaylist',
-        data: JSON.stringify(ToEdit),
+        url: '/Blacklists/EditBlacklistWord?id=' + blacklistId + "&text=" + text,
         dataType: "html",
-        type: "PUT",
-        contentType: "application/json",
+        type: "POST",
         success: (partial) => {
-            $("#myPlaylistContainer").html(partial);
-            UpdateUpper();
+            $("#EditBlacklistTarget").html(partial);
             console.log('works');
         },
         error: (data) => {
@@ -35,7 +26,7 @@ function DeleteBlacklist(that, badWordId) {
         dataType: "html",
         type: "DELETE",
         success: (partial) => {
-            $("#refresher123").html(partial);
+            $("#EditBlacklistTarget").html(partial);
             console.log('works');
         },
         error: (data) => {
@@ -49,21 +40,39 @@ function DeleteBlacklist(that, badWordId) {
 }
 
 function AddBlacklist() {
-    let text = $("#addblacklisttext").val();
-
-    let playlistName = text;
+    let text = $("#blacklistWordInput").val();
 
     $.ajax({
-        url: '/Blacklists/AddPlaylist?playlistName=' + playlistName,
+        url: '/Blacklists/AddNewBlacklistedWord?text=' + text,
         dataType: "html",
         type: "POST",
         success: (partial) => {
-            UpdateUpper();
-            $("#myPlaylistContainer").html(partial);
+            $("#EditBlacklistTarget").html(partial);
             console.log('works');
         },
         error: (data) => {
             alert("NOPE");
+            console.log("oops", data)
+        },
+        complete: (data) => {
+            console.log("done", data);
+        }
+    });
+}
+
+function runBlacklistWordSearch() {
+    let searchTerm = $("#searchBlacklistWord").val();
+
+    $.ajax({
+        url: '/Blacklists/BlacklistCatelogCheck?searchTerm=' + searchTerm,
+        dataType: "html",
+        type: "GET",
+        success: (data) => {
+            alert(data);
+            console.log('works');
+        },
+        error: (data) => {
+
             console.log("oops", data)
         },
         complete: (data) => {
