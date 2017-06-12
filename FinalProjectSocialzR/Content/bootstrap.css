@@ -4894,7 +4894,7 @@ a.label:focus {
   background-color: #358753;
 }
 .label-info {
-  background-color: #5bc0de;
+    background-color: #008cba;
 }
 .label-info[href]:hover,
 .label-info[href]:focus {

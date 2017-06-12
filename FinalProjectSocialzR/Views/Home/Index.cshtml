@@ -143,8 +143,28 @@
                     </form>
                 </div>
 
+                <a href="#item-2" class="list-group-item" data-toggle="collapse">Blacklist &nbsp;<i class="fa fa-ban" aria-hidden="true"></i></a>
+                <div class="list-group collapse" id="item-2">
 
-                <a href="#item-2" class="list-group-item" data-toggle="collapse">Instagram &nbsp;<i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <form>
+                        <label for="blacklist" placeholder="Words and regular expression patterns in this list will be used for blacklisting"></label>
+                        <div class="form-group1">
+                            <label for="search">Search words for censoring</label>
+                            <input type="text" id="search" name="search" placeholder="Search here...">
+                        </div>
+
+                        
+                        <div class="search">
+                            <button class="btn btn-primary" id="SearchButton" onclick="runTwitterSearchAdvance();" type="button">Search</button>
+                            <button class="btn btn-default" id="SearchButton" onclick="runTwitterSearchAdvance();" type="button">Edit</button>
+                            <button class="btn btn-default" id="SearchButton" onclick="runTwitterSearchAdvance();" type="button">Blacklist</button>
+                        </div>
+                        
+
+                    </form>
+                </div>
+
+                @*<a href="#item-2" class="list-group-item" data-toggle="collapse">Instagram &nbsp;<i class="fa fa-instagram" aria-hidden="true"></i></a>
                 <div class="list-group collapse" id="item-2">
 
                     <form>
@@ -176,7 +196,7 @@
                         </div>
 
                     </form>
-                </div>
+                </div>*@
 
 
             </div>
@@ -206,9 +226,9 @@
                             <h3 class="panel-title">
                                 Recent Comments
                             </h3>
-                            <span class="label label-info">
+                            @*<span class="label label-info">
                                 78
-                            </span>
+                            </span>*@
                         </div>
 
 

@@ -18,40 +18,45 @@
                             @item.PostTimeStamp
                         </div>
                         <div class="comment-text">
-                            @item.Text
+                            <span class="text-body">
+                                @item.Text
+                            </span>
 
-                            @if (item.Media != null)
-                            {
-                                if (item.Media.Contains("video"))
+                                @if (item.Media != null)
                                 {
-                                    <blockquote class="twitter-video" data-lang="en">
-                                        <p lang="en" dir="ltr"></p>
-                                        <a href="@item.Media"></a>
-                                    </blockquote>
-                                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                                }
-                                else
-                                {
-                                    <img  src="@item.MediaImage" alt="Alternate Text" />
-                                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                                }
+                                    if (item.Media.Contains("video"))
+                                    {
+                                        <blockquote class="twitter-video" data-lang="en">
+                                            <p lang="en" dir="ltr"></p>
+                                            <a class="twit-vid" href="@item.Media"></a>
+                                        </blockquote>
+                                        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                    }
+                                    else
+                                    {
+                                        <img src="@item.MediaImage" alt="Alternate Text" class="img-responsive" />
+                                        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                    }
 
-
-                            }
+                                }
+</div>
+                        <div class="media-link" value="@item.Media">
+                        </div>
+                        <div class="photo-link" value="@item.MediaImage">
                         </div>
                         <div class="action">
-                            <button class="upbutton btn btn-default btn-xs" title="Up">
+                            @*<button class="upbutton btn btn-default btn-xs" title="Up">
                                 <span class="glyphicon glyphicon-arrow-up"></span>
                             </button>
                             <button class="downbutton btn btn-default btn-xs" title="Down">
                                 <span class="glyphicon glyphicon-arrow-down"></span>
-                            </button>
+                            </button>*@
                             <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#squarespaceModal-@item.Id" title="Edit">
                                 <span class="glyphicon glyphicon-pencil"></span>
                             </button>
-                            <button type="button" class="btn btn-success btn-xs" title="Approved">
+                            @*<button type="button" class="btn btn-success btn-xs" title="Approved">
                                 <span class="glyphicon glyphicon-ok"></span>
-                            </button>
+                            </button>*@
                             <button type="button" class="btn btn-danger btn-xs" title="Delete" onclick="DeleteMessageInPlaylist(this, @item.Id);">
                                 <span class="glyphicon glyphicon-trash"></span>
                             </button>
@@ -85,7 +90,7 @@
                                                 </div>
                                             </div>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                         </div>
@@ -98,5 +103,7 @@
 }
 
 
-<a href="#" class="btn btn-primary btn-sm btn-block" role="button"><span class="glyphicon glyphicon-refresh"></span> More</a>
-<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<div class="playlistFooter">
+    <a href="playlistFooter" class="btn btn-primary btn-sm btn-block" role="button"><span class="glyphicon glyphicon-refresh"></span> More</a>
+    </div>
+    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
