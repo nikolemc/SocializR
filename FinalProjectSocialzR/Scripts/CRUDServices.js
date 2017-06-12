@@ -30,15 +30,12 @@
 }
 
 function DeleteBlacklist(that, badWordId) {
-
-
     $.ajax({
-        url: '/Blacklists/Delete/?id=' + badWordId,
+        url: '/Blacklists/DeleteWord/' + badWordId,
         dataType: "html",
         type: "DELETE",
         success: (partial) => {
-            $("#myPlaylistContainer").html(partial);
-            UpdateUpper();
+            $("#refresher123").html(partial);
             console.log('works');
         },
         error: (data) => {

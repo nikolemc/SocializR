@@ -244,6 +244,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\TwitterSearchServices.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\MainAppVM.cs" />
     <Compile Include="ViewModel\PlaylistPartialVM.cs" />
     <Compile Include="ViewModel\PlaylistWithSocialMessagesVM.cs" />
   </ItemGroup>
@@ -347,6 +348,8 @@
     <Content Include="Views\Blacklists\Edit.cshtml" />
     <Content Include="Views\Blacklists\Index.cshtml" />
     <Content Include="Views\Shared\_blacklistPartial.cshtml" />
+    <Content Include="Views\Shared\_entireBlacklistCatelog.cshtml" />
+    <Content Include="Views\Shared\_LanguageFilterPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
