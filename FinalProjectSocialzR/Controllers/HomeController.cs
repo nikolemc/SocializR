@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using System.Configuration;
+using FinalProjectSocialzR.ViewModel;
 
 namespace FinalProjectSocialzR.Controllers
 {
@@ -25,10 +26,12 @@ namespace FinalProjectSocialzR.Controllers
                 var userId = User.Identity.GetUserId();
                 var userName = User.Identity.GetUserName();
             }
+            
+            var playlist = new ApplicationDbContext().Playlists.ToList();
+            var blacklist = new ApplicationDbContext().Blacklists.ToList();
+            var vm = new MainAppVM() {Playlists = playlist, Blacklists = blacklist };
 
-            var vm = new ApplicationDbContext().Playlists.ToList();
             return View(vm);
-
         }
 
         //This can be used for only allowing superUsers and Admin to post to twitter.

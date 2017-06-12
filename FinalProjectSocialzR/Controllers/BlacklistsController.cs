@@ -119,8 +119,23 @@ namespace FinalProjectSocialzR.Controllers
             Blacklist blacklist = db.Blacklists.Find(id);
             db.Blacklists.Remove(blacklist);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            var vm = db.Blacklists.ToList();
+            return PartialView(vm);
         }
+
+        [HttpDelete]
+        public ActionResult DeleteWord(int id)
+        {
+            Blacklist blacklist = db.Blacklists.Find(id);
+            db.Blacklists.Remove(blacklist);
+            db.SaveChanges();
+
+            var vm = db.Blacklists.ToList();
+            return PartialView("_blacklistPartial", vm);
+        }
+
+
+
 
         protected override void Dispose(bool disposing)
         {
