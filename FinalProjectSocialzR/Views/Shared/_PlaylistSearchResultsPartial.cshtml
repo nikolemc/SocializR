@@ -10,56 +10,63 @@
                     <div class="col-xs-3 col-md-2">
                         <img src=@item.ImageUrl class="img-circle img-responsive" alt="" />
                     </div>
-                    <div class="col-xs-7 col-md-11">
+                    <div class="col-xs-7 col-md-10">
                         <div class="screen-name">
                             @item.ScreenName
                         </div>
-                        <div class="time-stamp">
-                            @item.PostTimeStamp
-                        </div>
+                        <time datetime="time-stamp">
+                            <span class="time">@item.PostTimeStamp</span>
+                            <span class="date">@item.PostTimeStamp</span>
+                        </time>
+                    </div>
+                    <div class="col-xs-10 col-md-12">
                         <div class="comment-text">
                             <span class="text-body">
                                 @item.Text
                             </span>
 
-                                @if (item.Media != null)
+                            @if (item.Media != null)
+                            {
+                                if (item.Media.Contains("video"))
                                 {
-                                    if (item.Media.Contains("video"))
-                                    {
-                                        <blockquote class="twitter-video" data-lang="en">
-                                            <p lang="en" dir="ltr"></p>
-                                            <a class="twit-vid" href="@item.Media"></a>
-                                        </blockquote>
-                                        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                                    }
-                                    else
-                                    {
-                                        <img src="@item.MediaImage" alt="Alternate Text" class="img-responsive" />
-                                        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                                    }
-
+                                    <blockquote class="twitter-video" data-lang="en">
+                                        <p lang="en" dir="ltr"></p>
+                                        <a class="twit-vid" href="@item.Media"></a>
+                                    </blockquote>
+                                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
                                 }
-</div>
+                                else
+                                {
+                                    <img src="@item.MediaImage" alt="Alternate Text" class="img-responsive" />
+                                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                }
+
+                            }
+                        </div>
                         <div class="media-link" value="@item.Media">
                         </div>
                         <div class="photo-link" value="@item.MediaImage">
                         </div>
+                        </div>
+
+                    <div class="col-xs-2 col-md-4">
                         <div class="action">
                             @*<button class="upbutton btn btn-default btn-xs" title="Up">
-                                <span class="glyphicon glyphicon-arrow-up"></span>
-                            </button>
-                            <button class="downbutton btn btn-default btn-xs" title="Down">
-                                <span class="glyphicon glyphicon-arrow-down"></span>
-                            </button>*@
+                    <span class="glyphicon glyphicon-arrow-up"></span>
+                </button>
+                <button class="downbutton btn btn-default btn-xs" title="Down">
+                    <span class="glyphicon glyphicon-arrow-down"></span>
+                </button>*@
                             <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#squarespaceModal-@item.Id" title="Edit">
                                 <span class="glyphicon glyphicon-pencil"></span>
                             </button>
                             @*<button type="button" class="btn btn-success btn-xs" title="Approved">
-                                <span class="glyphicon glyphicon-ok"></span>
-                            </button>*@
+                    <span class="glyphicon glyphicon-ok"></span>
+                </button>*@
                             <button type="button" class="btn btn-danger btn-xs" title="Delete" onclick="DeleteMessageInPlaylist(this, @item.Id);">
                                 <span class="glyphicon glyphicon-trash"></span>
                             </button>
+                        </div>
                         </div>
                         <!-- line modal -->
                         <div class="modal" id="squarespaceModal-@item.Id" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
@@ -89,6 +96,7 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            
                                     </div>
 
                                 </div>
@@ -98,12 +106,12 @@
                     </div>
                 </div>
             </div>
-        </div>
+        
     }
 }
 
 
 <div class="playlistFooter">
     <a href="playlistFooter" class="btn btn-primary btn-sm btn-block" role="button"><span class="glyphicon glyphicon-refresh"></span> More</a>
-    </div>
-    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

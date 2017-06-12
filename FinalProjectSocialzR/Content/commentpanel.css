@@ -108,3 +108,7 @@ margin-left: 0px
     overflow-y: scroll;
 }
 
+.screen-name{
+    font-weight: bold;
+}
+
