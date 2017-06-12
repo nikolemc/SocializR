@@ -26,7 +26,56 @@ namespace FinalProjectSocialzR.Controllers
 
             return PartialView("_blacklistPartial", vm);
         }
-        
+
+        [HttpDelete]
+        public ActionResult DeleteWord(int id)
+        {
+            Blacklist blacklist = db.Blacklists.Find(id);
+            db.Blacklists.Remove(blacklist);
+            db.SaveChanges();
+
+            var vm = db.Blacklists.ToList();
+            return PartialView("_blacklistPartial", vm);
+        }
+
+        public ActionResult BlacklistCatelogCheck(string searchTerm)
+        {
+            var blacklistCatelog = db.Blacklists.ToList();
+            var message = "That word is not an entry";
+            foreach (var item in blacklistCatelog)
+            {
+                if (System.Text.RegularExpressions.Regex.IsMatch(searchTerm.ToLower(), item.Word))
+                {
+                    message = "That word is an entry.";
+                }
+            }
+
+            return Json(message, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult EditBlacklistWord(int id, string text)
+        {
+            var blacklistedWord = db.Blacklists.Find(id);
+            blacklistedWord.Word = text;
+            db.SaveChanges();
+
+            var vm = db.Blacklists.ToList();
+            return PartialView("_blacklistPartial", vm);
+        }
+
+
+        [HttpPost]
+        public ActionResult AddNewBlacklistedWord(string text)
+        {
+            var blacklistedWord = new Blacklist() { Word = text};
+            db.Blacklists.Add(blacklistedWord);
+            db.SaveChanges();
+
+            var vm = db.Blacklists.ToList();
+            return PartialView("_blacklistPartial", vm);
+        }
+
         // GET: Blacklists/Details/5
         public ActionResult Details(int? id)
         {
@@ -41,6 +90,8 @@ namespace FinalProjectSocialzR.Controllers
             }
             return View(blacklist);
         }
+
+
 
         // GET: Blacklists/Create
         public ActionResult Create()
@@ -123,16 +174,6 @@ namespace FinalProjectSocialzR.Controllers
             return PartialView(vm);
         }
 
-        [HttpDelete]
-        public ActionResult DeleteWord(int id)
-        {
-            Blacklist blacklist = db.Blacklists.Find(id);
-            db.Blacklists.Remove(blacklist);
-            db.SaveChanges();
-
-            var vm = db.Blacklists.ToList();
-            return PartialView("_blacklistPartial", vm);
-        }
 
 
 

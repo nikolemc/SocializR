@@ -1,94 +1,95 @@
 ﻿@model IEnumerable<FinalProjectSocialzR.Models.Blacklist>
 
-
-<div class="center"><button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-primary center-block">Click Me</button></div>
-<!-- line modal -->
-<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                <h3 class="modal-title" id="lineModalLabel">My Modal</h3>
-            </div>
-            <div class="modal-body">
-
-
-                <h4>List Of Bad Words</h4>
-                <table>
-
-                    @foreach (var item in Model)
-                    {
+<span id="EditBlacklistTarget">
+    <span class="center"><button data-toggle="modal" data-target="#BlacklistEditModal" class="btn btn-primary center-block">Edit</button></span>
+    <!-- line modal -->
+    <div class="modal" id="BlacklistEditModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                    <h3 class="modal-title" id="lineModalLabel">Blacklisted Words</h3>
+                </div>
+                <div class="modal-body">
 
 
-                        <tr>
-                            <td>@item.Id |</td>
-                            <td>@item.Word</td>
-                            <td class="text-center">
-                                <a class="btn btn-primary btn-xs" data-toggle="modal" data-target="#editModal-@item.Id" title="Edit">
-                                    <span class="glyphicon glyphicon-pencil"></span>
-                                </a>
-                                <a href="#" class="btn btn-danger btn-xs" title="Delete" data-dismiss="modal" onclick="DeleteBlacklist(this, @item.Id);">
-                                    <span class="glyphicon glyphicon-trash"></span>
-                                </a>
-                            </td>
-                        </tr>
+                    <h4>List Of User Defined Blacklisted Words</h4>
+                    <table>
+
+                        @foreach (var item in Model)
+                        {
+                            if (item.Id > 313)
+                            {
+                                <tr>
+                                    <td>@item.Id |</td>
+                                    <td>@item.Word</td>
+                                    <td class="text-center">
+                                        <a class="btn btn-primary btn-xs" data-toggle="modal" data-target="#editBlacklistModal-@item.Id" title="Edit">
+                                            <span class="glyphicon glyphicon-pencil"></span>
+                                        </a>
+                                        <a href="#" class="btn btn-danger btn-xs" title="Delete" data-dismiss="modal" onclick="DeleteBlacklist(this, @item.Id);">
+                                            <span class="glyphicon glyphicon-trash"></span>
+                                        </a>
+                                    </td>
+                                </tr>
 
     <!-- line modal -->
-                        <div class="modal" id="editModal-@item.Id" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-                            <div class="modal-content">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                                        <h3 class="modal-title" id="lineModalLabel">Edit Playlist Name</h3>
-                                    </div>
-                                    <div class="modal-body">
-                                        <!-- content goes here -->
-
-                                        <form>
-                                            <div class="form-group">
-                                                <label for="exampleInputEmail-@item.Id">Playlist Name</label>
-                                                <input type="email" class="form-control" id="playlistname-@item.Id" placeholder="Enter Playlist Name" value="@item.Word">
-                                                <div class="btn-group" role="group">
-                                                    <button type="button" id="saveImage" class="btn btn-success" data-dismiss="modal" role="button" onclick="AddBlacklist(this, @item.Id);">Save &nbsp;<i class="fa fa-save" aria-hidden="true"></i></button>
-                                                </div>
+                                <div class="modal" id="editBlacklistModal-@item.Id" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                                    <div class="modal-content">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                                                <h3 class="modal-title" id="lineModalLabel">Edit Blacklist Word</h3>
                                             </div>
-                                        </form>
+                                            <div class="modal-body">
+                                                <!-- content goes here -->
 
-                                    </div>
-                                    <div class="modal-footer">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <label for="BlacklistedWord-@item.Id">Blacklisted Word</label>
+                                                        <input type="email" class="form-control" id="BlacklistedWord-@item.Id" placeholder="Enter Blacklisted Word" value="@item.Word">
+                                                        <div class="btn-group" role="group">
+                                                            <button type="button" id="saveImage" class="btn btn-success" data-dismiss="modal" role="button" onclick="SaveBlacklistEdit(this, @item.Id);">Save &nbsp;<i class="fa fa-save" aria-hidden="true"></i></button>
+                                                        </div>
+                                                    </div>
+                                                </form>
 
+                                            </div>
+                                            <div class="modal-footer">
+
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-    <!--modal stuff-->
-                    }
+   
+                            }
 
-                </table>
-                <!-- content goes here -->
-                <form>
-                    <div class="form-group">
-                        <label for="blacklistWordInput">Word to Blacklist</label>
-                        <input type="email" class="form-control" id="blacklistWordInput" placeholder="Enter Word">
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <div class="btn-group btn-group-justified" role="group" aria-label="group button">
-                    <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default" data-dismiss="modal" role="button">Close</button>
-                    </div>
-                    <div class="btn-group btn-delete hidden" role="group">
-                        <button type="button" id="delImage" class="btn btn-default btn-hover-red" data-dismiss="modal" role="button">Delete</button>
-                    </div>
-                    <div class="btn-group" role="group">
-                        <button type="button" id="saveImage" class="btn btn-default btn-hover-green" data-action="save" role="button">Save</button>
+
+                        }
+
+                    </table>
+                    <!-- content goes here -->
+                    <form>
+                        <div class="form-group">
+                            <label for="blacklistWordInput">Word to Blacklist</label>
+                            <input type="email" class="form-control" id="blacklistWordInput" placeholder="Enter Word">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <div class="btn-group btn-group-justified" role="group" aria-label="group button">
+                        <div class="btn-group" role="group">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" role="button">Close</button>
+                        </div>
+                        <div class="btn-group" role="group">
+                            <button type="button" id="saveNewBlacklistedWord" class="btn btn-success" data-dismiss="modal" role="button" onclick="AddBlacklist();">Add Word &nbsp;<i class="fa fa-save" aria-hidden="true"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</span>
 
 
 
