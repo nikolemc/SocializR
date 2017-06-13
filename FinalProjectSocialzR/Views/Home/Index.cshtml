@@ -152,6 +152,8 @@
                 </div>
             </div>
         }
+        @Html.ActionLink("AuthenticateTwitter", "Begin", "Oauth", null, null)
+
         @if (!HttpContext.Current.User.Identity.IsAuthenticated)
         {
             <div>
@@ -211,7 +213,7 @@
                         <div id="playlistSearchDisplayFrontUpper" class="panel-heading">
                             @Html.Partial("_PlaylistSearchResultsUpperPartial", new FinalProjectSocialzR.ViewModel.PlaylistWithSocialMessagesVM { AllPlaylist = Model.Playlists })
                         </div>
-                        <div class="panel-body">
+                        <div class="panel-body col-xs-12 col-sm-12" >
                             <div id="playlistSearchDisplayFront" style="max-height: 80vh" class="sortable_list connectedSortable">
                                 @Html.Partial("_PlaylistSearchResultsPartial", new FinalProjectSocialzR.ViewModel.PlaylistWithSocialMessagesVM { AllPlaylist = Model.Playlists })
                             </div>
