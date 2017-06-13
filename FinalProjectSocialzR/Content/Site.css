@@ -27,7 +27,7 @@ textarea {
 input,
 select,
 textarea {
-	max-width: 280px;
+	max-width: 500px;
 }
 
 .search {
@@ -68,6 +68,10 @@ radio-inline {
 
 .text-center {
 	text-align: right;
+}
+
+imagemovie{
+    text-align: center;
 }
 
 
