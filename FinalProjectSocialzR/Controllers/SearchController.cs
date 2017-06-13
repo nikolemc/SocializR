@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using System.Net.Http;
 using Newtonsoft.Json.Linq;
+using System.Dynamic;
 
 namespace FinalProjectSocialzR.Controllers
 {
@@ -24,7 +25,6 @@ namespace FinalProjectSocialzR.Controllers
         [ActionName("TwitterAdvancedSearch")]
         public async Task<ActionResult> TwitterAdvancedSearchAsync(TwitterSearchParam searchParam)
         {
-
             return PartialView("_TwitterSearchResultsPartial", await FinalProjectSocialzR.Services.TwitterSearchServices.GetTweetsAsync(searchParam));
         }
 
