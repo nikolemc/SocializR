@@ -129,6 +129,7 @@
 }
 /*test to be deleted end*/
 
+
 @media (min-width: 400px) {
     .sidebar {
         width: 80%;
@@ -274,6 +275,7 @@ input[type=submit] {
     }
 }
 
+
 /*
 
     @media screen and (min-width: 600px) {
@@ -294,3 +296,4 @@ input[type=submit] {
 }
 
 */
+

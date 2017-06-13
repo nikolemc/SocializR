@@ -264,6 +264,7 @@
     <Content Include="Images\SocializR1.png" />
     <Content Include="Images\SocializRFade.png" />
     <Content Include="Images\SocializRFade2.png" />
+    <Content Include="Images\SocializrLogoBlack.png" />
     <Content Include="Images\SocializRmiddle.png" />
     <Content Include="Images\SocializRmiddle2.png" />
     <Content Include="Images\SocializRmiddlelong.png" />
@@ -284,8 +285,6 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\commentpanel.js" />
     <Content Include="Scripts\CRUDServices.js" />
-    <Content Include="Scripts\formatdatetime.js" />
-    <Content Include="Scripts\formatdatetime2.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -298,10 +297,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\modifyList.js" />
-    <Content Include="Scripts\moment-with-locales.js" />
-    <Content Include="Scripts\moment-with-locales.min.js" />
-    <Content Include="Scripts\moment.js" />
-    <Content Include="Scripts\moment.min.js" />
     <Content Include="Scripts\PlaylistDatabaseSearchServices.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />

@@ -71,7 +71,7 @@ radio-inline {
 }
 
 imagemovie{
-    text-align: center;
+	text-align: center;
 }
 
 
@@ -89,7 +89,13 @@ imagemovie{
 		transition: 0.5s;
 	}
 }*/
+.table table-striped custab .td {
+	text-align: left;
+}
 
+.table > tbody > tr > td {
+	text-align: left;
+}
 
 
 

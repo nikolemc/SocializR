@@ -24,8 +24,7 @@ var initList = () => {
 
                 PlaylistId: _playListId
             };
-
-            //$("#item").load("runPlaylistSearch" + PlaylistId + "&list=" + $(this).attr('id')); 
+ 
 
             console.log(item); //Which item (or ui.item[0].id)
             // POST to server using $.post or $.ajax
@@ -48,12 +47,12 @@ $(function () {
 });
 
 
-$(".playlistFooter").draggable({
-    disabled: true
-});
-$("#btn btn-primary btn-sm btn-block").draggable({
-    disabled: true
-});
+//$(".playlistFooter").draggable({
+//    disabled: true
+//});
+//$("#btn btn-primary btn-sm btn-block").draggable({
+//    disabled: true
+//});
 
 
 function moveButton(counterId) {

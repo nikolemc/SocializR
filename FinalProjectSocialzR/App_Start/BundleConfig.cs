@@ -10,7 +10,7 @@ namespace FinalProjectSocialzR
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                  "~/Scripts/sidebar.js", "~/Scripts/slider.js", "~/Scripts/commentpanel.js",
-                 "~/Scripts/BootSideMenu.js", "~/Scripts/sortablelist.js", "~/Scripts/moment.js",
+                 "~/Scripts/BootSideMenu.js", "~/Scripts/sortablelist.js",
                  "~/Scripts/jquery-{version}.js", "~/Scripts/jquery-ui.js", "~/Scripts/formatdatetime.js",
                 "~/Scripts/formatdatetime2.js", "~/Scripts/PlaylistDatabaseSearchServices.js",
                  "~/Scripts/BootSideMenuServices.js",
