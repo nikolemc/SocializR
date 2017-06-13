@@ -3,14 +3,9 @@
     ViewBag.Title = "Home Page";
 }
 <body>
-
-
-    @if (HttpContext.Current.User.Identity.IsAuthenticated)
-    {
-
-
-
-        <div id="sidepanel">
+    <div id="sidepanel">
+        @if (HttpContext.Current.User.Identity.IsAuthenticated)
+        {
             <div class="titleside">
                 <h2>Social Search</h2>
             </div>
@@ -34,7 +29,7 @@
                             </select>
                         </div>
                         @Html.Partial("_LanguageFilterPartial")
-                        
+
 
                         <div class="checkbox1">
                             <label><input type="checkbox" id="IncludeRetweets"> Include Retweets</label>
@@ -80,7 +75,7 @@
 
 
                                     <div class="search">
-                                        <button class="btn btn-primary"  id="SearchButton" onclick="runTwitterSearchAdvance();" type="button">Search</button>
+                                        <button class="btn btn-primary" id="SearchButton" onclick="runTwitterSearchAdvance();" type="button">Search</button>
                                     </div>
                                 </form1>
                             </div>
@@ -99,67 +94,74 @@
                             <input type="text" id="searchBlacklistWord" name="search" placeholder="Search here...">
                         </div>
 
-                        
+
                         <div class="search">
                             <button class="btn btn-primary" id="SearchButtonBlacklist" onclick="runBlacklistWordSearch();" type="button">Search</button>
 
                             @Html.Partial("_blacklistPartial", Model.Blacklists)
-                             <span id="blacklistcatelog">
-                                @Html.Partial("_entireBlacklistCatelog", Model.Blacklists)                               
-                            </span>                           
+                            <span id="blacklistcatelog">
+                                @Html.Partial("_entireBlacklistCatelog", Model.Blacklists)
+                            </span>
                         </div>
-                        
+
 
                     </form>
                 </div>
 
                 @*<a href="#item-2" class="list-group-item" data-toggle="collapse">Instagram &nbsp;<i class="fa fa-instagram" aria-hidden="true"></i></a>
-                <div class="list-group collapse" id="item-2">
+                    <div class="list-group collapse" id="item-2">
 
-                    <form>
-                        <div class="form-group1">
-                            <label for="search">Search</label>
-                            <input type="text" id="search" name="search" placeholder="Search here...">
-                        </div>
+                        <form>
+                            <div class="form-group1">
+                                <label for="search">Search</label>
+                                <input type="text" id="search" name="search" placeholder="Search here...">
+                            </div>
 
-                        <div class="form-group1">
-                            <label for="queryon">Query On</label>
-                            <select id="queryon" name="queryon">
-                                <option value="hashtag">Hash Tag</option>
-                                <option value="user">User</option>
-                            </select>
-                        </div>
+                            <div class="form-group1">
+                                <label for="queryon">Query On</label>
+                                <select id="queryon" name="queryon">
+                                    <option value="hashtag">Hash Tag</option>
+                                    <option value="user">User</option>
+                                </select>
+                            </div>
 
-                        <div class="form-group1">
-                            <label for="mediafilter">Media Filter</label>
-                            <select id="mediafilter" name="mediafilter">
-                                <option value="showalltweets">Show All Posts</option>
-                                <option value="mustcontainphoto">Must Contain Photo</option>
-                                <option value="mustcontainvideo">Must Contain Video</option>
-                            </select>
-                        </div>
+                            <div class="form-group1">
+                                <label for="mediafilter">Media Filter</label>
+                                <select id="mediafilter" name="mediafilter">
+                                    <option value="showalltweets">Show All Posts</option>
+                                    <option value="mustcontainphoto">Must Contain Photo</option>
+                                    <option value="mustcontainvideo">Must Contain Video</option>
+                                </select>
+                            </div>
 
 
-                        <div class="search">
-                            <button class="btn btn-primary" id="SearchButton" onclick="runTwitterSearchAdvance();" type="button">Search</button>
-                        </div>
+                            <div class="search">
+                                <button class="btn btn-primary" id="SearchButton" onclick="runTwitterSearchAdvance();" type="button">Search</button>
+                            </div>
 
-                    </form>
-                </div>*@
+                        </form>
+                    </div>*@
 
             </div>
             <div>
 
 
                 <div>
-                    <div class="btn btn-primary MobileLogOutButton"><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></div>
-                 
+                    <div class="MobileLogOutButton"><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></div>
+
                 </div>
             </div>
-        </div>
+        }
+        @if (!HttpContext.Current.User.Identity.IsAuthenticated)
+        {
+            <div>
+                @Html.ActionLink("Login", "Login", "Account", null, new { @class = "btn btn-primary" })
+            </div>
+        }
+    </div> <!-- side panel code ends-->
 
 
-    }
+
 
 
 
@@ -167,6 +169,8 @@
 
 
     <div class="containercomments">
+        <!-- left side search display-->
+
         <div class="col-xs-12 col-md-6">
             <div class="containercomments1">
                 <div class="rowbody">
@@ -198,8 +202,8 @@
                 </div>
             </div>
         </div>
-
-
+        <!-- left side search display ends-->
+        <!--right side playlist-->
         <div class="col-xs-12 col-md-6 pull-right">
             <div class="containercomments2">
                 <div class="rowbody">
@@ -217,16 +221,13 @@
                 </div>
             </div>
         </div>
-    </div>
-    
-    @if (!HttpContext.Current.User.Identity.IsAuthenticated)
-    {
-        <div>
-            @Html.ActionLink("Login", "Login", "Account", null, new { @class = "btn btn-primary MobileLogOutButton" })
-        </div>
-    }
+        <!--right side playlist ends -->
 
- 
+    </div>
+
+  
+
+
 
 
 

@@ -155,9 +155,7 @@ imagemovie{
 
 
 @media screen and (max-width: 481px) {
-    .MobileLogOutButton {
-        position: absolute;
-        bottom: 0;
+    .MobileLogOutButton {        
     }
 }
 
