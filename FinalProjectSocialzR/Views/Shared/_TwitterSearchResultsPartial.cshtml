@@ -1,11 +1,11 @@
 @model List<FinalProjectSocialzR.Models.Tweet>
 @if (Model != null)
 {
-
+    var counter = 1;
     foreach (var item in Model)
     {
 
-        <div class="ui-state-highlight">
+        <div class="ui-state-highlight" id="leftSideSearch-@counter">
             <div class="list-group-item">
                 <div class="row">
                     <div class="col-xs-3 col-md-2">
@@ -52,11 +52,11 @@
                         </div>
                         <div class="action">
                             @*<button class="upbutton btn btn-default btn-xs" title="Up">
-                                <span class="glyphicon glyphicon-arrow-up"></span>
+                                    <span class="glyphicon glyphicon-arrow-up"></span>
+                                </button>*@
+                            <button type="button" class="btn btn-primary btn-xs" title="addToPlaylist" onclick="moveButton(@counter);">
+                                <span class="glyphicon  glyphicon-arrow-down"></span>
                             </button>
-                            <button class="downbutton btn btn-default btn-xs" title="Down">
-                                <span class="glyphicon glyphicon-arrow-down"></span>
-                            </button>*@
                             <button type="button" class="btn btn-primary btn-xs" title="Edit">
                                 <span class="glyphicon glyphicon-pencil"></span>
                             </button>
@@ -76,7 +76,7 @@
         </div>
 
 
-
+        counter++;
     }
 
 }

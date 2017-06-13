@@ -78,7 +78,7 @@ namespace FinalProjectSocialzR.Controllers
             {
                 return BadRequest(ModelState);
             }
-
+            //savedSocialMessage.PostTimeStamp = DateTime.Now;
             db.SavedSocialMessages.Add(savedSocialMessage);
             db.SaveChanges();
 
