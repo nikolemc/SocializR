@@ -4,13 +4,14 @@
 
 
 .sortable_list {
-    border: 1px solid #0094ff;
-   
+    border: 1px solid steelblue;
+    overflow-y: scroll;
 }
+
 
     .sortable_list li {
         margin: 0 5px 5px 5px;
-        font-size: 1.2em;
+        font-size: 1.5em;
     }
 
 
@@ -56,7 +57,7 @@ margin-left: 0px
 }
 
 .widget .comment-text {
-    font-size: 12px;
+    font-size: 15px;
     padding-top: 8px;
 }
 
@@ -98,18 +99,19 @@ margin-left: 0px
 
 }
 
-.sortable_list {
-    overflow-y: scroll;
-}
 
-.screen-name{
+.screen-name {
     font-weight: bold;
     color: steelblue;
+    font-size: 22px;
+    padding-top: 2px;
+    padding-left: -4px;
 }
 
 .time-stamp{
  font-size: 12px;
- color: dimgrey;
+ font-style: oblique;
+ padding-top: 3px;
 }
 
 .span .list-group-item .glyphicon {
@@ -133,9 +135,43 @@ imagemovie {
     margin-top: 10px;
 }
 
+
 .img-responsive {
     margin-top: 10px;
+    padding-right: 0px;
 }
+
+.img-circle {
+    border-radius: 50%;
+}
+
+col-xs-7 col-md-10 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    float: left;
+}
+
+col-xs-3 col-md-2 {
+    margin: 0;
+    padding: 0;
+}
+
+offset-0 {
+    margin: 0;
+    padding: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.modalbody .textarea {
+    margin-bottom: 16px;
+    min-height: 50px;
+}
+
+
+
+
 
 
 
