@@ -9,6 +9,7 @@
     {
 
 
+
         <div id="sidepanel">
             <div class="titleside">
                 <h2>Social Search</h2>
@@ -101,7 +102,7 @@
                         
                         <div class="search">
                             <button class="btn btn-primary" id="SearchButtonBlacklist" onclick="runBlacklistWordSearch();" type="button">Search</button>
- @*                           <button class="btn btn-default" id="EditButtonBlacklist" onclick="runBlacklistWordSearch();" type="button">Edit</button>*@
+
                             @Html.Partial("_blacklistPartial", Model.Blacklists)
                              <span id="blacklistcatelog">
                                 @Html.Partial("_entireBlacklistCatelog", Model.Blacklists)                               
@@ -146,13 +147,16 @@
                     </form>
                 </div>*@
 
-
             </div>
+            <div>
 
+
+                <div>
+                    <div class="btn btn-primary MobileLogOutButton"><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></div>
+                 
+                </div>
+            </div>
         </div>
-
-
-
 
 
     }
@@ -174,9 +178,9 @@
                             <h3 class="panel-title">
                                 Recent Comments
                             </h3>
-                            @*<span class="label label-info">
+                            <span class="label label-info">
                                 78
-                            </span>*@
+                            </span>
                         </div>
 
 
@@ -214,8 +218,15 @@
             </div>
         </div>
     </div>
+    
+    @if (!HttpContext.Current.User.Identity.IsAuthenticated)
+    {
+        <div>
+            @Html.ActionLink("Login", "Login", "Account", null, new { @class = "btn btn-primary MobileLogOutButton" })
+        </div>
+    }
 
-
+ 
 
 
 
