@@ -20,14 +20,14 @@
 
 input[type=email], select,
 textarea {
-    max-width: 580px;
+	max-width: 580px;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
-	max-width: 280px;
+	max-width: 500px;
 }
 
 .search {
@@ -67,7 +67,11 @@ radio-inline {
 }
 
 .text-center {
-    text-align: right;
+	text-align: right;
+}
+
+imagemovie{
+    text-align: center;
 }
 
 

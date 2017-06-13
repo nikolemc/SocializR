@@ -49,7 +49,8 @@ input[type=text] {
     width: 100%;
     font-size: 15px;
     border-radius: 2px;
-    border: 3px solid #98d0f1
+    border: 3px solid #98d0f1;
+    float: left;
 }
 
 h4 {
@@ -76,7 +77,7 @@ textarea {
     border-radius: 2px;
     border: 3px solid #98d0f1;
     margin-top: 10px;
-    height: 80px;
+    /*height: 80px;*/
     width: 100%
 }
 
@@ -89,5 +90,5 @@ button {
     padding: 8px 0;
     border-radius: 3px;
     cursor: pointer;
-    margin-top: 25px
-}*/
+    margin-top: 10px;
+}

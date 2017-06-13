@@ -10,9 +10,9 @@ namespace FinalProjectSocialzR
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                  "~/Scripts/sidebar.js", "~/Scripts/slider.js", "~/Scripts/commentpanel.js",
-                 "~/Scripts/BootSideMenu.js", "~/Scripts/sortablelist.js",
-                 "~/Scripts/jquery-{version}.js", "~/Scripts/jquery-ui.js",
-                 "~/Scripts/PlaylistDatabaseSearchServices.js",
+                 "~/Scripts/BootSideMenu.js", "~/Scripts/sortablelist.js", "~/Scripts/moment.js",
+                 "~/Scripts/jquery-{version}.js", "~/Scripts/jquery-ui.js", "~/Scripts/formatdatetime.js",
+                "~/Scripts/formatdatetime2.js", "~/Scripts/PlaylistDatabaseSearchServices.js",
                  "~/Scripts/BootSideMenuServices.js",
                   "~/Scripts/CRUDServices.js"));
 
@@ -29,8 +29,8 @@ namespace FinalProjectSocialzR
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css", "~/Content/sidebar.css",
-                       "~/Content/slider.css", "~/Content/commentpanel.css", "~/Content/font-awesome.css",
+                      "~/Content/bootstrap.css", "~/Content/commentpanel.css",
+                       "~/Content/slider.css", "~/Content/font-awesome.css",
                        "~/Content/BootSideMenu.css", "~/Content/jquery-ui.css",
                         "~/Content/navbar.css",
                       "~/Content/site.css"));

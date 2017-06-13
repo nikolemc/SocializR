@@ -19,14 +19,14 @@
     });
 }
 
-//allows search to happen by pressing enter
-document.getElementById("twitterSearch")
-    .addEventListener("keyup", function (event) {
-        event.preventDefault();
-        if (event.keyCode == 13) {
-            document.getElementById("SearchButton").click();
-        }
-    });
+////allows search to happen by pressing enter
+//document.getElementById("twitterSearch")
+//    .addEventListener("keyup", function (event) {
+//        event.preventDefault();
+//        if (event.keyCode == 13) {
+//            document.getElementById("SearchButton").click();
+//        }
+//    });
 
 
 let runTwitterSearchAdvance = () => {
@@ -75,14 +75,14 @@ let runTwitterSearchAdvance = () => {
         }
     });
 
-    //allows search to happen by pressing enter after entering location
-    document.getElementById("Location")
-        .addEventListener("keyup", function (event) {
-            event.preventDefault();
-            if (event.keyCode == 13) {
-                document.getElementById("SearchButton").click();
-            }
-        });
+    ////allows search to happen by pressing enter after entering location
+    //document.getElementById("Location")
+    //    .addEventListener("keyup", function (event) {
+    //        event.preventDefault();
+    //        if (event.keyCode == 13) {
+    //            document.getElementById("SearchButton").click();
+    //        }
+    //    });
 }
 
 //receive: ajax(event, ui) {
