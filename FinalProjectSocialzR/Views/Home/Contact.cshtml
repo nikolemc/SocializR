@@ -1,17 +1,29 @@
-﻿@{
-    ViewBag.Title = "Contact";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+﻿<!DOCTYPE html>
+<html>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+<body>
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+
+    <!--Test -->
+    <div id="leftsidemenu">
+       
+
+  
+
+    </div>
+    <!--/Test -->
+
+    @Scripts.Render("~/Scripts/jquery-2.2.4.min.js")
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#leftsidemenu').BootSideMenu({
+                side: "left",
+                closeOnClick: false
+            });
+        });
+    </script>
+
+</body>
+</html>
+
