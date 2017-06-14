@@ -99,4 +99,150 @@ imagemovie{
 
 
 
+
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* dat starting mobile css here*/
+
+
+@media screen and (max-width: 481px) {
+    .MobileLogOutButton {       
+        
+    }
+    .playlistDisplayName {
+        display: none;
+    }
+    #playlistDisplayName {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 481px) {
+    .MobileLogOutButton {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* dat ending mobile css here*/

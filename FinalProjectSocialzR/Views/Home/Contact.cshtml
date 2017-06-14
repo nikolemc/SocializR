@@ -1,17 +1,30 @@
-﻿@{
-    ViewBag.Title = "Contact";
-}
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+﻿<div class="panel panel-primary">
+    <div id="nonSelected">
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+        <!-- TWO INPUT TAGS -->
+        <input id="btnDefault" onclick="moveButton(this)" type="button" class="btn btn-default" value="Default" />
+        <input id="btnPrimary" onclick="moveButton(this)" type="button" class="btn btn-primary" value="Primary" />
 
-<address>
-    <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+        <!-- THREE BUTTON TAGS -->
+        <button id="btnDanger" onclick="moveButton(this)" type="button" class="btn btn-danger">Danger</button>
+        <button id="btnWarning" onclick="moveButton(this)" type="button" class="btn btn-warning">Warning</button>
+        <button id="btnSuccess" onclick="moveButton(this)" type="button" class="btn btn-success">Success</button>
+
+    </div>
+</div>
+<div class="panel panel-primary">
+    <div id="selected">
+
+    </div>
+</div>
+
+<script>
+    function moveButton(elem) {
+        if ($(elem).parent().attr("id") == "nonSelected") {
+            $(elem).detach().appendTo('#selected');
+        }
+        else {
+            $(elem).detach().appendTo('#nonSelected');
+        }
+    }
+</script>
