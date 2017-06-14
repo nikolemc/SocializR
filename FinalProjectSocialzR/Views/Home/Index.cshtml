@@ -100,8 +100,6 @@
                             <button class="btn btn-primary" id="SearchButtonBlacklist" onclick="runBlacklistWordSearch();" type="button" style="padding-left: 16px; padding-right: 16px">Search</button>
  @*                           <button class="btn btn-default" id="EditButtonBlacklist" onclick="runBlacklistWordSearch();" type="button">Edit</button>*@
 
-                            <button class="btn btn-primary" id="SearchButtonBlacklist" onclick="runBlacklistWordSearch();" type="button">Search</button>
-
                             @Html.Partial("_blacklistPartial", Model.Blacklists)
                             <span id="blacklistcatelog">
                                 @Html.Partial("_entireBlacklistCatelog", Model.Blacklists)
@@ -156,8 +154,11 @@
                 </div>
             </div>
         }
-        @Html.ActionLink("AuthenticateTwitter", "Begin", "Oauth", null, null)
 
+        @if (HttpContext.Current.Session.Keys.Count == 0)
+        {
+            @Html.ActionLink("AuthenticateTwitter", "Begin", "Oauth", null, null)
+        } 
         @if (!HttpContext.Current.User.Identity.IsAuthenticated)
         {
             <div>
