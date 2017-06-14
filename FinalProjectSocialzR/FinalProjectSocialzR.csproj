@@ -352,6 +352,7 @@
     <Content Include="Views\Shared\_blacklistPartial.cshtml" />
     <Content Include="Views\Shared\_entireBlacklistCatelog.cshtml" />
     <Content Include="Views\Shared\_LanguageFilterPartial.cshtml" />
+    <Content Include="Views\Shared\_LeftUpperPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

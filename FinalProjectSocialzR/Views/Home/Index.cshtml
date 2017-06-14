@@ -189,9 +189,16 @@
                             <h3 class="panel-title">
                                 Recent Comments
                             </h3>
-                            <span class="label label-info" id="retrievedtweetscounter">
-                                0
+                            <span id="mobileplaylistpicker">
+                                @Html.Partial("_LeftUpperPartial", new FinalProjectSocialzR.ViewModel.PlaylistWithSocialMessagesVM { AllPlaylist = Model.Playlists })
                             </span>
+
+
+
+
+                            @*<span class="label label-info" id="retrievedtweetscounter">
+                                0
+                            </span>*@
                         </div>
 
 

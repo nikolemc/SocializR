@@ -6,6 +6,7 @@
        
         success: (partial) => {
             $("#twitterSearchDisplayFront").html(partial);
+            UpdateNameLeft();
             console.log('works');
         },
         error: (data) => {
@@ -18,6 +19,8 @@
 
     });
 }
+
+
 
 ////allows search to happen by pressing enter
 //document.getElementById("twitterSearch")

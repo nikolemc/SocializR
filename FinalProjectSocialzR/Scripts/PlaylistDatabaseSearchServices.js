@@ -8,6 +8,7 @@
             UpdateRightUpper(null, playlistNumber);
             $("#playlistSearchDisplayFront").html(partial); // make a new PLaylist search results partial
             initList();
+            UpdateNameLeft(playlistNumber);
             console.log('works');
         },
         error: (data) => {
@@ -18,6 +19,24 @@
             console.log("done", data);
         }
 
+    });
+}
+
+let UpdateNameLeft = (id) => {
+    $.ajax({
+        url: '/PlaylistSelection/RefreshUpper2?id=' + id, //controller to ping to get data from datbase (GET for saved social media controller)
+        dataType: "html",
+        type: "GET",
+        success: (data) => {
+            $("#playlistDisplayName2").html(data); // make a new PLaylist search results partial
+            console.log('works');
+        },
+        error: (data) => {
+            console.log("oops", data)
+        },
+        complete: (data) => {
+            console.log("done", data);
+        }
     });
 }
 
