@@ -60,5 +60,6 @@ namespace FinalProjectSocialzR.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+        
     }
 }

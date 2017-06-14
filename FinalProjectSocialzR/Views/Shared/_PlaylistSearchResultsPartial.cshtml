@@ -7,8 +7,8 @@
         <div class="ui-state-highlight">
             <div class="list-group-item">
                 <div class="row">
-                    <div class="col-xs-3 col-md-2 offset-0"  style="padding-right:0;">
-                        <img src=@item.ImageUrl class="img-circle img-responsive" alt=""/>
+                    <div class="col-xs-3 col-md-2 offset-0" style="padding-right:0;">
+                        <img src=@item.ImageUrl class="img-circle img-responsive" alt="" />
                     </div>
                     <div class="col-xs-7 col-md-10 offset-0" style="padding-left:0; padding-right:0">
                         <div class="screen-name">
@@ -24,90 +24,89 @@
                                 @item.Text
                             </span>
                             <span class="imagemovie">
-                            @if (item.Media != null)
-                            {
-                                if (item.Media.Contains("video"))
+                                @if (item.Media != null)
                                 {
-                                    <blockquote class="twitter-video" data-lang="en">
-                                        <p lang="en" dir="ltr"></p>
-                                        <a class="twit-vid" href="@item.Media"></a>
-                                    </blockquote>
-                                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                    if (item.Media.Contains("video"))
+                                    {
+                                        <blockquote class="twitter-video" data-lang="en">
+                                            <p lang="en" dir="ltr"></p>
+                                            <a class="twit-vid" href="@item.Media"></a>
+                                        </blockquote>
+                                        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                    }
+                                    else
+                                    {
+                                        <img src="@item.MediaImage" alt="Alternate Text" class="img-responsive" />
+                                        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+                                    }
                                 }
-                                else
-                                {
-                                    <img src="@item.MediaImage" alt="Alternate Text" class="img-responsive" />
-                                    <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-                                }
-
-                            }
                             </span>
                         </div>
                         <div class="media-link" value="@item.Media">
                         </div>
                         <div class="photo-link" value="@item.MediaImage">
                         </div>
-                        </div>
+                    </div>
 
                     <div class="col-xs-2 col-md-4">
                         <div class="action">
                             @*<button class="upbutton btn btn-default btn-xs" title="Up">
-                    <span class="glyphicon glyphicon-arrow-up"></span>
-                </button>
-                <button class="downbutton btn btn-default btn-xs" title="Down">
-                    <span class="glyphicon glyphicon-arrow-down"></span>
-                </button>*@
+                                    <span class="glyphicon glyphicon-arrow-up"></span>
+                                </button>
+                                <button class="downbutton btn btn-default btn-xs" title="Down">
+                                    <span class="glyphicon glyphicon-arrow-down"></span>
+                                </button>*@
                             <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" data-target="#squarespaceModal-@item.Id" title="Edit">
                                 <span class="glyphicon glyphicon-pencil"></span>
                             </button>
                             @*<button type="button" class="btn btn-success btn-xs" title="Approved">
-                    <span class="glyphicon glyphicon-ok"></span>
-                </button>*@
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </button>*@
                             <button type="button" class="btn btn-danger btn-xs" title="Delete" onclick="DeleteMessageInPlaylist(this, @item.Id);">
                                 <span class="glyphicon glyphicon-trash"></span>
                             </button>
                         </div>
-                        </div>
-                        <!-- line modal -->
-                        <div class="modal" id="squarespaceModal-@item.Id" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                                        <h3 class="modal-title" id="lineModalLabel">Edit Twitter Message</h3>
-                                    </div>
+                    </div>
+                    <!-- line modal -->
+                    <div class="modal" id="squarespaceModal-@item.Id" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                                    <h3 class="modal-title" id="lineModalLabel">Edit Twitter Message</h3>
+                                </div>
+                                <div class="modal-body">
+                                    <!-- content goes here -->
+
                                     <div class="modal-body">
-                                        <!-- content goes here -->
-                                        
-                                            <div class="modal-body">
-                                                <label for="exampleInputEmail-@item.Id"></label>
-                                                <textarea rows="6" cols="100" name="comment" id="exampleInputEmail-@item.Id" form="usrform">
+                                        <label for="exampleInputEmail-@item.Id"></label>
+                                        <textarea rows="6" cols="100" name="comment" id="exampleInputEmail-@item.Id" form="usrform">
                                                     "@item.Text"
                                                    </textarea>
-                                                @*<input type="text" class="form-control" id="exampleInputEmail-@item.Id" placeholder="Enter email" value="@item.Text">*@
+                                        @*<input type="text" class="form-control" id="exampleInputEmail-@item.Id" placeholder="Enter email" value="@item.Text">*@
 
+                                    </div>
+                                    <div class="modal-dialog modal-sm">
+                                        <div class="btn-group btn-group-justified" role="group" aria-label="group button">
+                                            <div class="btn-group btn-delete hidden" role="group">
+                                                <button type="button" id="delImage" class="btn btn-danger" data-dismiss="modal" role="button">Delete</button>
                                             </div>
-                                            <div class="modal-dialog modal-sm">
-                                                <div class="btn-group btn-group-justified" role="group" aria-label="group button">
-                                                                                                        <div class="btn-group btn-delete hidden" role="group">
-                                                        <button type="button" id="delImage" class="btn btn-danger" data-dismiss="modal" role="button">Delete</button>
-                                                    </div>
-                                                    <div class="btn-group" role="group">
-                                                        <button type="button" id="" class="btn btn-success" role="button" data-dismiss="modal" onclick="EditMessageInPlaylist(this, @item.Id);">Save</button>
-                                                    </div>
-                                                </div>
+                                            <div class="btn-group" role="group">
+                                                <button type="button" id="" class="btn btn-success" role="button" data-dismiss="modal" onclick="EditMessageInPlaylist(this, @item.Id);">Save</button>
                                             </div>
-                                            
+                                        </div>
                                     </div>
 
                                 </div>
+
                             </div>
                         </div>
-                        <!--modal stuff-->
                     </div>
+                    <!--modal stuff-->
                 </div>
             </div>
-        
+        </div>
+
     }
 }
 

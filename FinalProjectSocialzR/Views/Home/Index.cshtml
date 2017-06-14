@@ -100,8 +100,6 @@
                             <button class="btn btn-primary" id="SearchButtonBlacklist" onclick="runBlacklistWordSearch();" type="button" style="padding-left: 16px; padding-right: 16px">Search</button>
  @*                           <button class="btn btn-default" id="EditButtonBlacklist" onclick="runBlacklistWordSearch();" type="button">Edit</button>*@
 
-                            <button class="btn btn-primary" id="SearchButtonBlacklist" onclick="runBlacklistWordSearch();" type="button">Search</button>
-
                             @Html.Partial("_blacklistPartial", Model.Blacklists)
                             <span id="blacklistcatelog">
                                 @Html.Partial("_entireBlacklistCatelog", Model.Blacklists)
@@ -156,8 +154,11 @@
                 </div>
             </div>
         }
-        @Html.ActionLink("AuthenticateTwitter", "Begin", "Oauth", null, null)
 
+        @if (HttpContext.Current.Session.Keys.Count == 0)
+        {
+            @Html.ActionLink("AuthenticateTwitter", "Begin", "Oauth", null, null)
+        } 
         @if (!HttpContext.Current.User.Identity.IsAuthenticated)
         {
             <div>
@@ -186,11 +187,18 @@
                         <div class="panel-heading">
                             <span class="glyphicon glyphicon-comment"></span>
                             <h3 class="panel-title">
-                                Recent Comments
+                                Search List
                             </h3>
-                            <span class="label label-info" id="retrievedtweetscounter">
-                                0
+                            <span id="mobileplaylistpicker">
+                                @Html.Partial("_LeftUpperPartial", new FinalProjectSocialzR.ViewModel.PlaylistWithSocialMessagesVM { AllPlaylist = Model.Playlists })
                             </span>
+
+
+
+
+                            @*<span class="label label-info" id="retrievedtweetscounter">
+                                0
+                            </span>*@
                         </div>
 
 

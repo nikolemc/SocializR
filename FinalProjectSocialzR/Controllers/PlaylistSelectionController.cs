@@ -41,6 +41,13 @@ namespace FinalProjectSocialzR.Controllers
             return PartialView("_PlaylistSearchResultsUpperPartial", vm);
         }
 
+        public ActionResult RefreshUpper2(int id)
+        {
+            var playlist = db.Playlists.Find(id);
+            var name = playlist.PlaylistName;
+            return Json(name, JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult RefreshUpperNoId()
         {
             

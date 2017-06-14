@@ -1,0 +1,38 @@
+﻿@model FinalProjectSocialzR.ViewModel.PlaylistWithSocialMessagesVM
+
+<div class="playlist-buttons pull-right">
+    <!-- Trigger the modal with a button -->
+
+    <div class="dropdown">
+        <buttonplaylist type="button" class="btn btn-primary btn-xs" title="Select Playlist" data-toggle="dropdown">
+            <span class="glyphicon glyphicon-search"></span>
+            <span class="caret"></span>
+        </buttonplaylist>
+        <ul id="drop-menu" class="dropdown-menu">
+            @foreach (var item in Model.AllPlaylist)
+            {
+                var length = Model.AllPlaylist.Count();
+                var counter = 2;
+                var selected = "";
+                var word = "";
+                if (item.Id == Model.Id)
+                {
+                    selected = "selected-playlist";
+                }
+
+
+                <li id="playlist-@item.Id" class="@selected" onclick="runPlaylistSearch(this, @item.Id);" data-id="@item.Id"><a href="#">@item.PlaylistName</a></li>
+                counter++;
+            }
+        </ul>
+        <span class="label label-info pull-left" placeholder="No Playlist Selected" id="playlistDisplayName2">
+            @Model.PlayListName
+
+            @if (Model.PlayListName == null)
+            {
+                <span>No PlayList Selected </span>
+            }
+        </span>       
+    </div>
+</div>
+

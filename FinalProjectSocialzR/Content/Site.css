@@ -170,13 +170,21 @@ imagemovie{
     #playlistDisplayName {
         display: none;
     }
+
 }
 
 @media screen and (min-width: 481px) {
     .MobileLogOutButton {
         display: none;
     }
+    #playlistDisplayName2 {
+        display: none;
+    }
+    #mobileplaylistpicker {
+        display: none;
+    }
 }
+
 
 
 
