@@ -2,4 +2,4 @@
 
 
 
-![](https://raw.githubusercontent.com/datctran/SocializR/master/Images/PizzaSnip.PNG)
+![](https://raw.githubusercontent.com/datctran/SocializR/master/FinalProjectSocialzR/Images/PizzaSnip.PNG)
