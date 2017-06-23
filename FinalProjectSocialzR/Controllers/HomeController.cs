@@ -26,8 +26,10 @@ namespace FinalProjectSocialzR.Controllers
                 var userId = User.Identity.GetUserId();
                 var userName = User.Identity.GetUserName();
             }
-            
-            var playlist = new ApplicationDbContext().Playlists.ToList();
+
+            var compId = db.Users.Find(User.Identity.GetUserId())?.CompanyId;
+
+            var playlist = new ApplicationDbContext().Playlists.Where(w => w.CompanyId == compId).ToList();
             var blacklist = new ApplicationDbContext().Blacklists.ToList();
             var vm = new MainAppVM() {Playlists = playlist, Blacklists = blacklist };
 
