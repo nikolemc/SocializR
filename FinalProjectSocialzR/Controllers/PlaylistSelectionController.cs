@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Microsoft.AspNet.Identity;
 
 namespace FinalProjectSocialzR.Controllers
 {
@@ -30,7 +31,9 @@ namespace FinalProjectSocialzR.Controllers
         public ActionResult RefreshUpper(int id)
         {
             var rv = db.Playlists.Select(s => new { Playlist = s, Message = s.SavedSocialMessage, }).FirstOrDefault(f => f.Playlist.Id == id);
-            var playLists = db.Playlists.ToList();
+            var compId = db.Users.Find(User.Identity.GetUserId())?.CompanyId;
+
+            var playLists = db.Playlists.Where(w => w.CompanyId == compId).ToList();
             var vm = new PlaylistWithSocialMessagesVM
             {
                 Messages = rv.Message,
@@ -50,16 +53,14 @@ namespace FinalProjectSocialzR.Controllers
 
         public ActionResult RefreshUpperNoId()
         {
-            
-            var playLists = db.Playlists.ToList();
+            var compId = db.Users.Find(User.Identity.GetUserId())?.CompanyId;
+            var playLists = db.Playlists.Where(w => w.CompanyId == compId).ToList();
             var vm = new PlaylistWithSocialMessagesVM
             {
                 AllPlaylist = playLists,
             };
             return PartialView("_PlaylistSearchResultsUpperPartial", vm);
-        }
-
-
+        }        
 
         [HttpPut]
         public ActionResult EditPlaylist(int id, string newPlaylistName)
@@ -88,6 +89,7 @@ namespace FinalProjectSocialzR.Controllers
             var playlisttoadd = new Playlist();
             playlisttoadd.PlaylistName = playlistName;
             playlisttoadd.LastModifiedTimeStamp = DateTime.Now;
+            playlisttoadd.CompanyId = db.Users.Find(User.Identity.GetUserId())?.CompanyId;
             db.Playlists.Add(playlisttoadd);
             db.SaveChanges();
 
@@ -144,9 +146,6 @@ namespace FinalProjectSocialzR.Controllers
 
             return PartialView("_PlaylistPartial", vm);
         }
-
-
-
     }
 
 

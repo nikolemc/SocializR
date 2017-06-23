@@ -238,9 +238,14 @@
     <Compile Include="Migrations\201706231715283_addedcompnayidtouser.Designer.cs">
       <DependentUpon>201706231715283_addedcompnayidtouser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706231828049_blackliststatic.cs" />
+    <Compile Include="Migrations\201706231828049_blackliststatic.Designer.cs">
+      <DependentUpon>201706231828049_blackliststatic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Blacklist.cs" />
+    <Compile Include="Models\BlacklistStatic.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Instagram.cs" />
@@ -389,6 +394,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706231715283_addedcompnayidtouser.resx">
       <DependentUpon>201706231715283_addedcompnayidtouser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706231828049_blackliststatic.resx">
+      <DependentUpon>201706231828049_blackliststatic.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
