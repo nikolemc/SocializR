@@ -227,6 +227,7 @@
     <Compile Include="Controllers\SavedSocialMessagesController.cs" />
     <Compile Include="Controllers\SavedSocialMessagesCRUDController.cs" />
     <Compile Include="Controllers\SearchController.cs" />
+    <Compile Include="Controllers\UserCRUDController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -370,6 +371,7 @@
     <Folder Include="Views\PlaylistChoice\" />
     <Folder Include="Views\SavedSocialMessagesCRUD\" />
     <Folder Include="Views\Search\" />
+    <Folder Include="Views\UserCRUD\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

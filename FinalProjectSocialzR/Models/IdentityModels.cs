@@ -41,5 +41,22 @@ namespace FinalProjectSocialzR.Models
         public System.Data.Entity.DbSet<FinalProjectSocialzR.Models.Playlist> Playlists { get; set; }
 
         public System.Data.Entity.DbSet<FinalProjectSocialzR.Models.Blacklist> Blacklists { get; set; }
+
+        public System.Data.Entity.DbSet<FinalProjectSocialzR.Models.ApplicationUser> ApplicationUsers { get; set; }
+
+        public System.Data.Entity.DbSet<FinalProjectSocialzR.Models.Company> Companies { get; set; }
+    }
+
+    //Added this
+    public class ApplicationRole : IdentityRole
+
+    {
+
+        public ApplicationRole() : base() { }
+
+        public ApplicationRole(string name) : base(name) { }
+
+        public string Description { get; set; }
+
     }
 }
