@@ -58,6 +58,10 @@ namespace FinalProjectSocialzR.Models
 
         public int? PlaylistId { get; set; }
         public Playlist Playlist { get; set; }
+
+        public int? CompanyId { get; set; }
+        public Company Company { get; set; }       
+
     }
 
 
