@@ -242,6 +242,18 @@
     <Compile Include="Migrations\201706231828049_blackliststatic.Designer.cs">
       <DependentUpon>201706231828049_blackliststatic.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706231831566_blackliststatic2.cs" />
+    <Compile Include="Migrations\201706231831566_blackliststatic2.Designer.cs">
+      <DependentUpon>201706231831566_blackliststatic2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706231834308_blackliststatic3.cs" />
+    <Compile Include="Migrations\201706231834308_blackliststatic3.Designer.cs">
+      <DependentUpon>201706231834308_blackliststatic3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706231835564_blackliststatic4.cs" />
+    <Compile Include="Migrations\201706231835564_blackliststatic4.Designer.cs">
+      <DependentUpon>201706231835564_blackliststatic4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Blacklist.cs" />
@@ -397,6 +409,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201706231828049_blackliststatic.resx">
       <DependentUpon>201706231828049_blackliststatic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706231831566_blackliststatic2.resx">
+      <DependentUpon>201706231831566_blackliststatic2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706231834308_blackliststatic3.resx">
+      <DependentUpon>201706231834308_blackliststatic3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706231835564_blackliststatic4.resx">
+      <DependentUpon>201706231835564_blackliststatic4.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

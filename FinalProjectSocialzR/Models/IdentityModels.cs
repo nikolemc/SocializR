@@ -41,5 +41,7 @@ namespace FinalProjectSocialzR.Models
         public System.Data.Entity.DbSet<FinalProjectSocialzR.Models.Playlist> Playlists { get; set; }
 
         public System.Data.Entity.DbSet<FinalProjectSocialzR.Models.Blacklist> Blacklists { get; set; }
+
+        public System.Data.Entity.DbSet<FinalProjectSocialzR.Models.BlacklistStatic > blacklistStatics { get; set; }
     }
 }
