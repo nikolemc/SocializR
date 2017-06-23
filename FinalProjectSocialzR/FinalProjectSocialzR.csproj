@@ -230,29 +230,25 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706231627537_Company.cs" />
-    <Compile Include="Migrations\201706231627537_Company.Designer.cs">
-      <DependentUpon>201706231627537_Company.cs</DependentUpon>
+    <Compile Include="Migrations\201706231911587_blackliststatic7.cs" />
+    <Compile Include="Migrations\201706231911587_blackliststatic7.Designer.cs">
+      <DependentUpon>201706231911587_blackliststatic7.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706231715283_addedcompnayidtouser.cs" />
-    <Compile Include="Migrations\201706231715283_addedcompnayidtouser.Designer.cs">
-      <DependentUpon>201706231715283_addedcompnayidtouser.cs</DependentUpon>
+    <Compile Include="Migrations\201706231914223_blackliststatic8.cs" />
+    <Compile Include="Migrations\201706231914223_blackliststatic8.Designer.cs">
+      <DependentUpon>201706231914223_blackliststatic8.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706231828049_blackliststatic.cs" />
-    <Compile Include="Migrations\201706231828049_blackliststatic.Designer.cs">
-      <DependentUpon>201706231828049_blackliststatic.cs</DependentUpon>
+    <Compile Include="Migrations\201706231915042_blackliststatic9.cs" />
+    <Compile Include="Migrations\201706231915042_blackliststatic9.Designer.cs">
+      <DependentUpon>201706231915042_blackliststatic9.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706231831566_blackliststatic2.cs" />
-    <Compile Include="Migrations\201706231831566_blackliststatic2.Designer.cs">
-      <DependentUpon>201706231831566_blackliststatic2.cs</DependentUpon>
+    <Compile Include="Migrations\201706231916151_blackliststatic1.cs" />
+    <Compile Include="Migrations\201706231916151_blackliststatic1.Designer.cs">
+      <DependentUpon>201706231916151_blackliststatic1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201706231834308_blackliststatic3.cs" />
-    <Compile Include="Migrations\201706231834308_blackliststatic3.Designer.cs">
-      <DependentUpon>201706231834308_blackliststatic3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706231835564_blackliststatic4.cs" />
-    <Compile Include="Migrations\201706231835564_blackliststatic4.Designer.cs">
-      <DependentUpon>201706231835564_blackliststatic4.cs</DependentUpon>
+    <Compile Include="Migrations\201706231936408_blackliststatic2.cs" />
+    <Compile Include="Migrations\201706231936408_blackliststatic2.Designer.cs">
+      <DependentUpon>201706231936408_blackliststatic2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -270,6 +266,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\TwitterSearchServices.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModel\BlacklistExtendedVM.cs" />
     <Compile Include="ViewModel\MainAppVM.cs" />
     <Compile Include="ViewModel\PlaylistPartialVM.cs" />
     <Compile Include="ViewModel\PlaylistWithSocialMessagesVM.cs" />
@@ -401,23 +398,20 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201706231627537_Company.resx">
-      <DependentUpon>201706231627537_Company.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706231911587_blackliststatic7.resx">
+      <DependentUpon>201706231911587_blackliststatic7.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706231715283_addedcompnayidtouser.resx">
-      <DependentUpon>201706231715283_addedcompnayidtouser.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706231914223_blackliststatic8.resx">
+      <DependentUpon>201706231914223_blackliststatic8.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706231828049_blackliststatic.resx">
-      <DependentUpon>201706231828049_blackliststatic.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706231915042_blackliststatic9.resx">
+      <DependentUpon>201706231915042_blackliststatic9.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706231831566_blackliststatic2.resx">
-      <DependentUpon>201706231831566_blackliststatic2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706231916151_blackliststatic1.resx">
+      <DependentUpon>201706231916151_blackliststatic1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706231834308_blackliststatic3.resx">
-      <DependentUpon>201706231834308_blackliststatic3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706231835564_blackliststatic4.resx">
-      <DependentUpon>201706231835564_blackliststatic4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706231936408_blackliststatic2.resx">
+      <DependentUpon>201706231936408_blackliststatic2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
