@@ -234,6 +234,10 @@
     <Compile Include="Migrations\201706231627537_Company.Designer.cs">
       <DependentUpon>201706231627537_Company.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706231715283_addedcompnayidtouser.cs" />
+    <Compile Include="Migrations\201706231715283_addedcompnayidtouser.Designer.cs">
+      <DependentUpon>201706231715283_addedcompnayidtouser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Blacklist.cs" />
@@ -382,6 +386,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201706231627537_Company.resx">
       <DependentUpon>201706231627537_Company.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706231715283_addedcompnayidtouser.resx">
+      <DependentUpon>201706231715283_addedcompnayidtouser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
