@@ -3,9 +3,14 @@ namespace FinalProjectSocialzR.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class blackliststatic4 : DbMigration
+    public partial class blackliststatic9 : DbMigration
     {
         public override void Up()
+        {
+            DropTable("dbo.BlacklistStatics");
+        }
+        
+        public override void Down()
         {
             CreateTable(
                 "dbo.BlacklistStatics",
@@ -16,11 +21,6 @@ namespace FinalProjectSocialzR.Migrations
                     })
                 .PrimaryKey(t => t.Id);
             
-        }
-        
-        public override void Down()
-        {
-            DropTable("dbo.BlacklistStatics");
         }
     }
 }

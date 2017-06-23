@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using FinalProjectSocialzR.Models;
+using Microsoft.AspNet.Identity;
 
 namespace FinalProjectSocialzR.Controllers
 {
@@ -17,7 +18,9 @@ namespace FinalProjectSocialzR.Controllers
         // GET: Blacklists
         public ActionResult Index()
         {
-            return View(db.Blacklists.ToList());
+            var compId = db.Users.Find(User.Identity.GetUserId())?.CompanyId;
+
+            return View(db.Blacklists.Where(w => w.CompanyId == compId).ToList());
         }
 
         public ActionResult GetAfter300()
@@ -68,7 +71,9 @@ namespace FinalProjectSocialzR.Controllers
         [HttpPost]
         public ActionResult AddNewBlacklistedWord(string text)
         {
-            var blacklistedWord = new Blacklist() { Word = text};
+            var compId = db.Users.Find(User.Identity.GetUserId())?.CompanyId;
+
+            var blacklistedWord = new Blacklist() { Word = text, CompanyId = compId};
             db.Blacklists.Add(blacklistedWord);
             db.SaveChanges();
 

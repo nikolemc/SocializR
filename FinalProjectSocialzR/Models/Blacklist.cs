@@ -11,6 +11,9 @@ namespace FinalProjectSocialzR.Models
         [Key]
         public int Id { get; set; }
         public string Word { get; set; }
-        
+
+
+        public int? CompanyId { get; set; }
+        public Company Company { get; set; }
     }
 }
