@@ -14,5 +14,8 @@ namespace FinalProjectSocialzR.Models
         public DateTime LastModifiedTimeStamp { get; set; } = DateTime.Now;
 
         public ICollection<SavedSocialMessage> SavedSocialMessage { get; set; }
+
+        public int? CompanyId { get; set; }
+        public Company Company { get; set; }
     }
 }
