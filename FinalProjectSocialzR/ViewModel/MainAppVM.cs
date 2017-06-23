@@ -10,5 +10,7 @@ namespace FinalProjectSocialzR.ViewModel
     {
         public IEnumerable<Playlist> Playlists { get; set; }
         public IEnumerable<Blacklist> Blacklists { get; set; }
+        public IEnumerable<BlacklistStatic> StaticBlacklist { get; set; }
+
     }
 }

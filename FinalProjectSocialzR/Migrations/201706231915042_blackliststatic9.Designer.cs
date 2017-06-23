@@ -7,13 +7,13 @@ namespace FinalProjectSocialzR.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class Company : IMigrationMetadata
+    public sealed partial class blackliststatic9 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Company));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(blackliststatic9));
         
         string IMigrationMetadata.Id
         {
-            get { return "201706231627537_Company"; }
+            get { return "201706231915042_blackliststatic9"; }
         }
         
         string IMigrationMetadata.Source

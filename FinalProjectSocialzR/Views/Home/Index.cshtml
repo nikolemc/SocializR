@@ -102,7 +102,7 @@
 
                             @Html.Partial("_blacklistPartial", Model.Blacklists)
                             <span id="blacklistcatelog">
-                                @Html.Partial("_entireBlacklistCatelog", Model.Blacklists)
+                                @Html.Partial("_entireBlacklistCatelog", new FinalProjectSocialzR.ViewModel.BlacklistExtendedVM() { Blacklist = Model.Blacklists, BlacklistStatic = Model.StaticBlacklist} )
                             </span>
                         </div>
 

@@ -6,14 +6,10 @@ using System.Web;
 
 namespace FinalProjectSocialzR.Models
 {
-    public class Blacklist
+    public class BlacklistStatic
     {
         [Key]
         public int Id { get; set; }
         public string Word { get; set; }
-
-
-        public int? CompanyId { get; set; }
-        public Company Company { get; set; }
     }
 }
